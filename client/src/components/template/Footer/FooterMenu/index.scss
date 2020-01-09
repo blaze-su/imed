@@ -1,0 +1,45 @@
+.wrap {
+	display: flex;
+	flex-direction: column;
+}
+
+.list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.link {
+	display: block;
+	margin-top: 30px;
+	text-decoration: none;
+	font-family: 'SF UI Display';
+	font-weight: lighter;
+	font-size: 20px;
+	line-height: 150%;
+}
+
+.item {
+	display: block;
+	margin-bottom: 20px;
+	text-decoration: none;
+	font-family: 'SF UI Display';
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 150%;
+	color: black;
+	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+	.item {
+		font-size: 14px;
+		line-height: 150%;
+	}
+}
+
+@media (max-width: 540px) {
+	.wrap {
+		display: none;
+	}
+}

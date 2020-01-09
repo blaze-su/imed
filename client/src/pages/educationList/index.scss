@@ -1,0 +1,58 @@
+@import '../page';
+@import '../section';
+
+.subTitle {
+  width: 100%;
+  padding: 0 10px;
+  font-family: 'SF UI Display';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 200%;
+  color: #000000;
+}
+
+.text {
+  font-family: 'SF UI Display';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 200%;
+  color: #000000;
+}
+
+.wrap{
+  display: flex;
+  p, img{
+    width: calc(50% - 20px);
+  }
+}
+
+.img{
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.event{
+  display: flex;
+  flex-flow: row wrap;
+  & > div{
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media all and (max-width: 1024px){
+  .wrap{
+    display: flex;
+    flex-direction: column;
+    img{
+      width: 100%;
+      order: 1;
+    }
+    p{
+      width: 100%;
+      order: 2;
+    }
+  }
+}

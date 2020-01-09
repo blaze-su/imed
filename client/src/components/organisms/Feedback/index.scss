@@ -1,0 +1,62 @@
+.wrap {
+  outline: none;
+  border: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  width: 100%;
+  max-width: 1180px;
+  height: 346px;
+  padding: 40px;
+  border-radius: 5px;
+}
+
+.patient,
+.doctor {
+  span {
+    font-family: 'SF UI Display';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 200%;
+  }
+
+  strong {
+    font-family: 'SF UI Display';
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 150%;
+  }
+}
+
+.feedback {
+  font-family: 'SF UI Display';
+  margin: 22px 0 30px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 200%;
+}
+
+@media all and (max-width: 540px){
+  .item {
+    padding: 30px 10px;
+  }
+  .feedback{
+    font-size: 12px;
+  }
+
+  .patient,
+  .doctor {
+    span {
+      font-size: 12px;
+    }
+
+    strong {
+      font-size: 16px;
+    }
+  }
+}

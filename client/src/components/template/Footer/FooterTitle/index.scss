@@ -1,0 +1,21 @@
+.title{
+  margin-bottom: 30px;
+  font-family: 'SF UI Display';
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 200%;
+  color: #65BBE9;
+}
+
+@media (max-width: 768px) {
+  .title{
+    font-size: 20px;
+    line-height: 150%;
+  }
+}
+
+@media (max-width: 540px) {
+  .title{
+    display: none;
+  }
+}

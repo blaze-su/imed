@@ -1,0 +1,45 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  font-family: 'SF UI Display';
+  font-size: 16px;
+  line-height: 200%;
+  color: #000000;
+}
+
+.item {
+  position: relative;
+  display: block;
+  padding-left: 15px;
+
+  &:before{
+    content: '-';
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.list{
+  margin-bottom: 20px;
+}
+
+.desc{
+  font-family: 'SF UI Display';
+  font-size: 16px;
+  line-height: 150%;
+  color: #000000;
+}
+
+@media all and (max-width: 540px){
+  .wrap {
+    font-size: 12px;
+    line-height: 200%;
+  }
+  .desc{
+    font-size: 12px;
+    line-height: 200%;
+  }
+}

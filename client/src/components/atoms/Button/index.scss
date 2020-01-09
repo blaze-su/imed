@@ -1,0 +1,54 @@
+$width: 280px;
+$height: 60px;
+$bgColor: #65bbe9;
+$bgHover: #3CACE8;
+
+.btn,
+.btnWhite{
+  width: $width;
+  height: $height;
+  border-radius: 35px;
+  outline: none;
+  border: none;
+  font-family: 'SF UI Display';
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  cursor: pointer;
+}
+
+.btn {
+  position: relative;
+  background: $bgColor;
+  color: white;
+
+  &:hover,
+  &:active {
+    background: $bgHover;
+  }
+}
+
+.btnWhite {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+  background: white;
+  color: $bgColor;
+
+  &:hover,
+  &:active {
+    border: 1px solid $bgHover;
+    background: white;
+    color: $bgHover;
+  }
+}
+
+@media (max-width: 540px){
+  .btn,
+  .btnWhite {
+    width: 200px;
+    height: 40px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,42 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  width: 880px;
+  height: 280px;
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    transition: .2s ease-out;
+    box-shadow: 2px -4px 4px #C4C4C4, 0px 4px 4px #C4C4C4;
+  }
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-family: 'SF UI Display';
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 300;
+}
+
+.img {
+  width: 280px;
+  height: 280px;
+}
+
+.wrapper {
+  flex: 0 1 auto;
+  padding: 10px 20px 30px;
+}
+
+.desc {
+  display: block;
+  max-height: 132px;
+  font-size: 15px;
+  line-height: 150%;
+  overflow: hidden;
+}

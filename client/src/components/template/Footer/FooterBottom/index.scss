@@ -1,0 +1,56 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95vw;
+  max-width: 1180px;
+  height: 40px;
+  margin: 30px auto 0;
+  font-family: 'SF UI Display';
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-family: 'SF UI Display';
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  opacity: 0.5;
+
+  &:focus,
+  &:active,
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.develop {
+  @extend .link;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 540px) {
+  .wrap {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    font-size: 10px;
+  }
+  .link {
+    width: 100%;
+    text-align: left;
+    font-size: 10px;
+
+    &:last-child{
+      margin-top: 20px;
+    }
+  }
+}

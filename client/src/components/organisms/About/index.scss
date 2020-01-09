@@ -1,0 +1,60 @@
+.wrap {
+  display: flex;
+  flex-flow: row wrap;
+  width: 95vw;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+.wrapText,
+.img {
+  width: calc(50% - 10px);
+  max-height: 100%;
+}
+
+.wrapText {
+  margin-right: 20px;
+}
+
+.description {
+  font-family: 'SF UI Display';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 200%;
+}
+
+@media all and (max-width: 768px) {
+  .wrap{
+    width: 100vw;
+    flex-flow: column nowrap;
+    padding: 0;
+    padding-top: 50px;
+  }
+
+  .wrapText,
+  .title {
+    width: calc(100vw - 32px);
+  }
+
+  .wrapText{
+    margin: 0 auto;
+    order: 3;
+  }
+
+  .img {
+    width: 100vw;
+    margin-bottom: 30px;
+    order: 1;
+  }
+}
+
+@media all and (max-width: 540px) {
+  .description{
+    font-size: 12px;
+    line-height: 200%;
+  }
+  .wrap{
+    padding: 0;
+  }
+}

@@ -1,0 +1,16 @@
+.link{
+  text-decoration: none;
+  font-family: "SF UI Display";
+  font-size: 20px;
+  line-height: 150%;
+  align-items: center;
+  font-weight: bold;
+  color: #1B1C1C;
+}
+
+@media all and (min-width: 540px){
+  .link{
+    font-size: 25px;
+    line-height: 200%;
+  }
+}

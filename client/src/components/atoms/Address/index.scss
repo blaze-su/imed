@@ -1,0 +1,20 @@
+.address{
+  font-family: "SF UI Display";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 200%;
+}
+
+@media all and (min-width: 540px){
+  .address {
+    font-size: 16px;
+    line-height: 200%;
+  }
+}
+
+@media all and (min-width: 768px){
+  .address {
+    line-height: 150%;
+  }
+}

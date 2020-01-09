@@ -1,0 +1,127 @@
+$width: 60px;
+$mobileWidth: 30px;
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 95%;
+}
+
+.searchBox {
+  width: 100%;
+  height: 100px;
+  position: relative;
+}
+
+.input {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  box-sizing: border-box;
+  width: 0;
+  height: $width;
+  padding: 0 20px;
+  outline: none;
+  font-size: 18px;
+  border-radius: 50px;
+  color: #29313a;
+  border: none;
+  transition: all 0.8s ease;
+}
+
+.btn {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: $width;
+  height: $width;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  background-image: url("https://svgsilh.com/svg/1976105.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+  cursor: pointer;
+  text-align: center;
+  line-height: $width;
+  font-size: 20px;
+  color: #fff;
+  outline: none;
+  transition: all 0.8s ease;
+}
+
+.inputActive {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  height: $width;
+  padding: 0 20px;
+  outline: none;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  color: #29313a;
+  transition: all 0.8s ease;
+}
+
+.btnAnimate {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: $width;
+  height: $width;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  background-image: url("https://svgsilh.com/svg/1976105.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+  cursor: pointer;
+  text-align: center;
+  line-height: $width;
+  font-size: 20px;
+  color: #fff;
+  transition: all 0.8s ease;
+  transform: rotate(-360deg);
+  outline: none;
+}
+
+@media all and (max-width: 768px) {
+  .wrapper {
+    right: 100px;
+    width: 50%;
+  }
+}
+
+@media all and (max-width: 540px) {
+  .btnAnimate,
+  .btn{
+    top: 0;
+    width: $mobileWidth;
+    height: $mobileWidth;
+    line-height: $mobileWidth;
+  }
+
+  .input,
+  .inputActive{
+    top: 0;
+    right: 5px;
+    padding: 0 10px;
+    height: $mobileWidth;
+    font-size: 12px;
+    line-height: 16;
+  }
+  .wrapper{
+    right: 80px;
+  }
+
+  .searchBox{
+    height: 30px;
+  }
+}

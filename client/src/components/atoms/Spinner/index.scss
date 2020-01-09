@@ -1,0 +1,63 @@
+$spinSize: 54px;
+$spinSpinnerColor: #337ab7;
+$circleCount: 12;
+$animationDuration: 1.2s;
+$mwidth: 64px;
+.bg {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  min-width: $mwidth;
+  min-height: $mwidth;
+  padding: 20px;
+}
+
+.circle {
+  width: $spinSize;
+  height: $spinSize;
+  position: relative;
+  margin: auto;
+
+  .item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .item:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 15%;
+    height: 15%;
+    background-color: $spinSpinnerColor;
+    border-radius: 100%;
+    animation: sk-fading-circle-delay $animationDuration infinite ease-in-out both;
+  }
+
+  @for $i from 2 through $circleCount {
+    .item#{$i} {
+      transform: rotate((360deg / $circleCount * ($i - 1)));
+    }
+  }
+
+  @for $i from 2 through $circleCount {
+    .item#{$i}:before {
+      animation-delay: (-$animationDuration + $animationDuration / $circleCount * ($i - 1));
+    }
+  }
+
+}
+
+@keyframes sk-fading-circle-delay {
+  0%, 39%, 100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}

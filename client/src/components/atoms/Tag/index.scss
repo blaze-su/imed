@@ -1,0 +1,27 @@
+$color: #65BBE9;
+.tag {
+  position: relative;
+  display: inline-block;
+  max-height: 26px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background-color: white;
+  border: 1px solid $color;
+  border-radius: 3px;
+  font-family: 'SF UI Display';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: $color;
+}
+
+@media all and (max-width: 540px) {
+  .tag {
+    height: 20px;
+    font-size: 10px;
+  }
+}

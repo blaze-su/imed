@@ -1,0 +1,30 @@
+@import '../section.scss';
+@import '../page.scss';
+
+section {
+  nav{
+    margin-right: 40px;
+  }
+}
+
+
+.wrap{
+  width: 70%;
+}
+
+.doctors{
+  display: flex;
+  flex-flow: row wrap;
+  div{
+    margin-bottom: 20px;
+    margin-right: 20px;
+  }
+}
+
+.info{
+  font-family: SF UI Display;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 200%;
+}

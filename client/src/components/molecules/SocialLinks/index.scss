@@ -1,0 +1,11 @@
+.img {
+    max-width: 50px;
+    max-height: 50px;
+  &:first-child{
+    margin-right: 20px;
+  }
+}
+
+.soc{
+  margin-top: 20px;
+}

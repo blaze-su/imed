@@ -1,0 +1,70 @@
+.breadcrumbs {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100vw;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 0 15px;
+  a {
+    text-decoration: none;
+    color: #000;
+    font-family: SF UI Display;
+    font-weight: 500;
+  }
+}
+
+a.linkActive{
+  color: #C4C4C4;
+}
+
+@media (min-width: 575.98px){
+  .breadcrumbs {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 0 calc(50vw - 270px);
+  }
+}
+
+@media (min-width: 767.98px){
+  .breadcrumbs{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 0 calc(50vw - 360px);
+  }
+}
+
+@media (min-width: 991.98px) {
+  .breadcrumbs{
+    padding: 0 calc(50vw - 480px);
+  }
+}
+
+@media (min-width: 1199.98px){
+  .breadcrumbs{
+    padding: 0 calc(50vw - 590px);
+  }
+}
+
+.link,
+.linkActive{
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 150%;
+  color: #000;
+
+  span{
+    display: inline-block;
+    margin: 0 5px;
+    font-size: inherit;
+  }
+}
+
+@media all and (max-width: 540px){
+  .link,
+  .linkActive {
+    font-size: 10px;
+    line-height: 150%;
+  }
+}

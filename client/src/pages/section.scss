@@ -1,0 +1,31 @@
+section {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  padding: 0 10px;
+}
+
+@media (min-width: 575.98px) {
+  section {
+    padding: 0 calc(50vw - 270px);
+  }
+}
+
+@media (min-width: 767.98px) {
+  section {
+    padding: 0 calc(50vw - 360px);
+  }
+}
+
+@media (min-width: 991.98px) {
+  section {
+    flex-flow: row wrap;
+    padding: 0 calc(50vw - 480px);
+  }
+}
+
+@media (min-width: 1199.98px) {
+  section {
+    padding: 0 calc(50vw - 600px);
+  }
+}

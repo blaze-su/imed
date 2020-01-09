@@ -1,0 +1,82 @@
+@import '../page';
+@import '../section';
+a {text-decoration: none;}
+p {margin-bottom: 20px;}
+
+.aboutService,
+.desc,
+.detail,
+.date {
+  margin-bottom: 30px;
+  font-family: 'SF UI Display';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 200%;
+}
+
+.detail strong,
+.name {
+  margin-bottom: 30px;
+  font-family: 'SF UI Display';
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 200%;
+  text-decoration: underline;
+}
+
+.date {
+  margin-bottom: 50px;
+}
+
+.title {
+  width: 100%;
+  padding: 0 15px;
+  margin: 50px auto 30px;
+  font-family: 'SF UI Display';
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+.img {
+  width: 100%;
+  margin-left: 0;
+  margin-bottom: 20px;
+}
+
+.wrap {
+  display: flex;
+  width: 100%;
+}
+
+@media (min-width: 575.98px) {
+  .title {
+    font-size: 40px;
+    line-height: 150%;
+  }
+}
+
+@media (min-width: 767.98px) {
+  .img {
+    margin-bottom: 30px;
+  }
+  .title {
+    margin: 70px 0 50px;
+  }
+}
+
+@media (min-width: 991.98px) {
+  .img {
+    width: 580px;
+    height: 544px;
+    margin-left: 20px;
+  }
+
+  .title {
+    margin: 100px 0 50px;
+  }
+}
+
+@media (min-width: 1199.98px) {
+
+}

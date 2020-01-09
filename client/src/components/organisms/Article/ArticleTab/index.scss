@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.title{
+  margin: 0 0 20px;
+  font-family: 'SF UI Display';
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 200%;
+}
+
+.desc{
+  font-family: 'SF UI Display';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 200%;
+}
+
+.img{
+  margin-left: 20px;
+}
+
+@media (max-width: 540px) {
+  .container {
+    flex-direction: column;
+  }
+  .title{
+    font-size: 20px;
+  }
+  .img{
+    order: 1;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+  .desc{
+    font-size: 12px;
+    order: 2;
+  }
+}
