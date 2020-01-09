@@ -26,7 +26,7 @@ export const Doctor = ({
 }: IDoctor) => {
 	return (
 		<div className={style.item}>
-			<Link href={'/doctor/' + _id.slice(0, 6)}>
+			<Link href={`doctors/${_id}`}>
 				<a className={style.link}>
 					<img
 						className={style.img}
@@ -39,7 +39,7 @@ export const Doctor = ({
 				</a>
 			</Link>
 			<div className={style.wrapper}>
-				<Link href={'/doctor/' + _id.slice(0, 6)}>
+				<Link href={`doctors/${_id}`}>
 					<a className={style.link}>
 						<p className={style.name}>{name}</p>
 					</a>
