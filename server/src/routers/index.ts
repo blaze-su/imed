@@ -1,6 +1,6 @@
 export { articleRouter } from '@routers/articleRouter';
 export { bannerRouter } from '@routers/bannerRouter';
-export { categoryRouter } from '@routers/categoryRouter';
+// export { categoryRouter } from '@routers/_categoryRouter';
 export { chapterRouter } from '@routers/chapterRouter';
 export { contrRouter } from '@routers/contrRouter';
 export { describeRouter } from '@routers/describeRouter';

@@ -2,10 +2,8 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {fetchServices} from '@redux/actions';
 import {ErrorBoundary, Accordion, Spinner, Title } from '@components/atoms';
-
-
 import {useReset} from '@components/template/resetToggle';
-import {Layout} from '@components/organisms/Layout';
+import {Layout} from '@components/template';
 import './index.scss';
 
 export interface IAccordion {
@@ -19,13 +17,15 @@ export interface IAccordion {
 }
 
 const Services = () => {
-    const url: string = 'https://kasparov-store.ru/Services.json';
+    const url: string = 'https://localhost:3000/api/servoces';
     const dispatch = useDispatch();
     useReset(dispatch);
     useEffect((): any => dispatch(fetchServices(url)), [url, dispatch]);
-    const fetchServicesList = useSelector((store: any) => store.fetchServices);
-    const servicesList = fetchServicesList.services;
-    const isLoading = fetchServicesList.servicesIsLoading;
+    const servicesReducer = useSelector((store: any) => store.servicesReducer);
+    const { services, servicesIsLoading } = servicesReducer;
+    const categories = services.filter((s: any) => s.parentId === undefined);
+    console.log(categories);
+    
     const links = [
         {'title' : 'Главная', 'link' : '/'},
         {'title' : 'Услуги', 'link' : 'services/'}
@@ -33,10 +33,10 @@ const Services = () => {
 
     return(
         <Layout title={'Это тайлтл'} description={'Это дескрипшен'} keywords={'Это ключевое слово'} breadcrumbs={links}>
-            {isLoading ? <Spinner/> :
+            {servicesIsLoading ? <Spinner/> :
             <ErrorBoundary>
                 <Title text={'Услуги'} />
-                {servicesList.map(({_id, innerList}: IAccordion) =>
+                {services.map(({_id, innerList}: IAccordion) =>
                     <Accordion
                         link={{anchor: 'Первичные консультации  врачей', url: '/'}}
                         innerList={innerList}

@@ -12,7 +12,7 @@ const Doctor = () => {
   const { doctorID } = router.query;
   console.log('doctorID', router.query);
 
-  const url: string = `http://localhost:3000/api/doctors/${doctorID}`;
+  const url: string = `/api/doctors/${doctorID}`;
   console.log('durl', url);
 
   const dispatch = useDispatch();

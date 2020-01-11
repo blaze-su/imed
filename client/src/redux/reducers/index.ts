@@ -14,6 +14,7 @@ import { saleReducer } from './saleReducer';
 import { salesReducer } from './salesReducer';
 import { scheduleReducer } from './scheduleReducer';
 import { serviceReducer } from './serviceReducer';
+import { servicesReducer } from './servicesReducer';
 import { vacanciesReducer } from './vacanciesReducer';
 import { videoReducer } from './videoReducer';
 import { formReducer } from './formReducer';
@@ -35,6 +36,7 @@ export const reducer = combineReducers({
 	salesReducer,
 	scheduleReducer,
 	serviceReducer,
+	servicesReduser,
 	vacanciesReducer,
 	videoReducer,
 	form: reduxFormReducer

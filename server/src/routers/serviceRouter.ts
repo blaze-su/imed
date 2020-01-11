@@ -1,36 +1,54 @@
-import { Request, Response, NextFunction, Router } from 'express';
-import * as bodyParser from 'body-parser';
-import { Service, Doctor } from '@models/';
+import { Request, Response, NextFunction, Router } from "express";
+import * as bodyParser from "body-parser";
+import { Service, Doctor } from "@models/";
 
 const serviceRouter = Router();
 serviceRouter.use(bodyParser.json());
 
 serviceRouter
-	.route('/services/')
-	.get((req: Request, res: Response, next: NextFunction): void => {
-		Service.find({})
-			.populate({ path: 'doctorsId', model: Doctor })
-			.then(
-				service => {
-					res.json(service);
-				},
-				(err: Error) => next(err)
-			)
-			.catch((err: Error) => next(err));
-	});
+  .route("/services/")
+  .get((req: Request, res: Response, next: NextFunction): void => {
+    Service.find({})
+      //.populate({ path: "doctorsId", model: Doctor })
+      .then(
+        service => {
+          interface IData {
+            _id: string;
+            title: string;
+            sort: number;
+            parentId?: string;
+          }
+
+          const data = service.map(
+            (m: any): IData => {
+              console.log(m, m.parentId);
+              return {
+                _id: m._id,
+                title: m.title,
+                parentId: m.parentId,
+                sort: m.sort
+              };
+            }
+          );
+          res.json(data);
+        },
+        (err: Error) => next(err)
+      )
+      .catch((err: Error) => next(err));
+  });
 
 serviceRouter
-	.route('/services/:serviceId')
-	.get((req: Request, res: Response, next: NextFunction): void => {
-		Service.findById(req.params.serviceId)
-			.populate({ path: 'doctorsId', model: Doctor })
-			.then(
-				service => {
-					res.json(service);
-				},
-				(err: Error) => next(err)
-			)
-			.catch((err: Error) => next(err));
-	});
+  .route("/services/:serviceId")
+  .get((req: Request, res: Response, next: NextFunction): void => {
+    Service.findById(req.params.serviceId)
+      .populate({ path: "doctorsId", model: Doctor })
+      .then(
+        service => {
+          res.json(service);
+        },
+        (err: Error) => next(err)
+      )
+      .catch((err: Error) => next(err));
+  });
 
 export { serviceRouter };
