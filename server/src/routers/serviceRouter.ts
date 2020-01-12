@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction, Router } from "express";
 import * as bodyParser from "body-parser";
-import { Service, Doctor } from "@models/";
+import { Service, IService, IServiceCategory, Doctor } from "@models/";
+import { ILink } from "@interfaces/";
 
 const serviceRouter = Router();
 serviceRouter.use(bodyParser.json());
@@ -16,20 +17,40 @@ serviceRouter
             _id: string;
             title: string;
             sort: number;
-            parentId?: string;
+            links?: ILink[];
           }
 
-          const data = service.map(
-            (m: any): IData => {
-              console.log(m, m.parentId);
+          const data: IData[] = service // Get categories
+            .filter((s: IService) => s.parentId === undefined)
+            .sort((a: IService, b: IService) => // Sort categories
+              (a.sort || 0) > (b.sort || 0) ? 1 : -1
+            )
+            .map((c: IService) => { // Add links
+              let links: ILink[] = service
+                .filter((s: IService) => {
+                  const _id: string = c._id.toString() || "";
+                  const parentId: string = s.parentId || "";
+                  return parentId == _id;
+                })
+                .sort((a: IService, b: IService) =>
+                  (a.sort || 0) > (b.sort || 0) ? 1 : -1
+                )
+                .map((f: IService) => {
+                  return {
+                    _id: f._id,
+                    title: f.title,
+                    sort: f.sort
+                  };
+                });
+
               return {
-                _id: m._id,
-                title: m.title,
-                parentId: m.parentId,
-                sort: m.sort
+                _id: c._id,
+                title: c.title,
+                sort: c.sort,
+                links: links || []
               };
-            }
-          );
+            });
+
           res.json(data);
         },
         (err: Error) => next(err)

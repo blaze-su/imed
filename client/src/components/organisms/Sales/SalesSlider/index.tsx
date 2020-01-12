@@ -39,6 +39,7 @@ export const SalesSlider = () => {
 	useEffect((): any => dispatch(fetchSales(url)), [url, dispatch]);
 	const salesReducer = useSelector((store: any) => store.salesReducer);
 	const { sales, salesIsLoading } = salesReducer;
+	
 	return (
 		<div className={css.wrap}>
 			{salesIsLoading ? (

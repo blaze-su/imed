@@ -1,43 +1,13 @@
 .title,
 .titleWhite {
-  width: 100vw;
-  padding: 0 15px;
+  padding: 0;
   font-family: 'SF UI Display';
   font-weight: bold;
-  font-size: 25px;
+  font-size: 40px;
   color: #65BBE9;
   z-index: 2;
 }
 
 .titleWhite {
   color: white;
-}
-
-@media (min-width: 575.98px) {
-  .title,
-  .titleWhite {
-    padding: 0 calc(50vw - 270px);
-  }
-}
-
-@media (min-width: 767.98px) {
-  .title,
-  .titleWhite {
-    font-size: 40px;
-    padding: 0 calc(50vw - 360px);
-  }
-}
-
-@media (min-width: 991.98px) {
-  .title,
-  .titleWhite {
-    padding: 0 calc(50vw - 480px);
-  }
-}
-
-@media (min-width: 1199.98px) {
-  .title,
-  .titleWhite {
-    padding: 0 calc(50vw - 590px);
-  }
 }

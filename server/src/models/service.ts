@@ -1,5 +1,21 @@
 import * as mongoose from 'mongoose';
 
+
+export interface IService extends mongoose.Document {
+	title: string,
+	parentId: string,
+	sort: number,
+	description: string,
+	doctorsId: string[],
+	equipmentsId: string[]
+}
+
+export interface IServiceCategory {
+	_id?: string,
+	title: string,
+	sort?: number
+}
+
 const serviseSchema = new mongoose.Schema({
 	title: {
 		required: true,
@@ -27,4 +43,4 @@ const serviseSchema = new mongoose.Schema({
 
 });
 
-export const Service = mongoose.model('Service', serviseSchema);
+export const Service = mongoose.model<IService>('Service', serviseSchema);
