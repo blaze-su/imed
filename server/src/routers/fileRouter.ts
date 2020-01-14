@@ -103,7 +103,7 @@ fileRouter
 						console.log('jpgImage', jpgImage);
 						fileSaveInfo(
 							hash + '.jpg',
-							'',
+							req.body.title || '',
 							'image/jpeg',
 							res,
 							next
