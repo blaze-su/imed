@@ -6,15 +6,9 @@ import { fetchServices } from "@redux/actions";
 import { ErrorBoundary, Spinner, Title } from "@components/atoms";
 import { useReset } from "@components/template/resetToggle";
 import { Layout } from "@components/template";
-import { ILink } from "@interfaces";
-import { ServiceAccordion } from "@components/organisms/Service/ServiceAccordion";
+import { IService } from "@interfaces";
+import { ServiceAccordion } from "@components/organisms/Service";
 
-interface IService {
-    _id: string;
-    title: string;
-    sort: number;
-    links: ILink[];
-}
 
 const Services = () => {
     const url: string = "http://localhost:3000/api/services";

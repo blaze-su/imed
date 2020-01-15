@@ -1,0 +1,22 @@
+.link, .link__active {
+    display: block;
+    font-family: "SF UI Display";
+    font-size: 16px;
+    line-height: 150%;
+    color: #000; 
+    text-decoration: none;
+    padding: 8px 12px;
+    margin-bottom: 2px;
+    border-bottom: 1px solid #C4C4C4;
+
+    &:hover {
+        // border: 1px solid rgba(101, 187, 233, 0.3);
+        // border-radius: 5px;
+        // background: rgba(101, 187, 233, 0.3);
+        font-weight: bold;
+    }
+
+    &__active {
+        font-weight: bold;
+    }
+}

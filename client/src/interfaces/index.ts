@@ -1,4 +1,5 @@
 export * from './ILink'
 export * from './IPhoto'
+export * from './IService'
 export * from './ITitle'
 export * from './IVideo'

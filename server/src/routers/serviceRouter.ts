@@ -1,6 +1,15 @@
 import { Request, Response, NextFunction, Router } from "express";
 import * as bodyParser from "body-parser";
-import { Service, IService, IServiceCategory, Doctor } from "@models/";
+import {
+    Service,
+    IService,
+    IServiceCategory,
+    Doctor,
+    Mark,
+    Specialization,
+    File,
+    Equipment
+} from "@models/";
 import { ILink } from "@interfaces/";
 
 const serviceRouter = Router();
@@ -64,7 +73,16 @@ serviceRouter
     .route("/services/:serviceId")
     .get((req: Request, res: Response, next: NextFunction): void => {
         Service.findById(req.params.serviceId)
-            .populate({ path: "doctorsId", model: Doctor })
+            .populate({
+                path: "doctorsId",
+                model: Doctor,
+                populate: [
+                    { path: "marksId", model: Mark },
+                    { path: "specializationsId", model: Specialization },
+                    { path: "filesId", model: File }
+                ]
+            })
+            .populate({ path: "equipmentsId", model: Equipment })
             .then(
                 service => {
                     res.json(service);
