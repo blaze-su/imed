@@ -1,0 +1,15 @@
+.case {
+    display: flex;
+    background-color: yellow;
+}
+
+.aside {
+    outline: 1px dashed green;
+    width: 260px;
+    margin-right: 40px;
+}
+
+.article {
+    flex-grow: 1;
+    outline: 1px solid red;
+}

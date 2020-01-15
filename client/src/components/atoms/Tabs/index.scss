@@ -1,0 +1,29 @@
+.nav {
+    border-bottom: 1px solid #65BBE9;
+}
+
+.tab, .tab__active {
+    display: inline-block;
+    font-family: "SF UI Display";
+    font-size: 20px;
+    line-height: 150%;
+    padding: 10px 25px;
+    margin: 0 5px 0 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(101, 187, 233, 0.3);
+    }
+
+    &__active {
+        color: #fff;
+        background: #65BBE9 !important;
+    }
+}
+
+.panel {
+    padding: 30px;
+}
