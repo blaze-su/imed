@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { Tabs, Title, Spinner, ErrorBoundary } from "@components/atoms";
-import { ServiceMenu as Menu } from "@components/organisms";
+import { ServiceMenu as Menu, DoctorsList } from "@components/organisms";
 import { Layout } from "@components/template";
 import style from "./service.scss";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,7 +13,6 @@ const service = () => {
     const serviceId: string = Array.isArray(router.query.serviceId)
         ? router.query.serviceId[0]
         : router.query.serviceId;
-
 
     // serviceId =  serviceId == "string" ? serviceId : serviceId[0];
 
@@ -30,6 +29,8 @@ const service = () => {
     console.log("service", service);
 
     const { doctorsId, equipmentsId, title, parentId, description } = service;
+
+    console.log(doctorsId);
 
     const links = [
         { title: "Главная", link: "/" },
@@ -55,6 +56,7 @@ const service = () => {
                         </aside>
                         <article className={style.article}>
                             <Tabs
+                                currentTab={2}
                                 titles={[
                                     "Информация",
                                     "Услуги и цены",
@@ -62,9 +64,9 @@ const service = () => {
                                     "Оборудование"
                                 ]}
                             >
-                                <h1>{description}</h1>
-                                <h1>{doctorsId.lenght}</h1>
-                                <h1>3</h1>
+                                {description}
+                                <h1></h1>
+                                <DoctorsList doctors={doctorsId}/>
                                 <h1>{equipmentsId.lenght}</h1>
                             </Tabs>
                         </article>
@@ -74,5 +76,6 @@ const service = () => {
         </Layout>
     );
 };
+
 
 export default service;

@@ -8,66 +8,65 @@ import { useReset } from "@components/template/resetToggle";
 import { Layout } from "@components/template";
 
 const Doctor = () => {
-  const router = useRouter();
-  const { doctorID } = router.query;
-  console.log('doctorID', router.query);
+    const router = useRouter();
+    const { doctorID } = router.query;
 
-  const url: string = `/api/doctors/${doctorID}`;
-  console.log('durl', url);
+    const url: string = `http://localhost:3000/api/doctors/${doctorID}`;
+    const dispatch = useDispatch();
+    useReset(dispatch);
+    useEffect((): any => dispatch(fetchDoctor(url)), [url, dispatch]);
+    const doctorReducer = useSelector((store: any) => store.doctorReducer);
+    const { doctor, doctorIsLoading } = doctorReducer;
 
-  const dispatch = useDispatch();
-  useReset(dispatch);
-  useEffect((): any => dispatch(fetchDoctor(url)), [url, dispatch]);
-  const doctorReducer = useSelector((store: any) => store.doctorReducer);
-  const { doctor, doctorIsLoading } = doctorReducer;
- 
-  const arr = [
-    { title: "Главная", link: "/" },
-    { title: "Врачи", link: "/doctors" },
-    { title: doctor.name, link: "/doctors" }
-  ];
+    const arr = [
+        { title: "Главная", link: "/" },
+        { title: "Врачи", link: "/doctors" },
+        { title: doctor.name, link: "" }
+    ];
 
-  console.log(doctorID);
-  return (
-    <Layout
-      title={"Это тайтл"}
-      description={"Это дескрипшен"}
-      keywords={"Это ключевое слово"}
-      breadcrumbs={arr}
-    >
-      {doctorIsLoading ? (
-        <Spinner />
-      ) : (
-        <ErrorBoundary>
-          <Title text={doctor.name} />
-          <div className={style.wrap}>
-            <div className={style.textWrap}>
-              <span className={style.title}>{doctor.position}</span>
-              {/* {achievement.map((item: string, index: number) => (
-                <span className={style.desc} key={index}>
-                  {item}
-                </span>
-              ))} */}
-              <span className={style.title}>Образование</span>
-              {doctor.education.map((item: string, index: number) => (
-                <span className={style.desc} key={index}>
-                  {item}
-                </span>
-              ))}
-              <span className={style.desc}>{doctor.describe}</span>
-            </div>
-            <div className={style.photoWrap}>
-              <img className={style.img} src={`http://localhost:3000/api/static/${doctor.filesId[0].src}`} alt={doctor.name} />
-              <Button
-                text={"Записаться на прием"}
-                onClick={() => dispatch(toggleFormSign(true))}
-              />
-            </div>
-          </div>
-        </ErrorBoundary>
-      )}
-    </Layout>
-  );
+    console.log(doctor);
+    return (
+        <Layout
+            title={"Это тайтл"}
+            description={"Это дескрипшен"}
+            keywords={"Это ключевое слово"}
+            breadcrumbs={arr}
+        >
+            {doctorIsLoading ? (
+                <Spinner />
+            ) : (
+                <ErrorBoundary>
+                    <Title text={doctor.name} />
+                    <section className={style.case}>
+                        <aside className={style.photo}>
+                            <img
+                                className={style.img}
+                                src={`http://localhost:3000/api/static/${doctor.filesId[0].src}`}
+                                alt={doctor.name}
+                            />
+                            <Button
+                                text={"Записаться на прием"}
+                                onClick={() => dispatch(toggleFormSign(true))}
+                            />
+                        </aside>
+                        <article className={style.content}>
+                            <h3 className={style.title}>Образование</h3>
+                            {doctor.education.map(
+                                (item: string, index: number) => (
+                                    <span className={style.description} key={index}>
+                                        {item}
+                                    </span>
+                                )
+                            )}
+                            <p className={style.description}>
+                                {doctor.describe}
+                            </p>
+                        </article>
+                    </section>
+                </ErrorBoundary>
+            )}
+        </Layout>
+    );
 };
 
 export default Doctor;

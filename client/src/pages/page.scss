@@ -2,8 +2,18 @@
   box-sizing: border-box;
 }
 
+@font-face { 
+  font-family: "SF UI Display";
+  src: url(/static/fonts/SFUIDisplay-Regular.eot?) format("eot"), 
+       url(/static/fonts/SFUIDisplay-Regular.woff) format("woff"), 
+       url(/static/fonts/SFUIDisplay-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body {
   overflow-x: hidden;
+  font-family: "SF UI Display";
 }
 
 ul, li, ol {
@@ -22,13 +32,4 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-}
-
-@font-face { 
-  font-family: "SF UI Display";
-  src: url(/static/fonts/SFUIDisplay-Regular.eot?) format("eot"), 
-       url(/static/fonts/SFUIDisplay-Regular.woff) format("woff"), 
-       url(/static/fonts/SFUIDisplay-Regular.ttf) format("truetype");
-  font-weight: normal;
-  font-style: normal;
 }

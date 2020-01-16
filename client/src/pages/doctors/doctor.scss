@@ -1,68 +1,42 @@
 @import "../page";
 
-.wrap {
-  display: flex;
-  flex-flow: row nowrap;
-  width: 100vw;
-  padding: 0 10px;
-}
-.photoWrap{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.case {
+	display: flex;
+	flex-direction: row-reverse;
 }
 
-.title{
-  font-family: 'SF UI Display';
-  font-weight: bold;
-  display: block;
-  margin: 30px 0 20px;
-  font-size: 20px;
-  line-height: 150%;
-
-  &:first-child{
-    margin-top: 0;
-  }
+.photo {
+    text-align: center;
 }
 
-.desc{
-  font-family: 'SF UI Display';
-  font-weight: 300;
-  display: block;
-  font-size: 12px;
-  line-height: 200%;
+.content {
+	font-size: 16px;
+	line-height: 200%;
+	margin-right: 40px;
 }
 
-.img{
-  width: 480px;
-  height: 570px;
-  margin-left: 20px;
-  margin-bottom: 50px;
+
+.title {
+    font-family: "SF UI Display";
+    font-weight: bold;
+    display: block;
+    margin: 30px 0 20px;
+    font-size: 20px;
+    line-height: 150%;
+
+    &:first-child {
+        margin-top: 0;
+    }
 }
 
-@media (min-width: 575.98px) {
-  .wrap{
-    padding: 0 calc(50vw - 270px);
-  }
-  .desc{
-    font-size: 16px;
-  }
+.description {
+	display: block;
+	line-height: 140%;
+	margin-bottom: 15px;
 }
 
-@media (min-width: 767.98px) {
-  .wrap {
-    padding: 0 calc(50vw - 360px);
-  }
-}
-
-@media (min-width: 991.98px) {
-  .wrap {
-    padding: 0 calc(50vw - 480px);
-  }
-}
-
-@media (min-width: 1199.98px) {
-  .wrap{
-    padding: 0 calc(50vw - 590px);
-  }
+.img {
+    width: 480px;
+    margin-left: 20px;
+    margin-bottom: 50px;
 }

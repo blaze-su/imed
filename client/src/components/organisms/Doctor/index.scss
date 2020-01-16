@@ -1,21 +1,32 @@
 .name {
-  margin-bottom: 0;
+  margin: 0 0 10px 0;
   font-family: 'SF UI Display';
   font-size: 25px;
   font-weight: bold;
-  line-height: 150%;
+  line-height: 140%;
   text-transform: capitalize;
 }
 
+
+.positions {
+  flex-grow: 1;
+}
+
 .position {
-  margin: 10px 0 15px;
+  display: inline-block;
+  margin: 0 8px 8px 0;
+  padding: 0 10px;
   font-family: 'SF UI Display';
   font-weight: 300;
   font-size: 16px;
-  line-height: 200%;
+  line-height: 150%;
+  color: #c4c4c4;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
 }
 
 .experience {
+  margin: 0;
   font-family: 'SF UI Display';
   font-size: 16px;
   font-weight: bold;
@@ -23,10 +34,8 @@
 }
 
 .item{
-  width: 380px;
-  height: 545px;
-  margin-right: 10px;
-  margin-bottom: 20px;
+  max-width: 380px;
+  margin: 0;
   border-radius: 5px       ;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
   overflow: hidden;
@@ -48,14 +57,9 @@
 }
 
 .wrapper{
-  padding: 20px 90px 20px 10px;
-}
-
-@media all and (max-width: 540px){
-  .item {
-    width: 300px;
-  }
-  .wrapper{
-    padding: 20px 10px;
-  }
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 15px 15px 15px;
 }

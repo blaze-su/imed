@@ -26,7 +26,7 @@ export const Doctor = ({
 }: IDoctor) => {
 	return (
 		<div className={style.item}>
-			<Link href={`doctors/${_id}`}>
+			<Link href={`/doctors/${_id}`}>
 				<a className={style.link}>
 					<img
 						className={style.img}
@@ -39,16 +39,18 @@ export const Doctor = ({
 				</a>
 			</Link>
 			<div className={style.wrapper}>
-				<Link href={`doctors/${_id}`}>
+				<Link href={`/doctors/${_id}`}>
 					<a className={style.link}>
 						<p className={style.name}>{name}</p>
 					</a>
 				</Link>
+				<div className={style.positions}>
                 {
                     specializationsId.map((item: ISpecialization, key: any) => (
                         <p key={key} className={style.position}>{item.title}</p>
                     ))
                 }
+				</div>
 				<p className={style.experience}>{experience}</p>
 			</div>
 		</div>
@@ -56,3 +58,4 @@ export const Doctor = ({
 };
 
 export * from './DoctorsSlider';
+export * from './DoctorsList';
