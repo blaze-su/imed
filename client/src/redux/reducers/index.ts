@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { reducer as reduxFormReducer } from "redux-form";
+import { reducer as reduxForm } from "redux-form";
 import { generalReducer, mobileMenuReducer } from "./reducer";
 import { aboutReducer } from "./aboutReducer";
 import { articlesReucer } from "./articlesReucer";
@@ -20,24 +20,24 @@ import { videoReducer } from "./videoReducer";
 import { formReducer } from "./formReducer";
 
 export const reducer = combineReducers({
-  generalReducer,
-  mobileMenuReducer,
-  formReducer,
-  aboutReducer,
-  articlesReucer,
-  bannerReducer,
-  descReducer,
-  doctorReducer,
-  doctorsReducer,
-  eventReducer,
-  feedbackReducer,
-  photoReducer,
-  saleReducer,
-  salesReducer,
-  scheduleReducer,
-  serviceReducer,
-  servicesReducer,
-  vacanciesReducer,
-  videoReducer,
-  form: reduxFormReducer
+    generalReducer,
+    mobileMenuReducer,
+    formReducer,
+    aboutReducer,
+    articlesReucer,
+    bannerReducer,
+    descReducer,
+    doctorReducer,
+    doctorsReducer,
+    eventReducer,
+    feedbackReducer,
+    photoReducer,
+    saleReducer,
+    salesReducer,
+    scheduleReducer,
+    serviceReducer,
+    servicesReducer,
+    vacanciesReducer,
+    videoReducer,
+    form: reduxForm
 });

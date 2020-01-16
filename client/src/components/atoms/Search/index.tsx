@@ -8,7 +8,7 @@ const FormSearch = (props: any) => {
     const active = useSelector(
         (store: any) => store.generalReducer.toggleSearch
     );
-    const search = useSelector((store: any) => store.formReducer.search);
+    const search = useSelector((store: any) => store.form.search);
     const dispatch = useDispatch();
     return (
         <form className={style.wrapper} onSubmit={props.onSubmit}>
