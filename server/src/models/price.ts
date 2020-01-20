@@ -6,7 +6,6 @@ const priceSchema = new mongoose.Schema({
 		type: String
 	},
 	duration: {
-		required: true,
 		type: String
 	},
 	title: {
@@ -14,13 +13,13 @@ const priceSchema = new mongoose.Schema({
 		type: String,
 		text: true
 	},
-	describe: {
+	description: {
 		type: String,
 		text: true
 	},
-	marksId: {
+	servicesId: {
 		type: [mongoose.Schema.Types.ObjectId],
-		ref: 'Mark'
+		ref: 'Service'
 	}
 });
 

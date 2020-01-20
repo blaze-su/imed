@@ -72,6 +72,11 @@ serviceRouter
 serviceRouter
     .route("/services/:serviceId")
     .get((req: Request, res: Response, next: NextFunction): void => {
+        if (req.params.serviceId === 'undefined') {
+            res.status(404).end(`Page ${req.params.serviceId} not found`);
+            return;
+        }
+
         Service.findById(req.params.serviceId)
             .populate({
                 path: "doctorsId",

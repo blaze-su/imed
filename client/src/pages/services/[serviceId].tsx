@@ -14,7 +14,9 @@ const service = () => {
         ? router.query.serviceId[0]
         : router.query.serviceId;
 
-    // serviceId =  serviceId == "string" ? serviceId : serviceId[0];
+    // if(!serviceId) {
+    //     return (<div>Ошибка загрузки...</div>);
+    // }
 
     console.log("serviceId", serviceId);
 
@@ -66,7 +68,7 @@ const service = () => {
                             >
                                 {description}
                                 <h1></h1>
-                                <DoctorsList doctors={doctorsId}/>
+                                <DoctorsList doctors={doctorsId} />
                                 <h1>{equipmentsId.lenght}</h1>
                             </Tabs>
                         </article>
@@ -76,6 +78,5 @@ const service = () => {
         </Layout>
     );
 };
-
 
 export default service;

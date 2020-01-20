@@ -2,6 +2,7 @@ import * as mongoose from 'mongoose';
 
 
 export interface IService extends mongoose.Document {
+	_id: string,
 	title: string,
 	parentId: string,
 	sort: number,
