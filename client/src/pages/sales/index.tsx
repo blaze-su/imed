@@ -2,7 +2,7 @@ import style from "./index.scss";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSales } from "@redux/actions";
-import { Spinner, Title } from "@components/atoms";
+import { Spinner, Title, Box } from "@components/atoms";
 import { Sale, ISale } from "@components/organisms";
 import { useReset } from "@components/template/resetToggle";
 import { Layout } from "@components/template";
@@ -24,18 +24,20 @@ const SaleList = () => {
                 { title: "Акции", link: "/sales" }
             ]}
         >
-            <Title text={"Акции"} />
-            {salesIsLoading ? (
-                <Spinner />
-            ) : (
-                <section className={style.section}>
-                    <div className={style.item}>
-                        {sales.map((item: ISale) => (
-                            <Sale {...item} key={item._id} />
-                        ))}
-                    </div>
-                </section>
-            )}
+            <Box>
+                <Title text={"Акции"} />
+                {salesIsLoading ? (
+                    <Spinner />
+                ) : (
+                    <section className={style.section}>
+                        <div className={style.item}>
+                            {sales.map((item: ISale) => (
+                                <Sale {...item} key={item._id} />
+                            ))}
+                        </div>
+                    </section>
+                )}
+            </Box>
         </Layout>
     );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
-import { Tabs, Title, Spinner, ErrorBoundary } from "@components/atoms";
+import { Tabs, Title, Spinner, ErrorBoundary, Box } from "@components/atoms";
 import { ServiceMenu as Menu, DoctorsList } from "@components/organisms";
 import { Layout } from "@components/template";
 import style from "./service.scss";
@@ -47,34 +47,39 @@ const service = () => {
             keywords={"Это ключевое слово"}
             breadcrumbs={links}
         >
-            {serviceIsLoading ? (
-                <Spinner />
-            ) : (
-                <ErrorBoundary>
-                    <Title text={title} />
-                    <div className={style.case}>
-                        <aside className={style.aside}>
-                            <Menu serviceId={serviceId} parentId={parentId} />
-                        </aside>
-                        <article className={style.article}>
-                            <Tabs
-                                currentTab={2}
-                                titles={[
-                                    "Информация",
-                                    "Услуги и цены",
-                                    "Врачи",
-                                    "Оборудование"
-                                ]}
-                            >
-                                {description}
-                                <h1></h1>
-                                <DoctorsList doctors={doctorsId} />
-                                <h1>{equipmentsId.lenght}</h1>
-                            </Tabs>
-                        </article>
-                    </div>
-                </ErrorBoundary>
-            )}
+            <Box>
+                {serviceIsLoading ? (
+                    <Spinner />
+                ) : (
+                    <ErrorBoundary>
+                        <Title text={title} />
+                        <div className={style.case}>
+                            <aside className={style.aside}>
+                                <Menu
+                                    serviceId={serviceId}
+                                    parentId={parentId}
+                                />
+                            </aside>
+                            <article className={style.article}>
+                                <Tabs
+                                    currentTab={2}
+                                    titles={[
+                                        "Информация",
+                                        "Услуги и цены",
+                                        "Врачи",
+                                        "Оборудование"
+                                    ]}
+                                >
+                                    {description}
+                                    <h1></h1>
+                                    <DoctorsList doctors={doctorsId} />
+                                    <h1>{equipmentsId.lenght}</h1>
+                                </Tabs>
+                            </article>
+                        </div>
+                    </ErrorBoundary>
+                )}
+            </Box>
         </Layout>
     );
 };

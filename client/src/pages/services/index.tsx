@@ -3,12 +3,11 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./index.scss";
 import { fetchServices } from "@redux/actions";
-import { ErrorBoundary, Spinner, Title } from "@components/atoms";
+import { ErrorBoundary, Spinner, Title, Box } from "@components/atoms";
 import { useReset } from "@components/template/resetToggle";
 import { Layout } from "@components/template";
 import { IService } from "@interfaces";
 import { ServiceAccordion } from "@components/organisms/Service";
-
 
 const Services = () => {
     const url: string = "http://localhost:3000/api/services";
@@ -30,7 +29,7 @@ const Services = () => {
             keywords={"Это ключевое слово"}
             breadcrumbs={links}
         >
-         
+            <Box>
                 {servicesIsLoading ? (
                     <Spinner />
                 ) : (
@@ -46,7 +45,7 @@ const Services = () => {
                         </div>
                     </ErrorBoundary>
                 )}
-          
+            </Box>
         </Layout>
     );
 };

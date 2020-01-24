@@ -20,7 +20,8 @@ services:
     build:
       dockerfile: Dockerfile.dev
       context: ./client
-    volumes: 
+    volumes:
+      - /.next 
       - /app/node_modules
       - ./client:/app
     

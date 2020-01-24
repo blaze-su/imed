@@ -1,7 +1,9 @@
-FROM node:alpine
+FROM node:13
 WORKDIR /app
 COPY package.json .
-RUN npm install 
+RUN npm install -g typescript
+RUN npm install
+RUN npm rebuild node-sass
 COPY . .
 ENV CHOKIDAR_USEPOLLING=true
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run",  "dev"]

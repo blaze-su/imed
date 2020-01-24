@@ -1,7 +1,9 @@
 .anchor{
-  position: fixed; right: 5vw; bottom: 3vh;
+  position: fixed; right: 5vw; bottom: 5vh;
   display: block;
   width: 60px; height: 60px;
+  padding: 10px;
+  border-radius: 4px;
   background: #E9E9E9;
   outline: none;
   z-index: 1000;

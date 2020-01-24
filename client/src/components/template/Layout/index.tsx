@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { PageHead } from "../Head";
 import { Header } from "../Header";
 import { Footer } from "../Footer";
-import { Anchor, Box } from "@components/atoms";
+import { Anchor } from "@components/atoms";
 import { Breadcrumbs } from "@components/molecules";
 import { ILink } from "@interfaces";
 
@@ -26,10 +26,8 @@ export const Layout = (props: ILayout) => {
             />
             <Header />
             <main onWheel={() => setAnchorIsVisible(window.pageYOffset > 500)}>
-                <Box>
-                    <Breadcrumbs items={props.breadcrumbs} />
-                	{props.children}
-				</Box>
+                <Breadcrumbs items={props.breadcrumbs} />
+                {props.children}
             </main>
             <Footer />
             {anchorIsVisible ? <Anchor /> : null}

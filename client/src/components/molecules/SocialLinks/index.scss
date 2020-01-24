@@ -1,11 +1,19 @@
-.img {
-    max-width: 50px;
-    max-height: 50px;
-  &:first-child{
-    margin-right: 20px;
-  }
+.link {
+	height: 58px;
+	width: 58px;
+	box-sizing: border-box;
+	display: inline-block;
+	border: 1px solid #244116;
+	border-radius: 50px;
+	padding-top: 12px;
+	margin-right: 15px;
+	text-align: center;
 }
 
-.soc{
-  margin-top: 20px;
+.img {
+    max-height: 30px;
+}
+
+.soc {
+    margin-top: 20px;
 }

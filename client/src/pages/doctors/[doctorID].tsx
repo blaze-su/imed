@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDoctor, toggleFormSign } from "@redux/actions";
-import { Title, Button, Spinner, ErrorBoundary } from "@components/atoms";
+import { Title, Button, Spinner, ErrorBoundary, Box } from "@components/atoms";
 import { useReset } from "@components/template/resetToggle";
 import { Layout } from "@components/template";
 
@@ -32,6 +32,7 @@ const Doctor = () => {
             keywords={"Это ключевое слово"}
             breadcrumbs={arr}
         >
+            <Box>
             {doctorIsLoading ? (
                 <Spinner />
             ) : (
@@ -65,6 +66,7 @@ const Doctor = () => {
                     </section>
                 </ErrorBoundary>
             )}
+            </Box>
         </Layout>
     );
 };
