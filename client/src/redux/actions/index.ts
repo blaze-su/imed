@@ -10,6 +10,7 @@ export * from './fetchDoctor';
 export * from './fetchFeedback';
 export * from './fetchAbout';
 export * from './fetchPhoto';
+export * from './fetchPrice';
 export * from './fetchVideo';
 export * from './fetchArticles';
 export * from './fetchService';

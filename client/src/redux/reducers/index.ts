@@ -10,6 +10,7 @@ import { doctorsReducer } from "./doctorsReducer";
 import { eventReducer } from "./eventReducer";
 import { feedbackReducer } from "./feedbackReducer";
 import { photoReducer } from "./photoReducer";
+import { priceReducer } from "./priceReducer";
 import { saleReducer } from "./saleReducer";
 import { salesReducer } from "./salesReducer";
 import { scheduleReducer } from "./scheduleReducer";
@@ -32,6 +33,7 @@ export const reducer = combineReducers({
     eventReducer,
     feedbackReducer,
     photoReducer,
+    priceReducer,
     saleReducer,
     salesReducer,
     scheduleReducer,

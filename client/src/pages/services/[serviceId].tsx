@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { Tabs, Title, Spinner, ErrorBoundary, Box } from "@components/atoms";
-import { ServiceMenu as Menu, DoctorsList } from "@components/organisms";
+import {
+    ServiceMenu as Menu,
+    DoctorsList,
+    ServicePriceAccordion
+} from "@components/organisms";
 import { Layout } from "@components/template";
 import style from "./service.scss";
 import { useDispatch, useSelector } from "react-redux";
@@ -62,7 +66,7 @@ const service = () => {
                             </aside>
                             <article className={style.article}>
                                 <Tabs
-                                    currentTab={2}
+                                    currentTab={1}
                                     titles={[
                                         "Информация",
                                         "Услуги и цены",
@@ -71,7 +75,7 @@ const service = () => {
                                     ]}
                                 >
                                     {description}
-                                    <h1></h1>
+                                    <ServicePriceAccordion />
                                     <DoctorsList doctors={doctorsId} />
                                     <h1>{equipmentsId.lenght}</h1>
                                 </Tabs>
