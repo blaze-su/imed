@@ -1,16 +1,12 @@
 .wrap{
-    width: 95vw;
-    max-width: 1180px;
-    margin: 0 auto;
     padding-bottom: 50px;
 }
 
-.item{
+.item {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 285px;
-    height: 455px;
-    padding: 10px 0;
+    padding: 10px 10px;
+    outline: none;
     outline: none;
 }

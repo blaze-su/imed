@@ -19,7 +19,7 @@ export const Sale = (props: ISale) => {
         <div className={style.item}>
             <Link href={`action/${_id}`}>
                 <a className={style.link}>
-                    <img className={style.img} src={photo.src} alt={title} title={title}/>
+                    <img className={style.img} src={photo.src || "http://placehold.jp/300x240.png"} alt={title} title={title}/>
                 </a>
             </Link>
             <div className={style.textWrap}>
