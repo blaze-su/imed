@@ -6,7 +6,7 @@ import { fetchVacancies, toggleFormVacancy } from '@redux/actions';
 import { FormVacancy, ModalForm } from '@components/organisms';
 import { Spinner } from '@components/atoms';
 
-const Vacancies = () => {
+export const Vacancies = () => {
 	const url: string = 'http://localhost:3000/api/vacancies';
 	const dispatch = useDispatch();
 	const formIsActive = useSelector(
@@ -74,5 +74,3 @@ const Vacancies = () => {
 		</div>
 	);
 };
-
-export default Vacancies;
