@@ -3,7 +3,7 @@ import style from "./index.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useReset } from "@components/template/resetToggle";
 import { fetchPrice } from "@redux/actions";
-import { Button, Spinner, ErrorBoundary } from "@components/atoms";
+import { Button, Spinner, ErrorBoundary, IsOpenMarker } from "@components/atoms";
 
 interface IPrice {
     _id: string;
@@ -65,7 +65,7 @@ const Panel = (props: IPrice) => {
                 <h4 className={style.title}>{title}</h4>
                 <div className={style.duration}>{duration}</div>
                 <div className={style.cost}>{cost} руб.</div>
-                <div className={style.marker}>+</div>
+                <IsOpenMarker isOpen={setActive === "active" ? true : false} />
             </div>
             <section
                 className={style.content}

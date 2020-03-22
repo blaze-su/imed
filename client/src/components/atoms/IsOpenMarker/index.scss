@@ -1,0 +1,29 @@
+.close, .open {
+    position: relative;
+    width: 32px;
+    height: 32px;
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 14px;
+        height: 4px;
+        width: 32px;
+        background: #C4C4C4;
+    }
+
+    &::after {
+        transform: rotate(90deg);
+        transition-duration: 400ms;
+        opacity: 1;
+    }
+}
+
+.open {
+    &::after  {
+        opacity: .1;
+        transform-origin: rotate(90deg);
+        transform: rotate(0deg);
+    }
+}

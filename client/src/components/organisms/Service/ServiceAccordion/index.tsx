@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import Link from "next/link";
 import style from "./index.scss";
 import { ILink } from "@interfaces";
+import { IsOpenMarker } from "@components/atoms";
 
 interface IProps {
     title: string;
@@ -28,7 +29,7 @@ export const ServiceAccordion = ({ title, items }: IProps) => {
         <div className={style.accordion}>
             <div className={style.head} onClick={toggleAccordion}>
                 <h3 className={style.title}>{title}</h3>
-                <div className={ setActive !== "active" ? style.close : style.open}></div>
+                <IsOpenMarker isOpen={setActive === "active" ? true : false} />
             </div>
             <div
                 className={style.content}
