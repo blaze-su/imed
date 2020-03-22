@@ -7,6 +7,9 @@
 }
 
 .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: #F8F8F8;
     padding: 20px;
 }
@@ -43,4 +46,36 @@
         color: #5F9012;
     }
 }
+
+.close, .open {
+    position: relative;
+    width: 36px;
+    height: 36px;
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 16px;
+        height: 4px;
+        width: 36px;
+        background: #C4C4C4;
+    }
+
+    &::after {
+        transform: rotate(90deg);
+        transition-duration: 400ms;
+        opacity: 1;
+    }
+}
+
+.open {
+    &::after  {
+        opacity: .1;
+        transform-origin: rotate(90deg);
+        transform: rotate(0deg);
+    }
+}
+
+
 

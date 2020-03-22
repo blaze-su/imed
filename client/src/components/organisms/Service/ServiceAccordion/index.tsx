@@ -28,6 +28,7 @@ export const ServiceAccordion = ({ title, items }: IProps) => {
         <div className={style.accordion}>
             <div className={style.head} onClick={toggleAccordion}>
                 <h3 className={style.title}>{title}</h3>
+                <div className={ setActive !== "active" ? style.close : style.open}></div>
             </div>
             <div
                 className={style.content}
