@@ -29,12 +29,12 @@ const SaleList = () => {
                 {salesIsLoading ? (
                     <Spinner />
                 ) : (
-                    <section className={style.section}>
-                        <div className={style.item}>
-                            {sales.map((item: ISale) => (
+                    <section className={style.items}>
+                        {sales.map((item: ISale) => (
+                            <div className={style.item}>
                                 <Sale {...item} key={item._id} />
-                            ))}
-                        </div>
+                            </div>
+                        ))}
                     </section>
                 )}
             </Box>

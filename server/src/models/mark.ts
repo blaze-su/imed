@@ -1,5 +1,11 @@
 import * as mongoose from 'mongoose';
 
+export interface IMark extends mongoose.Document {
+	_id: string | null;
+	title: string;
+}
+
+
 const markSchema = new mongoose.Schema({
 	title: {
 		required: true,
@@ -8,4 +14,4 @@ const markSchema = new mongoose.Schema({
 	}
 });
 
-export const Mark = mongoose.model('Mark', markSchema);
+export const Mark = mongoose.model<IMark>('Mark', markSchema);

@@ -1,11 +1,14 @@
 import * as mongoose from 'mongoose';
 
+
 export interface IFile extends mongoose.Document {
 	_id: string | null;
 	src: string;
 	title?: string;
 	type: string;
+	parentId?: string
 }
+
 
 const fileSchema = new mongoose.Schema({
 	src: {
@@ -17,6 +20,9 @@ const fileSchema = new mongoose.Schema({
 	},
 	type: {
 		required: true,
+		type: String
+	},
+	parentId: {
 		type: String
 	}
 });

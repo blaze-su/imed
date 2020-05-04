@@ -14,7 +14,7 @@ const services: Array<ILink> = [
 const about: Array<ILink> = [
     {_id: '98H45T', title: 'Клиника', link: '/about'},
     {_id: '98H45U', title: 'Врачи', link: '/doctors'},
-    {_id: 'Q8H45U', title: 'Акции', link: '/sales'},
+    {_id: 'Q8H45U', title: 'Акции', link: '/actions'},
     {_id: 'W8H45U', title: 'Обучение', link: '/educationList'},
     {_id: 'E8H45U', title: 'Контакты', link: '/contacts'},
     {_id: 'R8H45U', title: 'Вакансии', link: '/vacancies'},

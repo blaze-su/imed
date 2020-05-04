@@ -2,11 +2,13 @@
 import express, { Router } from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv'; dotenv.config();
+import cors from 'cors';
 
 import * as routers from './routers';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
 const MONGODB_URL: string = process.env.MONGODB_URL || '';
 const connect = mongoose.connect(MONGODB_URL, {
 	useNewUrlParser: true,
@@ -23,7 +25,7 @@ connect.then(
 		console.log(err);
 	}
 );
-
+app.use(cors());
 app.use('/static', express.static('public/uploads'));
 app.get('/', (req, res, next) => {
 	res.send('Tour Booking API');

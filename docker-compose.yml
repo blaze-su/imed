@@ -7,13 +7,23 @@ services:
       context: ./nginx
     ports:
       - '3000:80'
+      - '5000:5000'
   api:
     build:
       dockerfile: Dockerfile.dev
       context: ./server
     volumes:
-      - /app/node_modules
-      - ./server:/app         
+      - /app/server/node_modules
+      - ./server:/app/server
+  admin:
+    depends_on: 
+      - api
+    build: 
+      dockerfile: Dockerfile.dev
+      context: ./admin
+    volumes:
+      - /app/admin/node_modules
+      - ./admin:/app/admin                   
   client:
     depends_on: 
       - api
@@ -22,6 +32,6 @@ services:
       context: ./client
     volumes:
       - /.next 
-      - /app/node_modules
-      - ./client:/app
+      - /app/client/node_modules
+      - ./client:/app/client
     
