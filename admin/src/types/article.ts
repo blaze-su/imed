@@ -15,7 +15,7 @@ interface IChunkTitle extends IChunkComon {
 }
 
 interface IChunkParagraph extends IChunkComon {
-    article: string
+    text: string
     image?: {
         file?: {
             _id: string | null
@@ -36,4 +36,11 @@ export interface IArticle {
 	chunks: Array<IChunk>
 	fileId?: IFile | string,
 	marksId: Array<IMark>
+}
+
+
+export interface IChunkMove {
+    direction: "UP" | "DOWN"
+    chunkId: string
+    sort?: null
 }

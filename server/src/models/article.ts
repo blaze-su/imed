@@ -18,7 +18,7 @@ interface IChunkTitle extends IChunkComon {
 
 
 interface IChunkParagraph extends IChunkComon {
-    article: string
+    text: string
     image?: {
         file?: {
             _id: string | null

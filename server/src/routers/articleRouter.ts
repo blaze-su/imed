@@ -78,6 +78,10 @@ articleRouter.route("/articles/:articleId/chunks/").post((req, res, next) => {
                 if ((chunk.type = "TITLE")) {
                     model.chunks = [...model.chunks, chunk];
                 }
+
+                if ((chunk.type = "PARAGRAPH")) {
+                    model.chunks = [...model.chunks, chunk];
+                }
             }
 
             return model;
@@ -91,6 +95,64 @@ articleRouter.route("/articles/:articleId/chunks/").post((req, res, next) => {
         )
         .catch((err: Error) => next(err));
 });
+
+
+interface IChunkMove {
+    direction: "UP" | "DOWN"
+    chunkId: string
+    sort?: null
+}
+
+
+// sort
+articleRouter
+    .route("/articles/:articleId/chunks/move")
+    .put((req, res, next) => {
+        const { articleId } = req.params;
+        const {chunkId, direction }: IChunkMove = req.body
+        
+        Article.findById(articleId)
+            .then((article) => {
+                if (article !== null) {
+                    const chunkIndex = article.chunks.findIndex((item) => {
+                        if (item._id == chunkId) return true
+                        return false
+                    })
+
+                    
+
+                    if(chunkIndex > -1) {
+                        switch (direction)
+                        {
+                            case "UP":
+                                article.chunks[chunkIndex].sort = article.chunks[chunkIndex].sort - 11
+                            break
+                            case "DOWN":
+                                article.chunks[chunkIndex].sort = article.chunks[chunkIndex].sort + 11
+                            break
+                        }
+                        
+                        chunksSort(article.chunks)
+                        article.save()
+                    }
+                }
+                res.json(article);
+            })
+            .catch((err: Error) => next(err));
+        
+            
+        })  
+
+
+const chunksSort = (chunks: IChunk[]) => {
+    const arr = chunks.sort((a,b) => a.sort - b.sort)
+
+    return arr.map((item: IChunk, index: number) => {
+        item.sort = 10 + 10 * index
+        return index
+    })
+}
+
 
 articleRouter
     .route("/articles/:articleId/chunks/:chunkId")
@@ -116,6 +178,13 @@ articleRouter
                 return model;
             })
             .then((model) => model?.save())
+            .then((model) => {
+                return Article.findById(articleId).populate([
+                    { path: "marksId", model: Mark },
+                    { path: "fileId", model: File },
+                    { path: "chunks.image.fileId", model: File },
+                ]);
+            })
             .then(
                 (article) => {
                     res.json(article);
@@ -145,5 +214,7 @@ articleRouter
             )
             .catch((err: Error) => next(err));
     });
+
+
 
 export { articleRouter };

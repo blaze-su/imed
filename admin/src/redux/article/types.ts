@@ -4,6 +4,7 @@ import { IArticle } from "types";
 export interface IArticleState {
     article: any | IArticle
     isLoading: boolean
+    isEdit: boolean
 }
 
 export enum ArticleActionTypes {
@@ -14,6 +15,7 @@ export enum ArticleActionTypes {
     DELETE  = "@@article/DELETE",
     LOADING = "@@article/LOADING",
     ERROR   = "@@article/ERROR",
+    EDIT    = "@@article/EDIT"
 }
 
 interface IInitArticleAction {
@@ -31,6 +33,11 @@ interface IAddArticleAction {
     payload: IArticle;
 }
 
+interface IEditArticleAction {
+    type: typeof ArticleActionTypes.EDIT;
+    payload: boolean;
+}
+
 interface IUpdateArticleAction {
     type: typeof ArticleActionTypes.UPDATE;
     payload: IArticle;
@@ -44,6 +51,7 @@ interface ILoadingArticleAction {
 export type IArticleActionTypes =
     | IInitArticleAction
     | IFetchArticleAction
+    | IEditArticleAction
     | IAddArticleAction    
     | ILoadingArticleAction
     | IUpdateArticleAction;

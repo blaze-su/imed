@@ -5,4 +5,10 @@ RUN npm install -g typescript tspath nodemon
 RUN npm install
 COPY . .
 ENV CHOKIDAR_USEPOLLING=true
+ENV NODE_ENV='DEV'
+ENV HOST='http://localhost'
+ENV PORT=8000
+ENV MONGODB_URL='mongodb+srv://blazeadmin:YAaKRHLQGnLZLz6R@intellect-medical-gqknc.mongodb.net/test?retryWrites=true&w=majority'
+ENV PUBLIC_DIR='public'
+ENV UPLOAD_DIR='uploads'
 CMD ["npm", "run", "start"]

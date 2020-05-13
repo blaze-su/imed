@@ -1,6 +1,6 @@
 import { ArticleActionTypes as ActionTypes } from "./types";
 import { IRequest } from "redux/types";
-import { IArticle, IChunk } from "types";
+import { IArticle, IChunk, IChunkMove } from "types";
 
 const sendingRequest = (loading: boolean) => ({
     type: ActionTypes.LOADING,
@@ -19,6 +19,11 @@ const fetchArticleComplete = (data: string) => ({
 
 const updateArticleComplete = (data: string) => ({
     type: ActionTypes.UPDATE,
+    payload: data,
+});
+
+const editArticleComplete = (data: boolean) => ({
+    type: ActionTypes.EDIT,
     payload: data,
 });
 
@@ -43,6 +48,10 @@ export const fetchArticle = (url: string) => (dispatch: IRequest) => {
         .catch((err) => console.error(err.message));
 };
 
+export const editChunk = (isEdit: boolean) => (dispatch: IRequest) => {
+    dispatch(editArticleComplete(!isEdit));
+};
+
 export const updateArtcile = (url: string, article: IArticle) => (
     dispatch: IRequest
 ) => {
@@ -55,7 +64,25 @@ export const updateArtcile = (url: string, article: IArticle) => (
         body: JSON.stringify(article),
     })
         .then((response) => response.json())
-        .then((data) =>  dispatch(updateArticleComplete(data)))
+        .then((data) => dispatch(updateArticleComplete(data)))
+        .then(() => dispatch(sendingRequest(false)))
+        .catch((err) => console.error(err.message));
+};
+
+export const addChunk = (url: string, chunk: IChunk) => (
+    dispatch: IRequest
+) => {
+    dispatch(sendingRequest(true));
+
+    fetch(url, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(chunk),
+    })
+        .then((response) => response.json())
+        .then((data) => dispatch(updateArticleComplete(data)))
         .then(() => dispatch(sendingRequest(false)))
         .catch((err) => console.error(err.message));
 };
@@ -64,7 +91,6 @@ export const updateChunk = (url: string, chunk: IChunk) => (
     dispatch: IRequest
 ) => {
     dispatch(sendingRequest(true));
-    //console.log("updateChunk", chunk)
 
     fetch(url, {
         method: "PUT",
@@ -74,21 +100,34 @@ export const updateChunk = (url: string, chunk: IChunk) => (
         body: JSON.stringify(chunk),
     })
         .then((response) => response.json())
-        .then((data) =>  dispatch(updateArticleComplete(data)))
+        .then((data) => dispatch(updateArticleComplete(data)))
         .then(() => dispatch(sendingRequest(false)))
         .catch((err) => console.error(err.message));
 };
 
-export const deleteChunk = (url: string) => (
-    dispatch: IRequest
-) => {
+export const deleteChunk = (url: string) => (dispatch: IRequest) => {
     dispatch(sendingRequest(true));
     fetch(url, {
         method: "delete",
     })
         .then((response) => response.json())
-        .then((data) =>  dispatch(updateArticleComplete(data)))
+        .then((data) => dispatch(updateArticleComplete(data)))
         .then(() => dispatch(sendingRequest(false)))
+        .catch((err) => console.error(err.message));
+};
+
+export const moveChunk = (url: string, move: IChunkMove) => (
+    dispatch: IRequest
+) => {
+    fetch(url, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(move),
+    })
+        .then((response) => response.json())
+        .then((data) => dispatch(updateArticleComplete(data)))
         .catch((err) => console.error(err.message));
 };
 

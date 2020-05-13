@@ -7,6 +7,7 @@ import {
 const initialState: IArticleState = {
     article: null,
     isLoading: true,
+    isEdit: true,
 };
 
 export const articleReduser = (
@@ -20,6 +21,11 @@ export const articleReduser = (
             return {
                 ...state,
                 article: action.payload,
+            };
+        case ActionTypes.EDIT:
+            return {
+                ...state,
+                isEdit: action.payload,
             };
         case ActionTypes.ADD:
             return {

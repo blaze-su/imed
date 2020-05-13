@@ -5,3 +5,6 @@ import style from "./index.module.scss";;
 export const ArticleChunk = () => {
     return <div className={style.box}>111</div>;
 };
+
+export * from "./ArticleChunkParagraph"
+export * from "./ArticleChunkTitle"

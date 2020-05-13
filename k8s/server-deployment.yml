@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: server
+  template:
+    metadata:
+      labels:
+        component: server
+    spec:
+      containers: 
+        - name: server
+          image: sidorov/imed-server
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NODE_ENV
+              value: 'DEV'
+            - name: PORT
+              value: '5000'
+            - name: PUBLIC_DIR 
+              value: 'public'
+            - name: UPLOAD_DIR
+              value: 'uploads'
+              valueFrom: 
+                secretKeyRef:
+                  name: mongodburl
+                  key: MONGODB_URL    
+
