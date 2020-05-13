@@ -26,6 +26,7 @@ spec:
               value: 'public'
             - name: UPLOAD_DIR
               value: 'uploads'
+            - name: MONGODB_URL
               valueFrom: 
                 secretKeyRef:
                   name: mongodburl
