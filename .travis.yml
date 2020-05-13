@@ -20,6 +20,9 @@ before_install:
   - gcloud container clusters get-credentials imed-k8s
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
+script:
+  - echo "skipping tests!" 
+
 deploy:
   provider: script
   script: bash ./deploy.sh
