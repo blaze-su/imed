@@ -8,6 +8,8 @@ import * as routers from './routers';
 
 const app = express();
 
+console.log("MONGODB_URL", MONGODB_URL);
+
 const connect = mongoose.connect(MONGODB_URL, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
