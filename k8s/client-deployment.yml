@@ -6,15 +6,16 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      component: client
+      component: web
   template:
     metadata:
       labels:
-        component: client
+        component: web
     spec:
       containers: 
         - name: server
           image: sidorov/imed-client
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
           env:
