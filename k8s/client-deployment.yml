@@ -13,7 +13,7 @@ spec:
         component: web
     spec:
       containers: 
-        - name: server
+        - name: client
           image: sidorov/imed-client
           imagePullPolicy: IfNotPresent
           ports:
