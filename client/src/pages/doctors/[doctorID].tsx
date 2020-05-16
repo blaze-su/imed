@@ -6,12 +6,13 @@ import { fetchDoctor, toggleFormSign } from "@redux/actions";
 import { Title, Button, Spinner, ErrorBoundary, Box } from "@components/atoms";
 import { useReset } from "@components/template/resetToggle";
 import { Layout } from "@components/template";
+import { HOST_IMAGE, HOST_API } from 'keys'
 
 const Doctor = () => {
     const router = useRouter();
     const { doctorID } = router.query;
 
-    const url: string = `http://localhost:3000/api/doctors/${doctorID}`;
+    const url: string = `${HOST_API}/doctors/${doctorID}`;
     const dispatch = useDispatch();
     useReset(dispatch);
     useEffect((): any => dispatch(fetchDoctor(url)), [url, dispatch]);
@@ -42,7 +43,7 @@ const Doctor = () => {
                         <aside className={style.photo}>
                             <img
                                 className={style.img}
-                                src={`http://localhost:3000/api/static/${doctor.filesId[0].src}`}
+                                src={`${HOST_IMAGE}/${doctor.filesId[0].src}`}
                                 alt={doctor.name}
                             />
                             <Button

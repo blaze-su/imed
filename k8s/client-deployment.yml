@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: client
+  template:
+    metadata:
+      labels:
+        component: client
+    spec:
+      containers: 
+        - name: server
+          image: sidorov/imed-client
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              value: 'DEV'
+            - name: HOST_API
+              valueFrom: 
+                secretKeyRef:
+                  name: hostapi
+                  key: HOST_API
+            - name: HOST_IMAGE
+              valueFrom: 
+                secretKeyRef:
+                  name: hostimage
+                  key: HOST_IMAGE        
+

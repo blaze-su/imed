@@ -6,9 +6,10 @@ import { Spinner, Title, Box } from "@components/atoms";
 import { Doctor, IDoctor } from "@components/organisms";
 import { Layout } from "@components/template";
 import { useReset } from "@components/template/resetToggle";
+import { HOST_API } from "@keys";
 
 const Doctors = () => {
-    const url: string = "http://localhost:3000/api/doctors";
+    const url: string = `${HOST_API}/doctors`;
     const dispatch = useDispatch();
     useReset(dispatch);
     useEffect((): any => dispatch(fetchDoctors(url)), [url, dispatch]);

@@ -1,0 +1,15 @@
+travis encrypt-file service-account.json --org -r blaze-su/multy-k8s
+
+helm install nginx-ingress --namespace nginx-ingress stable/nginx-ingress 
+helm install cert-manager --namespace cert-manager --version v0.12.0 jetstack/cert-manager
+
+helm 
+which helm 
+rm {path}
+install helm 3 
+
+kubectl create secret generic hostapi --from-literal HOST_API="http://34.78.103.56/api"
+
+
+
+

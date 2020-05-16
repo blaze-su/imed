@@ -11,6 +11,7 @@ import style from "./service.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useReset } from "@components/template/resetToggle";
 import { fetchService } from "@redux/actions";
+import { HOST_API } from "@keys";
 
 const service = () => {
     const router = useRouter();
@@ -24,7 +25,7 @@ const service = () => {
 
     console.log("serviceId", serviceId);
 
-    const url: string = `http://localhost:3000/api/services/${serviceId}`;
+    const url: string = `${HOST_API}/services/${serviceId}`;
     const dispatch = useDispatch();
     useReset(dispatch);
     useEffect((): any => dispatch(fetchService(url)), [url, dispatch]);

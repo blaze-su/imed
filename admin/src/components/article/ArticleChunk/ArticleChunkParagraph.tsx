@@ -192,7 +192,7 @@ const ImagePlaceholder = (props: any) => {
 
     return (
         <div>
-            <img className={style.image} src={url} />
+            <img className={style.image} src={url} alt="test" />
         </div>
     );
 };
@@ -219,7 +219,7 @@ export const ArticleChunkParagraphRender = (props: any) => {
 
     return (
         <div className={style.chunk}>
-            {image ? <img src={url} className={imageStyle} /> : null}
+            {image ? <img src={url} className={imageStyle} alt="test" /> : null}
             {text}
         </div>
     );

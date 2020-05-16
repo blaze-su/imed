@@ -4,6 +4,12 @@ const withFonts = require('next-fonts');
 const withImages = require('next-images');
 
 const config = withSass({
+  publicRuntimeConfig: {
+    PROCESS_ENV_NODE_ENV: process.env.NODE_ENV,
+    PROCESS_ENV_HOST_API: process.env.HOST_API,
+    PROCESS_ENV_HOST_IMAGE: process.env.HOST_IMAGE
+    
+  },
   cssModules: true,
   webpack(config) {
     config.resolve.alias = {
@@ -11,7 +17,8 @@ const config = withSass({
       '@components': path.join(__dirname, './src/components'),
       '@redux': path.join(__dirname, './src/redux'),
       '@interfaces': path.join(__dirname, './src/interfaces'),
-      '@data': path.join(__dirname, './src/data')
+      '@data': path.join(__dirname, './src/data'),
+      '@keys': path.join(__dirname, './src/keys'),
     }
     
     config.module.rules.push({
@@ -26,3 +33,9 @@ const config = withSass({
 })
 
 module.exports = withImages(withFonts(config));
+
+// module.exports = {
+//   env: {
+//     textEnvExport: "TEST"
+//   }
+// }

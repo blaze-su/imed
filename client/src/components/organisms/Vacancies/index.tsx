@@ -5,9 +5,10 @@ import { Button } from '../../atoms/Button';
 import { fetchVacancies, toggleFormVacancy } from '@redux/actions';
 import { FormVacancy, ModalForm } from '@components/organisms';
 import { Spinner } from '@components/atoms';
+import { HOST_API } from "@keys";
 
 export const Vacancies = () => {
-	const url: string = 'http://localhost:3000/api/vacancies';
+	const url: string = `${HOST_API}/vacancies`;
 	const dispatch = useDispatch();
 	const formIsActive = useSelector(
 		(store: any) => store.formReducer.formVacancyActive

@@ -7,11 +7,12 @@ import { ErrorBoundary, Spinner, Title, Box } from "@components/atoms";
 import { SalesSlider } from "@components/organisms";
 import { useReset } from "@components/template/resetToggle";
 import { Layout } from "@components/template";
+import { HOST_API } from "@keys";
 
 const Sale = () => {
     const router = useRouter();
     const { actionID } = router.query;
-    const url: string = `http://localhost:3000/api/promos/${actionID}`;
+    const url: string = `${HOST_API}/promos/${actionID}`;
     const dispatch = useDispatch();
     useReset(dispatch);
     useEffect((): any => dispatch(fetchSale(url)), [url, dispatch]);

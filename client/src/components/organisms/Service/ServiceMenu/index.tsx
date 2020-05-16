@@ -6,6 +6,7 @@ import { fetchServices } from "@redux/actions";
 import { Spinner } from "@components/atoms";
 import { IService, ILink } from "@interfaces";
 import Link from "next/link";
+import { HOST_API } from "@keys";
 
 interface IProps {
     serviceId: string;
@@ -13,7 +14,7 @@ interface IProps {
 }
 
 export const ServiceMenu = ({ serviceId, parentId }: IProps) => {
-    const url: string = "http://localhost:3000/api/services";
+    const url: string = `${HOST_API}/services`;
     const dispatch = useDispatch();
     useReset(dispatch);
     useEffect((): any => dispatch(fetchServices(url)), [url, dispatch]);

@@ -24,7 +24,8 @@
       "@components/*": ["./components/*"],
       "@redux/*": ["./redux/*"],
       "@interfaces": ["./interfaces"],
-      "@data/*": ["./data/*"]
+      "@data/*": ["./data/*"],
+      "@keys": ["./keys"]
     },
     "isolatedModules": true
   },

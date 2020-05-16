@@ -146,13 +146,12 @@ export const ArticleChunkTitleRender = (props: any) => {
     switch (title.style) {
         case "H2":
             return <h2>{title.title}</h2>;
-            break;
+            
         case "H3":
             return <h3>{title.title}</h3>;
-            break;
+            
         case "H4":
             return <h4>{title.title}</h4>;
-            break;
     }
 
     return null;

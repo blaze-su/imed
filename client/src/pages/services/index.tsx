@@ -8,9 +8,10 @@ import { useReset } from "@components/template/resetToggle";
 import { Layout } from "@components/template";
 import { IService } from "@interfaces";
 import { ServiceAccordion } from "@components/organisms/Service";
+import { HOST_API } from "@keys";
 
 const Services = () => {
-    const url: string = "http://localhost:3000/api/services";
+    const url: string = `${HOST_API}/services`;
     const dispatch = useDispatch();
     useReset(dispatch);
     useEffect((): any => dispatch(fetchServices(url)), [url, dispatch]);

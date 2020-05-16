@@ -12,6 +12,7 @@ import {fetchArticles} from '../../redux/actions';
 import useReset from '../../components/template/resetToggle';
 import Layout from '../../components/organisms/Layout';
 import {ParsedUrlQuery} from 'querystring';
+import { HOST_API } from "@keys";
 
 const breadcrumbs = [
     {title: 'Главная', link: '/'},
@@ -22,7 +23,7 @@ const Articles = () => {
     const router = useRouter();
     const {articlesID}: ParsedUrlQuery = router.query;
     const articlesPerPage: number = 5;
-    const url: string = `http://localhost:8000/articles`;
+    const url: string = `${HOST_API}/articles`;
     const dispatch = useDispatch();
     useReset(dispatch);
     useEffect((): any => dispatch(fetchArticles(url)), [url, dispatch]);

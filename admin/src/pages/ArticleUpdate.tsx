@@ -62,7 +62,7 @@ export const ArticleUpdate = () => {
 const RenderChunks = (props: any) => {
     const { article, isEdit } = props;
 
-    if (article === null || isEdit == undefined) return null;
+    if (article === null || isEdit === undefined) return null;
 
     return (
         <>

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchBanners } from '@redux/actions';
 import { Spinner } from '@components/atoms';
 import { IPhoto } from '@interfaces';
+import { HOST_API } from "@keys"
 
 export interface IBanner {
 	_id: string;
@@ -31,7 +32,7 @@ const settings = {
 };
 
 export const BannerSlider = () => {
-	const url: string = 'http://localhost:3000/api/banners';
+	const url: string = `${HOST_API}/banners`;
 
 	const dispatch = useDispatch();
 	useEffect((): any => dispatch(fetchBanners(url)), [url, dispatch]);

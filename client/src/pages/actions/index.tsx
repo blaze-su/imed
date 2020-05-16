@@ -6,9 +6,10 @@ import { Spinner, Title, Box } from "@components/atoms";
 import { Sale, ISale } from "@components/organisms";
 import { useReset } from "@components/template/resetToggle";
 import { Layout } from "@components/template";
+import { HOST_API } from "@keys";
 
 const SaleList = () => {
-    const url: string = "http://localhost:3000/api/promos";
+    const url: string = `${HOST_API}/promos`;
     const dispatch = useDispatch();
     useReset(dispatch);
     useEffect((): any => dispatch(fetchSales(url)), [url, dispatch]);

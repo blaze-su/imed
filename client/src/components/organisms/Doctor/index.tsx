@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import style from './index.scss';
 import { IPhoto } from '@interfaces';
+import { HOST_IMAGE} from '@keys'
 
 interface ISpecialization {
 	_id: string;
@@ -31,7 +32,7 @@ export const Doctor = ({
 					<img
 						className={style.img}
 						src={
-							'http://localhost:3000/api/static/' + filesId[0].src
+							`${HOST_IMAGE}/${filesId[0].src}`
 						}
 						alt={name}
 						title={name}

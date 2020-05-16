@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useReset } from "@components/template/resetToggle";
 import { fetchPrice } from "@redux/actions";
 import { Button, Spinner, ErrorBoundary, IsOpenMarker } from "@components/atoms";
+import { HOST_API } from "@keys";
 
 interface IPrice {
     _id: string;
@@ -16,7 +17,7 @@ interface IPrice {
 export const ServicePriceAccordion = () => {
     const serviceId = "5e187faf3c653e28d04a44e4";
 
-    const url: string = `http://localhost:3000/api/prices/service/${serviceId}`;
+    const url: string = `${HOST_API}/prices/service/${serviceId}`;
     const dispatch = useDispatch();
     useReset(dispatch);
     useEffect((): any => dispatch(fetchPrice(url)), [url, dispatch]);

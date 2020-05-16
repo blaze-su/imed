@@ -12,6 +12,7 @@ import {
 	Box
 } from "@components/atoms";
 import { Feedback, IFeedback } from "@components/organisms";
+import { HOST_API } from "@keys";
 
 const settings = {
     dots: false,
@@ -34,7 +35,7 @@ const settings = {
 };
 
 export const FeedbackSlider = () => {
-    const url: string = "http://localhost:3000/api/reviews";
+    const url: string = `${HOST_API}/reviews`;
     const dispatch = useDispatch();
     useEffect((): any => dispatch(fetchFeedbacks(url)), [url, dispatch]);
     const feedbackReducer = useSelector((store: any) => store.feedbackReducer);

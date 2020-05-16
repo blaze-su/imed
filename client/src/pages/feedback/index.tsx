@@ -5,9 +5,10 @@ import {fetchFeedbacks} from '@redux/actions';
 import {Title, Feedback, IFeedback, Spinner} from '@components/atoms';
 import {useReset} from '@components/template/resetToggle';
 import {Layout} from '@components/organisms/Layout';
+import { HOST_API } from "@keys";
 
 
-const url: string = 'http://localhost:3000/api/reviews';
+const url: string = `${HOST_API}/reviews`;
 const Feedbacks = () => {
     const dispatch = useDispatch();
     useReset(dispatch);
