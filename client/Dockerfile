@@ -5,5 +5,5 @@ RUN npm install -g typescript
 RUN npm install
 RUN npm rebuild node-sass
 COPY . .
-RUN ["npm", "run",  "build"]
+RUN npm run build
 CMD ["npm", "run",  "start"]
