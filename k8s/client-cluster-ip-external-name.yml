@@ -1,0 +1,8 @@
+kind: Service
+apiVersion: v1
+metadata:
+ name: client-cluster-ip-external-name
+ namespace: ingress-nginx
+spec:
+ type: ExternalName
+ externalName: client-cluster-ip-service.default.svc.cluster.local
