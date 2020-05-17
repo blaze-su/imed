@@ -7,7 +7,7 @@ const {
     PROCESS_ENV_HOST_IMAGE,
 } = publicRuntimeConfig;
 
-console.log("publicRuntimeConfig", publicRuntimeConfig)
+console.log("publicRuntimeConfig v2", publicRuntimeConfig)
 console.log("process.env", process.env)
 
 export const NODE_ENV = PROCESS_ENV_NODE_ENV;
