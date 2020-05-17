@@ -2,7 +2,8 @@ import style from './index.scss';
 import React from 'react';
 import {Button} from '../../components/atoms/Button';
 import {useDispatch} from 'react-redux';
-import useReset from '../../components/template/resetToggle';
+import { useReset } from '@components/template/resetToggle';
+
 
 const Index = () => {
     const dispatch = useDispatch();

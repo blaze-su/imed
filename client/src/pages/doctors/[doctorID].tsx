@@ -6,7 +6,7 @@ import { fetchDoctor, toggleFormSign } from "@redux/actions";
 import { Title, Button, Spinner, ErrorBoundary, Box } from "@components/atoms";
 import { useReset } from "@components/template/resetToggle";
 import { Layout } from "@components/template";
-import { HOST_IMAGE, HOST_API } from 'keys'
+import { HOST_IMAGE, HOST_API } from '@keys'
 
 const Doctor = () => {
     const router = useRouter();

@@ -1,10 +1,11 @@
 import style from './index.scss';
 import React from 'react';
-import Tab from '../../components/organisms/TabSearch';
-import Title from '../../components/atoms/Title';
+
 import {useDispatch} from 'react-redux';
-import useReset from '../../components/template/resetToggle';
-import Layout from '../../components/organisms/Layout';
+import { useReset } from '@components/template/resetToggle';
+import { Layout } from '@components/template';
+import { Title } from '@components/atoms';
+
 
 const Search = () => {
     const dispatch = useDispatch();
@@ -21,11 +22,11 @@ const Search = () => {
                             src={'https://www.pngfind.com/pngs/m/617-6173786_small-icon-png-search-icon-svg-transparent-png.png'}
                             alt=''/>
                     </label>
-                    <Tab links={[{title:'Услуги', count: 10}, {title: 'Статьи', count: 20}, {title: 'Врачи', count: 30}]}>
+                    {/* <Tab links={[{title:'Услуги', count: 10}, {title: 'Статьи', count: 20}, {title: 'Врачи', count: 30}]}>
                         <h1>kek</h1>
                         <h1>kek2</h1>
                         <h1>kek3</h1>
-                    </Tab>
+                    </Tab> */}
                 </div>
             </section>
         </Layout>

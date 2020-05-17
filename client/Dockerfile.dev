@@ -8,4 +8,4 @@ COPY . .
 ENV CHOKIDAR_USEPOLLING=true
 ENV HOST_API "http://localhost:3000/api"
 ENV HOST_IMAGE "http://localhost:3000/api/static"
-CMD ["npm", "run",  "dev"]
+CMD ["npm", "run",  "deploy"]

@@ -1,9 +1,10 @@
 import style from './index.scss';
 import React from 'react';
-import Title from '../../components/atoms/Title';
 import {useDispatch} from 'react-redux';
-import useReset from '../../components/template/resetToggle';
-import Layout from '../../components/organisms/Layout';
+import { useReset } from '@components/template/resetToggle';
+import { Layout } from '@components/template';
+import { Title } from '@components/atoms';
+
 
 const Agreement = () => {
     const dispatch = useDispatch();

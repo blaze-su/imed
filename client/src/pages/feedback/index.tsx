@@ -2,10 +2,11 @@ import React, {useEffect} from 'react';
 import style from './index.scss';
 import {useDispatch, useSelector} from 'react-redux';
 import {fetchFeedbacks} from '@redux/actions';
-import {Title, Feedback, IFeedback, Spinner} from '@components/atoms';
+import {Title, Spinner} from '@components/atoms';
 import {useReset} from '@components/template/resetToggle';
-import {Layout} from '@components/organisms/Layout';
 import { HOST_API } from "@keys";
+import { IFeedback, Feedback } from '@components/organisms';
+import { Layout } from '@components/template';
 
 
 const url: string = `${HOST_API}/reviews`;

@@ -1,7 +1,8 @@
 import style from './index.scss';
 import React, {useState} from 'react';
 import Link from 'next/link';
-import {Button} from '../Button';
+import { Button } from '@components/atoms';
+
 
 export interface IPrice {
     title: string;
