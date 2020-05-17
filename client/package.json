@@ -6,6 +6,7 @@
     "build": "next build",
     "start": "next start",
     "deploy": "next build && now",
+    "production": "next build && next start",
     "ts": "tsc"
   },
   "dependencies": {
