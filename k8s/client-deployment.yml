@@ -15,7 +15,6 @@ spec:
       containers: 
         - name: client
           image: sidorov/imed-client
-          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
           env:
