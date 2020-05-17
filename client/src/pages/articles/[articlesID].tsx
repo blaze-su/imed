@@ -28,14 +28,18 @@ const Articles = () => {
     useEffect((): any => dispatch(fetchArticles(url)), [url, dispatch]);
     const articlesReducer = useSelector((store: any) => store.articlesReducer);
 
-    if (articlesReducer === undefined) return null
-    
+    if (articlesReducer === undefined) return null;
+
     const { articles, articlesIsLoading } = articlesReducer;
-    
-    const pages = articles
-        .slice(0, Math.ceil(articles.length / articlesPerPage))
-        .map((_item: any, index: number) => `/articles/${index + 1}`);
-    
+
+    let pages;
+
+    if (articles) {
+        pages = articles
+            .slice(0, Math.ceil(articles.length / articlesPerPage))
+            .map((_item: any, index: number) => `/articles/${index + 1}`);
+    }
+
     return (
         <Layout
             title={"Статьи"}
@@ -53,8 +57,8 @@ const Articles = () => {
                         ) : (
                             articles
                                 .slice(
-                                    (+articlesID - 1) * articlesPerPage,
-                                    +articlesID * articlesPerPage
+                                    (parseInt(articlesID as string) - 1) * articlesPerPage,
+                                    parseInt(articlesID as string) * articlesPerPage
                                 )
                                 .map((item: IArticle) => <Article {...item} />)
                         )}

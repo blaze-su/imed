@@ -15,9 +15,7 @@ import { HOST_API } from "@keys";
 
 const service = () => {
     const router = useRouter();
-    const serviceId: string = Array.isArray(router.query.serviceId)
-        ? router.query.serviceId[0]
-        : router.query.serviceId;
+    const serviceId = router.query.serviceId as string
 
     // if(!serviceId) {
     //     return (<div>Ошибка загрузки...</div>);
