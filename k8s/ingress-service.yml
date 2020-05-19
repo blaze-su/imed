@@ -6,9 +6,15 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/ssl-redirect: 'false'
 spec:
+  tls:
+    - hosts: 
+      - intellect-medical.com
+      secretName: comodo-tls
   rules:
-    - http:
+    - host: intellest-medical.com
+      http:
         paths:
           - path: /?(.*)
             backend:
@@ -17,5 +23,5 @@ spec:
           - path: /api/?(.*)
             backend:
               serviceName: server-cluster-ip-external-name
-              servicePort: 5000
+              servicePort: 5000  
 
