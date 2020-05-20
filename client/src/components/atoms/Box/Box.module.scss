@@ -1,7 +1,8 @@
 .box {
+    display: block;
     max-width: 1180px;
     margin: 0 auto;
     padding: 0 40px;
-    outline: 1px dashed red;
+    outline: 1px dashed purple;
     box-sizing: border-box;
 }

@@ -1,4 +1,4 @@
-import css from "./index.scss";
+import css from "./Breadcrumbs.module.scss";
 import React from "react";
 import Link from "next/link";
 import { ILink } from "@interfaces";

@@ -30,8 +30,8 @@ const Doctors = () => {
                         <Spinner />
                     ) : (
                         doctors.map((doctor: IDoctor) => (
-                            <div className={style.item}>
-                                <Doctor {...doctor} key={doctor._id} />
+                            <div className={style.item} key={doctor._id}>
+                                <Doctor {...doctor} />
                             </div>
                         ))
                     )}

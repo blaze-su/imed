@@ -1,4 +1,4 @@
-import style from './index.scss';
+import style from './Footer.module.scss';
 import React from 'react';
 import { FooterInfo, FooterMenu, FooterBottom, FooterContacts } from '@components/template/Footer'
 import { ILink } from '@interfaces';

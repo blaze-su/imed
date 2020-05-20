@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import css from "./index.scss";
+import css from "./Accordion.module.scss";
 import { ILink } from "@interfaces";
 
 export interface IAccordion {

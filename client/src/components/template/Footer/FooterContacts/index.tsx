@@ -1,4 +1,4 @@
-import style from './index.scss';
+import style from './FooterContacts.module.index.scss';
 import React from 'react';
 import { FooterTitle as Title } from '../FooterTitle';
 import { SocialLinks } from '@components/molecules';

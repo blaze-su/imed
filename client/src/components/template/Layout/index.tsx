@@ -25,10 +25,10 @@ export const Layout = (props: ILayout) => {
                 keywords={props.keywords}
             />
             <Header />
-            <main onWheel={() => setAnchorIsVisible(window.pageYOffset > 500)}>
+            <section onWheel={() => setAnchorIsVisible(window.pageYOffset > 500)}>
                 <Breadcrumbs items={props.breadcrumbs} />
                 {props.children}
-            </main>
+            </section>
             <Footer />
             {anchorIsVisible ? <Anchor /> : null}
         </Fragment>

@@ -1,4 +1,4 @@
-import css from './index.scss';
+import css from './Anchor.module.scss';
 import React from 'react';
 
 const scrollToTop = () => {

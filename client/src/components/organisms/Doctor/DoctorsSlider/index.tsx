@@ -49,8 +49,8 @@ export const DoctorsSlider = () => {
             ) : (
                 <Slider ref={(slider) => slider} {...settings}>
                     {doctors.map((item: IDoctor) => (
-                        <div className={css.item}>
-                            <Doctor {...item} key={item._id} />
+                        <div className={css.item} key={item._id}>
+                            <Doctor {...item} />
                         </div>
                     ))}
                 </Slider>

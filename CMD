@@ -8,8 +8,8 @@ which helm
 rm {path}
 install helm 3 
 
-kubectl create secret generic hostapi --from-literal HOST_API="http://34.78.103.56/api"
-
+kubectl create secret generic hostapi --from-literal HOST_API="/api"
+kubectl create secret generic hostimage --from-literal HOST_API="/api/static"
 
 
 

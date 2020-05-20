@@ -83,11 +83,6 @@ const HeaderMobile = () => {
 							</Link>
 						</li>
 						<li className={css.menuItem}>
-							<Link href="/educationList">
-								<a>Обучение</a>
-							</Link>
-						</li>
-						<li className={css.menuItem}>
 							<Link href="/contacts">
 								<a>Контакты</a>
 							</Link>

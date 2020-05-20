@@ -1,11 +1,12 @@
-import css from "./index.scss";
+import { ArrowNext, ArrowPrev, Spinner } from "@components/atoms";
+import { ISale, Sale } from "../Sale";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
+import { HOST_API } from "@keys";
 import Slider from "react-slick";
 import { fetchSales } from "@redux/actions";
-import { Sale, ISale } from "../Sale";
-import { ArrowNext, ArrowPrev, Spinner } from "@components/atoms";
-import { HOST_API } from "@keys";
+import style from "./SalesSlider.module.scss";
 
 const settings = {
     dots: false,
@@ -42,14 +43,14 @@ export const SalesSlider = () => {
     const { sales, salesIsLoading } = salesReducer;
 
     return (
-        <div className={css.wrap}>
+        <div className={style.wrap}>
             {salesIsLoading ? (
                 <Spinner />
             ) : (
                 <Slider ref={(slider) => slider} {...settings}>
                     {sales.map((item: ISale) => (
-                        <div className={css.item}>
-                            <Sale {...item} key={item._id} />
+                        <div className={style.item} key={item._id}>
+                            <Sale {...item} />
                         </div>
                     ))}
                 </Slider>

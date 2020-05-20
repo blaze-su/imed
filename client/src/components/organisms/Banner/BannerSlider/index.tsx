@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import Slider from 'react-slick';
 import style from './index.scss';
 import { useDispatch, useSelector } from 'react-redux';
@@ -38,10 +38,9 @@ export const BannerSlider = () => {
 	useEffect((): any => dispatch(fetchBanners(url)), [url, dispatch]);
 	const bannerReducer = useSelector((store: any) => store.bannerReducer);
 	const { banners, bannerIsLoading } = bannerReducer;
-	console.log("bannerReducer", bannerReducer);
 
 	return (
-		<div className={style.bannerWrap}>
+		<section className={style.bannerWrap}>
 			{bannerIsLoading ? (
 				<Spinner />
 			) : (
@@ -62,7 +61,7 @@ export const BannerSlider = () => {
 					))}
 				</Slider>
 			)}
-		</div>
+		</section>
 	);
 };
 

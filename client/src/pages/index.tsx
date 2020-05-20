@@ -1,26 +1,38 @@
-import css from "./index.scss";
+import "./index.scss";
+
+import { Box, Title } from "@components/atoms";
+
+import { Layout } from "@components/template";
 import React from "react";
 import dynamic from "next/dynamic";
-import { Layout } from "@components/template";
-import { Title, Box } from "@components/atoms";
 
-const BannerSliderDynamic = dynamic((): any =>
-    import("@components/organisms").then(mod => mod.BannerSlider)
+const BannerSliderDynamic = dynamic(
+    (): any =>
+        import("../components/organisms").then((mod) => mod.BannerSlider),
+    { ssr: false }
 );
-const FeedbackSliderDynamic = dynamic((): any =>
-    import("@components/organisms").then(mod => mod.FeedbackSlider)
+const SalesSliderDynamic = dynamic(
+    (): any => import("@components/organisms").then((mod) => mod.SalesSlider),
+    { ssr: false }
 );
-const DoctorsSliderDynamic = dynamic((): any =>
-    import("@components/organisms").then(mod => mod.DoctorsSlider)
+const DoctorsSliderDynamic = dynamic(
+    (): any => import("@components/organisms").then((mod) => mod.DoctorsSlider),
+    { ssr: false }
 );
-const SalesSliderDynamic = dynamic((): any =>
-    import("@components/organisms").then(mod => mod.SalesSlider)
+
+const FeedbackSliderDynamic = dynamic(
+    (): any =>
+        import("@components/organisms").then((mod) => mod.FeedbackSlider),
+    { ssr: false }
 );
-const RatingDynamic = dynamic((): any =>
-    import("@components/organisms").then(mod => mod.Rating)
+
+const AboutDynamic = dynamic(
+    (): any => import("@components/organisms").then((mod) => mod.About),
+    { ssr: false }
 );
-const AboutDynamic = dynamic((): any =>
-    import("@components/organisms").then(mod => mod.About)
+const RatingDynamic = dynamic(
+    (): any => import("@components/organisms").then((mod) => mod.Rating),
+    { ssr: false }
 );
 
 const Index = () => {
@@ -34,7 +46,7 @@ const Index = () => {
             <BannerSliderDynamic />
             <Box>
                 <Title text={"Акции"} />
-                <section className={css.style}>
+                <section>
                     <SalesSliderDynamic />
                 </section>
 
@@ -48,6 +60,7 @@ const Index = () => {
                     <AboutDynamic />
                 </section>
             </Box>
+
             <FeedbackSliderDynamic />
 
             <Box>

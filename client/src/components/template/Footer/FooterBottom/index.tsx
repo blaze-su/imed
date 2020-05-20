@@ -1,4 +1,4 @@
-import style from './index.scss';
+import style from './FooterBottom.module.scss';
 import React from 'react';
 import Link from 'next/link';
 
