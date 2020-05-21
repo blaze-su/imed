@@ -1,10 +1,11 @@
 import React, { Fragment, useState } from "react";
-import { PageHead } from "../Head";
-import { Header } from "../Header";
-import { Footer } from "../Footer";
+
 import { Anchor } from "@components/atoms";
 import { Breadcrumbs } from "@components/molecules";
+import { Footer } from "../Footer";
+import { Header } from "../Header";
 import { ILink } from "@interfaces";
+import { PageHead } from "../Head";
 
 interface ILayout {
     title: string;

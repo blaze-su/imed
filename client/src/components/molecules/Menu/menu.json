@@ -101,12 +101,6 @@
         "node": null
     },
     {
-        "_id": "567",
-        "title": "Обучение",
-        "link": "/educationList",
-        "node": null
-    },
-    {
         "_id": "678",
         "title": "Контакты",
         "link": "/contacts",
