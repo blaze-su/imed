@@ -7,7 +7,7 @@
   list-style: none;
 
   &:hover {
-    background-color: rgba(101, 187, 233, .3);
+    background-color: rgba(102, 187, 106, .3) ;
 
     .innerList {
       display: flex;
@@ -51,6 +51,10 @@
   font-size: 16px;
   line-height: 200%;
   text-decoration: none;
+
+  &:hover {
+    font-weight: bold;
+  }
 }
 
 .nav {

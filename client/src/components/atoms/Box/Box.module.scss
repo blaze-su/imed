@@ -6,3 +6,9 @@
     outline: 1px dashed purple;
     box-sizing: border-box;
 }
+
+@media all and (max-width: 780px) {
+    .box {
+        padding: 0 20px;    
+    }
+}

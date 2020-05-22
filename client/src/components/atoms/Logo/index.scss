@@ -1,19 +1,10 @@
 .logo {
-  width: 190px;
   height: 60px;
 }
 
 @media (max-width: 768px) {
   .logo {
-    width: 220px;
-    height: 70px;
-  }
-}
-
-@media (max-width: 540px) {
-  .logo {
-    width: 100px;
-    height: 30px;
+    height: 40px;
   }
 }
 

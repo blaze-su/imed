@@ -1,0 +1,33 @@
+[
+    {
+        "_id": "Menu-1",
+        "title": "Клиника",
+        "link": "/about",
+        "node": null
+    },
+    {
+        "_id": "Menu-2",
+        "title": "Услуги",
+        "link": "/services",
+        "node": null,
+        "module": "services"
+    },
+    {
+        "_id": "Menu-3",
+        "title": "Врачи",
+        "link": "/doctors",
+        "node": null
+    },
+    {
+        "_id": "Menu-4",
+        "title": "Акции",
+        "link": "/actions",
+        "node": null
+    },
+    {
+        "_id": "Menu-5",
+        "title": "Контакты",
+        "link": "/contacts",
+        "node": null
+    }
+]

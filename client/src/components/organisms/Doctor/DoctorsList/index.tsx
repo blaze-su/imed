@@ -1,5 +1,6 @@
-import React from 'react'; 
-import { IDoctor, Doctor } from '@components/organisms';
+import { Doctor, IDoctor } from '@components/organisms';
+
+import React from 'react';
 import style from './index.scss';
 
 interface IDoctorsList {
@@ -9,7 +10,7 @@ interface IDoctorsList {
 export const DoctorsList = ({ doctors }: IDoctorsList) => (
     <div className={style.case}>
         {doctors.map((doctor: IDoctor) => (
-            <div className={style.item}><Doctor {...doctor} /></div>
+            <div className={style.item} key={doctor._id}><Doctor {...doctor} /></div>
         ))}
     </div>
 );

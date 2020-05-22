@@ -1,7 +1,7 @@
-import style from './index.scss';
-import React from 'react';
-import Link from 'next/link';
 import { IPhoto } from '@interfaces';
+import Link from 'next/link';
+import React from 'react';
+import style from './Sale.module.scss';
 
 export interface ISale {
     _id: string;
@@ -18,7 +18,7 @@ export const Sale = (props: ISale) => {
         <div className={style.item}>
             <Link href={detailLink}>
                 <a className={style.link}>
-                    <img className={style.img} src={photo.src || "http://placehold.jp/300x240.png"} alt={title} title={title}/>
+                    <img className={style.img} src={photo.src || "https://placehold.jp/300x240.png"} alt={title} title={title}/>
                 </a>
             </Link>
             <div className={style.textWrap}>

@@ -1,11 +1,12 @@
-import css from "./index.scss";
-import Slider from "react-slick";
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchDoctors } from "@redux/actions";
 import { ArrowNext, ArrowPrev, Spinner } from "@components/atoms/";
 import { Doctor, IDoctor } from "@components/organisms";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 import { HOST_API } from "@keys";
+import Slider from "react-slick";
+import css from "./DoctorsSlider.module.scss";
+import { fetchDoctors } from "@redux/actions";
 
 const settings = {
     dots: false,
@@ -26,7 +27,7 @@ const settings = {
         {
             breakpoint: 541,
             settings: {
-                dots: true,
+                dots: false,
                 slidesToShow: 1,
                 slidesToScroll: 1,
             },

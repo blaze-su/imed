@@ -1,46 +1,45 @@
-import React, { useEffect } from "react";
-import { useRouter } from "next/router";
-import { Tabs, Title, Spinner, ErrorBoundary, Box } from "@components/atoms";
+import { Box, ErrorBoundary, Spinner, Tabs, Title } from "@components/atoms";
 import {
-    ServiceMenu as Menu,
     DoctorsList,
-    ServicePriceAccordion
+    ServiceMenu as Menu,
+    ServicePriceAccordion,
 } from "@components/organisms";
-import { Layout } from "@components/template";
-import style from "./service.scss";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useReset } from "@components/template/resetToggle";
-import { fetchService } from "@redux/actions";
+
 import { HOST_API } from "@keys";
+import { Layout } from "@components/template";
+import { fetchService } from "@redux/actions";
+import style from "./service.scss";
+import { useReset } from "@components/template/resetToggle";
+import { useRouter } from "next/router";
 
 const service = () => {
     const router = useRouter();
-    const serviceId = router.query.serviceId as string
+    const serviceId = router.query.serviceId as string;
 
-    // if(!serviceId) {
-    //     return (<div>Ошибка загрузки...</div>);
-    // }
-
-    console.log("serviceId", serviceId);
+    //console.log("serviceId", serviceId);
 
     const url: string = `${HOST_API}/services/${serviceId}`;
     const dispatch = useDispatch();
     useReset(dispatch);
-    useEffect((): any => dispatch(fetchService(url)), [url, dispatch]);
+    useEffect((): any => {
+       serviceId ? dispatch(fetchService(url)) : null
+    }, [url, dispatch]);
     const serviceReducer = useSelector((store: any) => store.serviceReducer);
     const { service, serviceIsLoading } = serviceReducer;
 
-    console.log("serviceIsLoading", serviceIsLoading);
-    console.log("service", service);
+    // console.log("serviceIsLoading", serviceIsLoading);
+    // console.log("service", service);
 
     const { doctorsId, equipmentsId, title, parentId, description } = service;
 
-    console.log(doctorsId);
+    // console.log(doctorsId);
 
     const links = [
         { title: "Главная", link: "/" },
         { title: "Услуги", link: "/services/" },
-        { title: title, link: "" }
+        { title: title, link: "" },
     ];
 
     return (
@@ -70,7 +69,7 @@ const service = () => {
                                         "Информация",
                                         "Услуги и цены",
                                         "Врачи",
-                                        "Оборудование"
+                                        "Оборудование",
                                     ]}
                                 >
                                     {description}

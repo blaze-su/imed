@@ -1,6 +1,6 @@
-import style from './FooterBottom.module.scss';
-import React from 'react';
 import Link from 'next/link';
+import React from 'react';
+import style from './FooterBottom.module.scss';
 
 export const FooterBottom = () => {
 
@@ -10,7 +10,7 @@ export const FooterBottom = () => {
             <Link href='/agreement'><a className={style.link}>Соглашение об обработке перснальных данных</a></Link>
             <a className={style.develop} href={'https://blaze.su'} title={'blaze.su'}>
                 <span>Разработка и продвижение</span>
-                <img src={'https://blaze.su/logo.svg'} title={'blaze.su'} alt={'Blaze.su'}/>
+                <img className={style.blaze} src={'/static/img/blaze.svg'} title={'blaze.su'} alt={'Blaze.su'}/>
             </a>
         </div>
     );

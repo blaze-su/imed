@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useRef } from "react";
-import style from "./index.scss";
+import { Button, ErrorBoundary, IsOpenMarker, Spinner } from "@components/atoms";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useReset } from "@components/template/resetToggle";
-import { fetchPrice } from "@redux/actions";
-import { Button, Spinner, ErrorBoundary, IsOpenMarker } from "@components/atoms";
+
 import { HOST_API } from "@keys";
+import { fetchPrice } from "@redux/actions";
+import style from "./index.scss";
+import { useReset } from "@components/template/resetToggle";
 
 interface IPrice {
     _id: string;
@@ -31,7 +32,7 @@ export const ServicePriceAccordion = () => {
             ) : (
                 <ErrorBoundary>
                     {prices.map((price: IPrice) => (
-                        <Panel {...price} />
+                        <Panel {...price} key={price._id} />
                     ))}
                 </ErrorBoundary>
             )}
@@ -57,8 +58,6 @@ const Panel = (props: IPrice) => {
             );
         }
     };
-
-    console.log(_id);
 
     return (
         <section key={_id}>

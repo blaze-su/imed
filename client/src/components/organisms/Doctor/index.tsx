@@ -1,8 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
-import style from './index.scss';
+import { HOST_IMAGE } from '@keys'
 import { IPhoto } from '@interfaces';
-import { HOST_IMAGE} from '@keys'
+import Link from 'next/link';
+import React from 'react';
+import style from './Doctor.module.scss';
 
 interface ISpecialization {
 	_id: string;
