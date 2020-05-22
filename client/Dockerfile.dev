@@ -4,10 +4,9 @@ COPY package.json .
 RUN npm install -g typescript
 RUN npm install
 RUN npm rebuild node-sass
-RUN npm install --save next-compose-plugins
 COPY . .
 ENV CHOKIDAR_USEPOLLING=true
 ENV HOST_API "/api"
 ENV HOST_IMAGE "/api/static"
 
-CMD ["npm", "run",  "dev"]
+CMD ["npm", "run",  "production"]

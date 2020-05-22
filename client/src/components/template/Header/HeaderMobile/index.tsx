@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { Fragment } from "react";
 import Link from "next/link";
-import { SocialLinks } from "@components/molecules";
 import mobileStyle from "./HeaderMobile.module.scss";
 import { toggleFormSign } from "@redux/actions";
 

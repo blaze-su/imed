@@ -24,7 +24,7 @@ export const Header = () => {
                     <HeaderMobile />
                 )
             ) : (
-                <HeaderMobile />
+                <HeaderDesktop />
             )}
             {active ? (
                 <ModalForm>

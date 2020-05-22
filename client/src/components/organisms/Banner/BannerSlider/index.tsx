@@ -1,11 +1,12 @@
-import React, { useEffect, Fragment } from 'react';
-import Slider from 'react-slick';
-import style from './index.scss';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchBanners } from '@redux/actions';
-import { Spinner } from '@components/atoms';
-import { IPhoto } from '@interfaces';
+
 import { HOST_API } from "@keys"
+import { IPhoto } from '@interfaces';
+import Slider from 'react-slick';
+import { Spinner } from '@components/atoms';
+import { fetchBanners } from '@redux/actions';
+import style from './index.scss';
 
 export interface IBanner {
 	_id: string;
