@@ -1,11 +1,13 @@
-import React from "react";
-import { Title, Box } from "@components/atoms";
-import { Layout } from "@components/template";
+import { Box, Title } from "@components/atoms";
 
-const About = () => {
+import { Layout } from "@components/template";
+import React from "react";
+
+const About = (props:any) => {
     const title = "О центре";
     return (
         <Layout
+            isMobile={props.isMobile}
             title={title || "О центре"}
             description={"Информация о нашем центре"}
             keywords={"Kek"}

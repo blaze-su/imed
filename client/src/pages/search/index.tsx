@@ -1,26 +1,36 @@
-import style from './index.scss';
-import React from 'react';
+import { Layout } from "@components/template";
+import React from "react";
+import { Title } from "@components/atoms";
+import style from "./index.scss";
+import { useDispatch } from "react-redux";
+import { useReset } from "@components/template/resetToggle";
 
-import {useDispatch} from 'react-redux';
-import { useReset } from '@components/template/resetToggle';
-import { Layout } from '@components/template';
-import { Title } from '@components/atoms';
-
-
-const Search = () => {
+const Search = (props: any) => {
     const dispatch = useDispatch();
     useReset(dispatch);
-    return(
-        <Layout title={'Это тайлтл'} description={'Это дескрипшен'} keywords={'Это ключевое слово'} breadcrumbs={[{title: 'Главная', link: '/'}, {title: 'Поиск', link: '/'}]}>
-            <Title text={'Поиск'}/>
+    return (
+        <Layout
+            isMobile={props.isMobile}
+            title={"Это тайлтл"}
+            description={"Это дескрипшен"}
+            keywords={"Это ключевое слово"}
+            breadcrumbs={[
+                { title: "Главная", link: "/" },
+                { title: "Поиск", link: "/" },
+            ]}
+        >
+            <Title text={"Поиск"} />
             <section className={style.section}>
                 <div className={style.wrap}>
                     <label className={style.inputWrap}>
-                        <input type='text' className={style.input}/>
+                        <input type="text" className={style.input} />
                         <img
                             className={style.img}
-                            src={'https://www.pngfind.com/pngs/m/617-6173786_small-icon-png-search-icon-svg-transparent-png.png'}
-                            alt=''/>
+                            src={
+                                "https://www.pngfind.com/pngs/m/617-6173786_small-icon-png-search-icon-svg-transparent-png.png"
+                            }
+                            alt=""
+                        />
                     </label>
                     {/* <Tab links={[{title:'Услуги', count: 10}, {title: 'Статьи', count: 20}, {title: 'Врачи', count: 30}]}>
                         <h1>kek</h1>

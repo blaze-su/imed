@@ -1,3 +1,5 @@
+// import { BrowserView, MobileView } from "react-device-detect";
+
 import { FormSignUp, ModalForm } from "@components/organisms";
 import React, { Fragment } from "react";
 
@@ -10,14 +12,30 @@ const onSubmit = (formData: any) => {
     console.log(formData);
 };
 
+// const HeaderMobile = () => <h1>Header Mobile</h1>
+// const HeaderDesktop = () => <h1>Header Desktop</h1>
 
-export const Header = () => {
+interface IProps {
+    isMobile: string | null
+}
+
+export const Header = ({isMobile}: IProps) => {
     const active = useSelector(
         (store: any) => store.formReducer.formSignActive
     );
     return (
         <Fragment>
-            {typeof window !== "undefined" ? (
+
+
+            {isMobile ? <HeaderMobile key="HeaderMobile"/> : <HeaderDesktop key="HeaderDesktop"/>}
+                
+    
+
+{/* 
+            <BrowserView>
+                <HeaderDesktop key="HeaderDesktop"/>
+            </BrowserView> */}
+            {/*}
                 document.documentElement.clientWidth > 769 ? (
                     <HeaderDesktop />
                 ) : (
@@ -25,7 +43,7 @@ export const Header = () => {
                 )
             ) : (
                 <HeaderDesktop />
-            )}
+            )} */}
             {active ? (
                 <ModalForm>
                     <FormSignUp

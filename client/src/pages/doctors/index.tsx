@@ -1,14 +1,15 @@
-import style from "./index.scss";
+import { Box, Spinner, Title } from "@components/atoms";
+import { Doctor, IDoctor } from "@components/organisms";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchDoctors } from "@redux/actions";
-import { Spinner, Title, Box } from "@components/atoms";
-import { Doctor, IDoctor } from "@components/organisms";
-import { Layout } from "@components/template";
-import { useReset } from "@components/template/resetToggle";
-import { HOST_API } from "@keys";
 
-const Doctors = () => {
+import { HOST_API } from "@keys";
+import { Layout } from "@components/template";
+import { fetchDoctors } from "@redux/actions";
+import style from "./index.scss";
+import { useReset } from "@components/template/resetToggle";
+
+const Doctors = (props: any) => {
     const url: string = `${HOST_API}/doctors`;
     const dispatch = useDispatch();
     useReset(dispatch);
@@ -18,6 +19,7 @@ const Doctors = () => {
 
     return (
         <Layout
+            isMobile={props.isMobile}
             title={"Это тайлтл"}
             description={"Это дескрипшен"}
             keywords={"Это ключевое слово"}

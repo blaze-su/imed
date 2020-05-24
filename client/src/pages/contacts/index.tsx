@@ -1,12 +1,10 @@
-import css from './index.scss';
-import React from 'react';
-import Map from '../../components/molecules/Map';
-import {useDispatch} from 'react-redux';
-
-
 import {Button} from '../../components/atoms/Button';
-import {toggleFormSign} from '../../redux/actions';
 import { Layout } from '@components/template';
+import Map from '../../components/molecules/Map';
+import React from 'react';
+import css from './index.scss';
+import {toggleFormSign} from '../../redux/actions';
+import {useDispatch} from 'react-redux';
 import { useReset } from '@components/template/resetToggle';
 
 const MapDescription = () => {
@@ -22,11 +20,11 @@ const MapDescription = () => {
     );
 };
 
-const Contacts = () => {
+const Contacts = (props:any) => {
     const dispatch = useDispatch();
     useReset(dispatch);
     return(
-        <Layout title={'Это тайлтл'} description={'Это дескрипшен'} keywords={'Это ключевое слово'} breadcrumbs={null}>
+        <Layout isMobile={props.isMobile} title={'Это тайлтл'} description={'Это дескрипшен'} keywords={'Это ключевое слово'} breadcrumbs={null}>
             <div className={css.wrap}>
                 <MapDescription/>
                 <Map/>

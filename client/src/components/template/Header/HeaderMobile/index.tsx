@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { Fragment } from "react";
 import Link from "next/link";
-import mobileStyle from "./HeaderMobile.module.scss";
+import style from "./HeaderMobile.module.scss";
 import { toggleFormSign } from "@redux/actions";
 
 export const HeaderMobile = () => {
@@ -13,39 +13,39 @@ export const HeaderMobile = () => {
     );
     return (
         <Fragment>
-            <header className={mobileStyle.header__box}>
+            <header className={style.header__box}>
                 <Logo />
                 <Burger />
             </header>
 
             {active ? (
-                <div className={mobileStyle.menu}>
+                <div className={style.menu}>
                     <Address /><br/>
                     <Telephone /><br/>
-                    <ul className={mobileStyle.menuList}>
-                        <li className={mobileStyle.menuItem}>
+                    <ul className={style.menuList}>
+                        <li className={style.menuItem}>
                             <Link href="/about/photo">
-                                <a className={mobileStyle.menuLink}>Клиника</a>
+                                <a className={style.menuLink}>Клиника</a>
                             </Link>
                         </li>
-                        <li className={mobileStyle.menuItem}>
+                        <li className={style.menuItem}>
                             <Link href="/services">
-                                <a className={mobileStyle.menuLink}>Услуги</a>
+                                <a className={style.menuLink}>Услуги</a>
                             </Link>
                         </li>
-                        <li className={mobileStyle.menuItem}>
+                        <li className={style.menuItem}>
                             <Link href="/actions">
-                                <a className={mobileStyle.menuLink}>Акции</a>
+                                <a className={style.menuLink}>Акции</a>
                             </Link>
                         </li>
-                        <li className={mobileStyle.menuItem}>
+                        <li className={style.menuItem}>
                             <Link href="/doctors">
-                                <a className={mobileStyle.menuLink}>Врачи</a>
+                                <a className={style.menuLink}>Врачи</a>
                             </Link>
                         </li>
-                        <li className={mobileStyle.menuItem}>
+                        <li className={style.menuItem}>
                             <Link href="/contacts">
-                                <a className={mobileStyle.menuLink}>Контакты</a>
+                                <a className={style.menuLink}>Контакты</a>
                             </Link>
                         </li>
                     </ul>

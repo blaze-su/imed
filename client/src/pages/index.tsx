@@ -35,9 +35,11 @@ const RatingDynamic = dynamic(
     { ssr: false }
 );
 
-const Index = () => {
+const Index = (props: any) => {
+    //console.log("props", props);
     return (
         <Layout
+            isMobile={props.isMobile}
             title={"Это тайлтл"}
             description={"Это дескрипшен"}
             keywords={"Это ключевое слово"}

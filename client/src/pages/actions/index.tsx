@@ -1,14 +1,15 @@
-import style from "./index.scss";
+import { Box, Spinner, Title } from "@components/atoms";
+import { ISale, Sale } from "@components/organisms";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSales } from "@redux/actions";
-import { Spinner, Title, Box } from "@components/atoms";
-import { Sale, ISale } from "@components/organisms";
-import { useReset } from "@components/template/resetToggle";
-import { Layout } from "@components/template";
-import { HOST_API } from "@keys";
 
-const SaleList = () => {
+import { HOST_API } from "@keys";
+import { Layout } from "@components/template";
+import { fetchSales } from "@redux/actions";
+import style from "./index.scss";
+import { useReset } from "@components/template/resetToggle";
+
+const SaleList = (props:any) => {
     const url: string = `${HOST_API}/promos`;
     const dispatch = useDispatch();
     useReset(dispatch);
@@ -17,6 +18,7 @@ const SaleList = () => {
     const { sales, salesIsLoading } = salesReducer;
     return (
         <Layout
+            isMobile={props.isMobile}
             title={"Это тайлтл"}
             description={"Это дескрипшен"}
             keywords={"Это ключевое слово"}

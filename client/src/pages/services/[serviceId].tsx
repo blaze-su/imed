@@ -14,7 +14,7 @@ import style from "./service.scss";
 import { useReset } from "@components/template/resetToggle";
 import { useRouter } from "next/router";
 
-const service = () => {
+const service = (props: any) => {
     const router = useRouter();
     const serviceId = router.query.serviceId as string;
 
@@ -24,7 +24,7 @@ const service = () => {
     const dispatch = useDispatch();
     useReset(dispatch);
     useEffect((): any => {
-       serviceId ? dispatch(fetchService(url)) : null
+        serviceId ? dispatch(fetchService(url)) : null;
     }, [url, dispatch]);
     const serviceReducer = useSelector((store: any) => store.serviceReducer);
     const { service, serviceIsLoading } = serviceReducer;
@@ -44,6 +44,7 @@ const service = () => {
 
     return (
         <Layout
+            isMobile={props.isMobile}
             title={"Это тайлтл"}
             description={"Это дескрипшен"}
             keywords={"Это ключевое слово"}

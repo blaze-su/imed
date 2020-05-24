@@ -1,23 +1,24 @@
-import css from "./index.scss";
-import { useRouter } from "next/router";
+import { Article, IArticle } from "@components/organisms";
+import { ErrorBoundary, Spinner, Title } from "@components/atoms";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ParsedUrlQuery } from "querystring";
+
 import { HOST_API } from "@keys";
-import { useReset } from "@components/template/resetToggle";
-import { fetchArticles } from "@redux/actions";
 import { Layout } from "@components/template";
-import { Title, ErrorBoundary, Spinner } from "@components/atoms";
 import MenuSide from "@components/organisms/Catalog/MenuSide";
-import { Article, IArticle } from "@components/organisms";
 import { Pagination } from "@components/molecules";
+import { ParsedUrlQuery } from "querystring";
+import css from "./index.scss";
+import { fetchArticles } from "@redux/actions";
+import { useReset } from "@components/template/resetToggle";
+import { useRouter } from "next/router";
 
 const breadcrumbs = [
     { title: "Главная", link: "/" },
     { title: "Статьи", link: "/aricles" },
 ];
 
-const Articles = () => {
+const Articles = (props: any) => {
     const router = useRouter();
     const { articlesID }: ParsedUrlQuery = router.query;
     const articlesPerPage: number = 5;
@@ -42,6 +43,7 @@ const Articles = () => {
 
     return (
         <Layout
+            isMobile={props.isMobile}
             title={"Статьи"}
             description={"Описание"}
             keywords={"keywords"}
@@ -57,8 +59,10 @@ const Articles = () => {
                         ) : (
                             articles
                                 .slice(
-                                    (parseInt(articlesID as string) - 1) * articlesPerPage,
-                                    parseInt(articlesID as string) * articlesPerPage
+                                    (parseInt(articlesID as string) - 1) *
+                                        articlesPerPage,
+                                    parseInt(articlesID as string) *
+                                        articlesPerPage
                                 )
                                 .map((item: IArticle) => <Article {...item} />)
                         )}

@@ -13,7 +13,7 @@ import { ServiceAccordion } from "@components/organisms/Service";
 import { fetchServices } from "@redux/actions";
 import { useReset } from "@components/template/resetToggle";
 
-const Services = () => {
+const Services = (props:any) => {
     const url: string = `${HOST_API}/services`;
     const dispatch = useDispatch();
     useReset(dispatch);
@@ -28,6 +28,7 @@ const Services = () => {
 
     return (
         <Layout
+            isMobile={props.isMobile}
             title={"Это тайлтл"}
             description={"Это дескрипшен"}
             keywords={"Это ключевое слово"}

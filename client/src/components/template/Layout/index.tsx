@@ -8,6 +8,7 @@ import { ILink } from "@interfaces";
 import { PageHead } from "../Head";
 
 interface ILayout {
+    isMobile: string | null
     title: string;
     description: string;
     keywords: string;
@@ -25,7 +26,7 @@ export const Layout = (props: ILayout) => {
                 description={props.description}
                 keywords={props.keywords}
             />
-            <Header />
+            <Header isMobile={props.isMobile}/>
             <section onWheel={() => setAnchorIsVisible(window.pageYOffset > 500)}>
                 <Breadcrumbs items={props.breadcrumbs} />
                 {props.children}
