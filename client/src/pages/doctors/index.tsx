@@ -32,7 +32,7 @@ const Doctors = (props: any) => {
                         <Spinner />
                     ) : (
                         doctors.map((doctor: IDoctor) => (
-                            <div className={style.item} key={doctor._id}>
+                            <div className={style.doctors__item} key={doctor._id}>
                                 <Doctor {...doctor} />
                             </div>
                         ))

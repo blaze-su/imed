@@ -13,48 +13,52 @@ export const HeaderMobile = () => {
     );
     return (
         <Fragment>
-            <header className={style.header__box}>
-                <Logo />
-                <Burger />
-            </header>
-
-            {active ? (
-                <div className={style.menu}>
-                    <Address /><br/>
-                    <Telephone /><br/>
-                    <ul className={style.menuList}>
-                        <li className={style.menuItem}>
-                            <Link href="/about/photo">
-                                <a className={style.menuLink}>Клиника</a>
-                            </Link>
-                        </li>
-                        <li className={style.menuItem}>
-                            <Link href="/services">
-                                <a className={style.menuLink}>Услуги</a>
-                            </Link>
-                        </li>
-                        <li className={style.menuItem}>
-                            <Link href="/actions">
-                                <a className={style.menuLink}>Акции</a>
-                            </Link>
-                        </li>
-                        <li className={style.menuItem}>
-                            <Link href="/doctors">
-                                <a className={style.menuLink}>Врачи</a>
-                            </Link>
-                        </li>
-                        <li className={style.menuItem}>
-                            <Link href="/contacts">
-                                <a className={style.menuLink}>Контакты</a>
-                            </Link>
-                        </li>
-                    </ul>
-                    <Button
-                        text="Записаться на прием"
-                        onClick={() => dispatch(toggleFormSign(true))}
-                    /><br/>
+            <header className={style.header}>
+                <div className={style.header__top}>
+                    <Logo />
+                    <Burger />
                 </div>
-            ) : null}
+                {active ? (
+                    <div className={style.menu}>
+                        <Address />
+                        <br />
+                        <Telephone />
+                        <br />
+                        <ul className={style.menuList}>
+                            <li className={style.menuItem}>
+                                <Link href="/about/photo">
+                                    <a className={style.menuLink}>Клиника</a>
+                                </Link>
+                            </li>
+                            <li className={style.menuItem}>
+                                <Link href="/services">
+                                    <a className={style.menuLink}>Услуги</a>
+                                </Link>
+                            </li>
+                            <li className={style.menuItem}>
+                                <Link href="/actions">
+                                    <a className={style.menuLink}>Акции</a>
+                                </Link>
+                            </li>
+                            <li className={style.menuItem}>
+                                <Link href="/doctors">
+                                    <a className={style.menuLink}>Врачи</a>
+                                </Link>
+                            </li>
+                            <li className={style.menuItem}>
+                                <Link href="/contacts">
+                                    <a className={style.menuLink}>Контакты</a>
+                                </Link>
+                            </li>
+                        </ul>
+                        <Button
+                            text="Записаться на прием"
+                            onClick={() => dispatch(toggleFormSign(true))}
+                        />
+                        <br />
+                    </div>
+                ) : null}
+            </header>
         </Fragment>
     );
 };

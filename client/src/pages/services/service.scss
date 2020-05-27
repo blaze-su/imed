@@ -1,3 +1,5 @@
+@import '../page';
+
 .case {
     display: flex;
 }
@@ -9,4 +11,19 @@
 
 .article {
     flex-grow: 1;
+}
+
+@media (max-width: 540px) {
+    .case {
+        display: block;
+    }
+    
+    .aside {
+        min-width: auto;
+        margin-right: 0;
+    }
+    
+    .article {
+        flex-grow: none;
+    }
 }

@@ -67,3 +67,46 @@
     margin: 0 0 20px;
     line-height: 150%;
 }
+
+@media (max-width: 540px) {
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .title {
+        margin: 0;
+        width: 100%;    
+    }
+
+    .duration {
+        line-height: 32px;
+        margin: 0;
+        text-align: left;
+    }
+
+    .cost {
+        flex-grow: 1;
+        margin: 0;
+        padding-right: 15px;
+        line-height: 32px;
+        font-weight: bolder;
+    }
+
+    .marker {
+        border: 1px solid blue;
+    }
+
+    .content {
+    
+        &__box {
+            margin-top: -1px;
+            padding-bottom: 20px;
+            margin-bottom: 5px;
+            text-align: center;
+
+            p {
+                text-align: left;
+            }
+        }
+    }
+}

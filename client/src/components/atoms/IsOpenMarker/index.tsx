@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./index.scss";
+import style from "./IsOpenMarker.modile.scss";
 
 interface IProps {
     isOpen: boolean;

@@ -1,14 +1,25 @@
 @import '../page';
 
-.items {
+.actions {
   display: flex;
   flex-flow: row wrap;
   flex-wrap: wrap;
   margin: 0 -10px;
+
+  &__item {
+    width: 25%;
+    padding: 10px 10px 20px 10px;
+  }
+  
 }
 
-.item {
-  width: 25%;
-  padding: 10px 10px 20px 10px;
-  outline: 1px solid red;
+@media (max-width: 540px) {
+  .actions {
+    display: block;
+  
+    &__item {
+      width: auto;
+      padding: 10px 10px 20px 10px;
+    }
+  }
 }

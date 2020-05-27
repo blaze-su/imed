@@ -59,6 +59,7 @@ const service = (props: any) => {
                         <div className={style.case}>
                             <aside className={style.aside}>
                                 <Menu
+                                    isMobile={props.isMobile}
                                     serviceId={serviceId}
                                     parentId={parentId}
                                 />
@@ -70,13 +71,11 @@ const service = (props: any) => {
                                         "Информация",
                                         "Услуги и цены",
                                         "Врачи",
-                                        "Оборудование",
                                     ]}
                                 >
                                     {description}
                                     <ServicePriceAccordion />
                                     <DoctorsList doctors={doctorsId} />
-                                    <h1>{equipmentsId.lenght}</h1>
                                 </Tabs>
                             </article>
                         </div>

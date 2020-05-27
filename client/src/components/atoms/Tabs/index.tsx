@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import style from "./index.scss";
+
+import style from "./Tabs.module.scss";
 
 export interface ITabs {
     currentTab?: number | null;

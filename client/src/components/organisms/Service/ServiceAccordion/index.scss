@@ -48,4 +48,24 @@
 }
 
 
+@media (max-width: 540px) {
+    .head {
+        padding: 15px;
+    }
+
+    .nav {
+        padding: 15px;
+    }
+
+
+    .title {
+        font-size: 18px;
+    }
+
+    .link {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+}
+
 

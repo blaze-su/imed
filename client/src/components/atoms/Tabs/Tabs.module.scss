@@ -27,3 +27,28 @@
 .panel {
     padding: 30px 0;
 }
+
+@media (max-width: 540px) {
+    .nav {
+        border: none;
+    }
+
+    .tab, .tab__active {
+        display: block;
+        padding: 10px 25px;
+        margin: 5px 0 0 0;
+        border-radius: 5px;
+        background: #f8f8f8;
+    
+        cursor: pointer;
+    
+        &:hover {
+            background: rgba(102, 187, 106, .3) ;
+        }
+    
+        &__active {
+            color: #fff;
+            background: #43A047 !important;
+        }
+    }
+}

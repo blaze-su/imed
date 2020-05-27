@@ -32,10 +32,10 @@ const SaleList = (props:any) => {
                 {salesIsLoading ? (
                     <Spinner />
                 ) : (
-                    <section className={style.items}>
+                    <section className={style.actions}>
                         {sales.map((item: ISale) => (
-                            <div className={style.item}>
-                                <Sale {...item} key={item._id} />
+                            <div className={style.actions__item} key={item._id} >
+                                <Sale {...item} />
                             </div>
                         ))}
                     </section>

@@ -4,9 +4,21 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0 -10px;
+
+    &__item {
+        width: 33.333%;
+        padding: 0 10px 20px 10px;
+    }
 }
 
-.item {
-    width: 33.333%;
-    padding: 0 10px 20px 10px;
+@media (max-width: 540px) {
+    .doctors {
+        display: block;
+        margin: 0 -10px;
+    
+        &__item {
+            width: auto;
+            padding: 0 10px 20px 10px;
+        }
+    } 
 }

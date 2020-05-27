@@ -1,10 +1,15 @@
-import { Button, ErrorBoundary, IsOpenMarker, Spinner } from "@components/atoms";
+import {
+    Button,
+    ErrorBoundary,
+    IsOpenMarker,
+    Spinner,
+} from "@components/atoms";
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { HOST_API } from "@keys";
 import { fetchPrice } from "@redux/actions";
-import style from "./index.scss";
+import style from "./ServicePrice.module.scss";
 import { useReset } from "@components/template/resetToggle";
 
 interface IPrice {

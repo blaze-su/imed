@@ -1,14 +1,12 @@
 import React from "react";
-import style from "./index.scss";
 
 export const About = () => {
     return (
-        <div className={style.wrap}>
+        <article>
             <p>
                 <img
-                    className={style.image}
                     src={
-                        "http://www.koreanspace.ru/wp-content/uploads/2016/06/vrachi22.jpg"
+                        "https://placehold.jp/300x300.png"
                     }
                     alt="kek"
                 />
@@ -33,6 +31,6 @@ export const About = () => {
                 оздоровительных методик в лучших традиция восточных и западных
                 школ, которые проводят наши опытные мастера.
             </p>
-        </div>
+        </article>
     );
 };
