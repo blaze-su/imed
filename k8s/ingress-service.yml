@@ -13,7 +13,7 @@ spec:
       - intellect-medical.com
       secretName: comodo-tls
   rules:
-    - host: intellest-medical.com
+    - host: intellect-medical.com
       http:
         paths:
           - path: /?(.*)

@@ -32,7 +32,7 @@ const service = (props: any) => {
     // console.log("serviceIsLoading", serviceIsLoading);
     // console.log("service", service);
 
-    const { doctorsId, equipmentsId, title, parentId, description } = service;
+    const { doctorsId, title, parentId, description } = service;
 
     // console.log(doctorsId);
 
