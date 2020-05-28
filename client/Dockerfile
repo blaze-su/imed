@@ -13,4 +13,4 @@ COPY . .
 RUN npm run build
 EXPOSE 3000
 
-CMD ["npm", "run",  "stert"]
+CMD ["npm", "run",  "start"]
