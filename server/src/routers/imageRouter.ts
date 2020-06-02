@@ -18,7 +18,7 @@ imageRouter.route("/images/:imageSize/:imageName").get((req, res, next) => {
 
     const imageResizePath = path.join("/app/server/",
         PUBLIC_DIR as string,
-        ".temp",
+        "_temp",
         `${width}x${height}.${imageName}`
     );
 
