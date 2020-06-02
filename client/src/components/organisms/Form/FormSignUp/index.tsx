@@ -1,18 +1,19 @@
-import style from './index.scss';
 import { Field, reduxForm } from 'redux-form';
-import { useDispatch } from 'react-redux';
-import React from 'react';
-import { Button } from '@components/atoms';
-import { toggleFormSign } from '@redux/actions';
 import {
-	required,
-	minLength,
 	maxLength,
-	phoneLength,
-	upper,
+	minLength,
+	normalizeName,
 	normalizePhone,
-	normalizeName
+	phoneLength,
+	required,
+	upper
 } from '@components/template/validation';
+
+import { Button } from '@components/atoms';
+import React from 'react';
+import style from './FormSignUp.module.scss';
+import { toggleFormSign } from '@redux/actions';
+import { useDispatch } from 'react-redux';
 
 const minLength2 = minLength(2);
 const maxLength30 = maxLength(30);

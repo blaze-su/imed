@@ -1,17 +1,18 @@
-import { useDispatch } from 'react-redux';
-import style from './index.scss';
-import React from 'react';
-import { toggleFormFeedback } from '@redux/actions';
 import { Field, reduxForm } from 'redux-form';
-import { Button } from '@components/atoms';
 import {
-	required,
-	minLength,
 	maxLength,
-	phoneLength,
+	minLength,
+	normalizeName,
 	normalizePhone,
-	normalizeName
+	phoneLength,
+	required
 } from '@components/template/validation';
+
+import { Button } from '@components/atoms';
+import React from 'react';
+import style from './FormFeedback.module.scss';
+import { toggleFormFeedback } from '@redux/actions';
+import { useDispatch } from 'react-redux';
 
 const minLength2 = minLength(2);
 const maxLength30 = maxLength(30);

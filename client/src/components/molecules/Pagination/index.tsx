@@ -1,6 +1,6 @@
-import style from './index.scss';
-import React from 'react';
 import Link from 'next/link';
+import React from 'react';
+import style from './Pagination.module.scss';
 
 export interface IPagination {
     pages: string[];

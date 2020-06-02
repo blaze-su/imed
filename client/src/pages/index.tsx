@@ -1,5 +1,3 @@
-import "./index.scss";
-
 import { Box, Title } from "@components/atoms";
 
 import { Layout } from "@components/template";

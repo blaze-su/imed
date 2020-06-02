@@ -8,6 +8,7 @@ export { doctorRouter } from '@routers/doctorRouter';
 export { educationRouter } from '@routers/educationRouter';
 export { equipmentRouter } from '@routers/equipmentRouter';
 export { eventRouter } from '@routers/eventRouter';
+export { imageRouter }  from '@routers/imageRouter';
 export { fileRouter } from '@routers/file/fileRouter';
 export { informationRouter } from '@routers/informationRouter';
 export { logRouter } from '@routers/logRouter';

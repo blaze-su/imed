@@ -7,7 +7,7 @@ import Link from "next/link";
 import { ServiceAccordion } from "@components/organisms";
 import { Spinner } from "@components/atoms";
 import { fetchServices } from "@redux/actions";
-import style from "./index.scss";
+import style from "./ServiceMenu.module.scss";
 import { useReset } from "@components/template/resetToggle";
 
 interface IProps {

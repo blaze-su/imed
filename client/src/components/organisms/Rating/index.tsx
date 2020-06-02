@@ -1,5 +1,5 @@
-import css from './index.scss';
 import React from 'react';
+import css from './Rating.module.scss';
 
 export interface IRating{
     link: string;

@@ -1,5 +1,3 @@
-import "../page.scss";
-
 import { Box, Title } from "@components/atoms";
 import React, { useState } from "react";
 

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { HOST_API } from "@keys";
 import { Layout } from "@components/template";
 import { SalesSlider } from "@components/organisms";
-import css from "./action.scss";
+import css from "./action.module.scss";
 import { fetchSale } from "@redux/actions";
 import { useReset } from "@components/template/resetToggle";
 import { useRouter } from "next/router";

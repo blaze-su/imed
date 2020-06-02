@@ -1,7 +1,7 @@
 import React from 'react';
 import { SocialLinks } from '@components/molecules';
 import { FooterTitle as Title } from '../FooterTitle';
-import style from './FooterContacts.module.index.scss';
+import style from './FooterContacts.module.scss';
 
 export const FooterContacts = () => {
 	return (

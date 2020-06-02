@@ -1,10 +1,10 @@
 FROM node:13
+
 WORKDIR /app/admin/
+
 COPY package.json .
 RUN npm install
+
 COPY . .
-ENV PORT=8000
-ENV CI=true
-ENV CHOKIDAR_USEPOLLING=true
-ENV REACT_APP_HOST_API=http://localhost:3000/api
+
 CMD ["npm", "run",  "start"]

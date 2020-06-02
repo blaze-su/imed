@@ -1,9 +1,10 @@
 import React, { useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPhoto } from '@redux/actions';
-import { Spinner } from '@components/atoms';
-import style from './index.scss';
+
 import { IPhoto } from '@interfaces';
+import { Spinner } from '@components/atoms';
+import { fetchPhoto } from '@redux/actions';
+import style from './GalleryPhoto.module.scss';
 
 export const GalleryPhoto = (props: { url: string }) => {
 	const dispatch = useDispatch();

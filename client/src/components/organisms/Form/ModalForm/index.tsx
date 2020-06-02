@@ -1,12 +1,13 @@
-import style from './index.scss';
 import React, { Fragment, ReactElement, useRef } from 'react';
-import { useDispatch } from 'react-redux';
 import {
-	toggleFormSign,
-	toggleFormVacancy,
 	toggleFormFeedback,
-	toggleFormSeminar
+	toggleFormSeminar,
+	toggleFormSign,
+	toggleFormVacancy
 } from '@redux/actions';
+
+import style from './ModalForm.module.scss';
+import { useDispatch } from 'react-redux';
 
 interface IForm {
 	title?: string;

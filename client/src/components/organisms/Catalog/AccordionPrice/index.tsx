@@ -1,8 +1,8 @@
-import style from './index.scss';
 import React, {useState} from 'react';
-import Link from 'next/link';
-import { Button } from '@components/atoms';
 
+import { Button } from '@components/atoms';
+import Link from 'next/link';
+import style from './AccordionPrice.module.scss';
 
 export interface IPrice {
     title: string;

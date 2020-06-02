@@ -1,8 +1,9 @@
-import React, { useState, useRef } from "react";
-import Link from "next/link";
-import style from "./index.scss";
+import React, { useRef, useState } from "react";
+
 import { ILink } from "@interfaces";
 import { IsOpenMarker } from "@components/atoms";
+import Link from "next/link";
+import style from "./ServiceAccordion.module.scss";
 
 interface IProps {
     title: string;

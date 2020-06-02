@@ -8,7 +8,7 @@ import { Layout } from "@components/template";
 import MenuSide from "@components/organisms/Catalog/MenuSide";
 import { Pagination } from "@components/molecules";
 import { ParsedUrlQuery } from "querystring";
-import css from "./index.scss";
+import css from "./index.module.scss";
 import { fetchArticles } from "@redux/actions";
 import { useReset } from "@components/template/resetToggle";
 import { useRouter } from "next/router";

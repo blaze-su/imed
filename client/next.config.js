@@ -1,6 +1,6 @@
 const path = require("path");
-const withCss = require("@zeit/next-css");
-const withSass = require("@zeit/next-sass");
+// const withCss = require("@zeit/next-css");
+// const withSass = require("@zeit/next-sass");
 const withFonts = require("next-fonts");
 const withImages = require("next-images");
 const withPlugins = require("next-compose-plugins");
@@ -40,17 +40,7 @@ const nextConfig = {
 module.exports = withPlugins(
     [
         withFonts,
-        withImages,
-        [
-            withSass,
-            {
-                cssModules: true,
-                cssLoaderOptions: {
-                    localIdentName: "[path]___[local]___[hash:base64:5]",
-                },
-            },
-        ],
-        withCss,
+        withImages
     ],
     nextConfig
 );

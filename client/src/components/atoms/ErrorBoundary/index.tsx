@@ -1,7 +1,8 @@
 import React, {ReactElement} from 'react';
-import styles from './index.scss';
+
 import {Button} from '../Button';
 import Router from 'next/router';
+import styles from './ErrorBoundary.module.scss';
 
 interface IState {
     readonly hasError: boolean;

@@ -1,13 +1,15 @@
+import * as bodyParser from "body-parser";
+
+import { File, IFile } from "@models/";
+
 import { Router } from "express";
-import path from "path";
 import fs from "fs";
 import md5 from "md5";
+import path from "path";
 import sharp from "sharp";
-import * as bodyParser from "body-parser";
-import { File, IFile } from "@models/";
+
 import multer = require("multer");
-import { Error } from "mongoose";
-import { fstat } from "fs";
+
 
 const PUBLIC_DIR: string = process.env.PUBLIC_DIR || "public";
 const UPLOAD_DIR: string = process.env.UPLOAD_DIR || "uploads";

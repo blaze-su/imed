@@ -1,11 +1,12 @@
-import css from './index.scss';
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Button } from '../../atoms/Button';
-import { fetchVacancies, toggleFormVacancy } from '@redux/actions';
 import { FormVacancy, ModalForm } from '@components/organisms';
-import { Spinner } from '@components/atoms';
+import React, { useEffect } from 'react';
+import { fetchVacancies, toggleFormVacancy } from '@redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { Button } from '../../atoms/Button';
 import { HOST_API } from "@keys";
+import { Spinner } from '@components/atoms';
+import css from './Vacancies.module.scss';
 
 export const Vacancies = () => {
 	const url: string = `${HOST_API}/vacancies`;

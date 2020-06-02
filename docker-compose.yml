@@ -15,6 +15,8 @@ services:
     volumes:
       - /app/server/node_modules
       - ./server:/app/server
+    env_file: 
+      ./env/server.env       
   admin:
     depends_on: 
       - api
@@ -23,7 +25,9 @@ services:
       context: ./admin
     volumes:
       - /app/admin/node_modules
-      - ./admin:/app/admin                   
+      - ./admin:/app/admin
+    env_file: 
+      ./env/admin.env                       
   client:
     depends_on: 
       - api
@@ -34,4 +38,6 @@ services:
       - /app/client/.next
       - /app/client/node_modules
       - ./client:/app/client
+    env_file: 
+      ./env/client.env  
     

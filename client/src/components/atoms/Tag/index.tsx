@@ -1,7 +1,7 @@
-import style from './index.scss';
-import React from 'react';
-import Link from 'next/link';
 import { ILink } from '@interfaces';
+import Link from 'next/link';
+import React from 'react';
+import style from './Tag.module.scss';
 
 export const Tag = (props: ILink) => {
 	const { title, link } = props;

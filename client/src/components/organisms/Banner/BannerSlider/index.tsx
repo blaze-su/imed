@@ -6,13 +6,13 @@ import { IPhoto } from '@interfaces';
 import Slider from 'react-slick';
 import { Spinner } from '@components/atoms';
 import { fetchBanners } from '@redux/actions';
-import style from './index.scss';
+import style from './BannerSlider.module.scss';
 
 export interface IBanner {
 	_id: string;
 	alt?: string;
 	title: string;
-	desc: string;
+	text: string;
 	photo: IPhoto | string;
 }
 
@@ -46,11 +46,11 @@ export const BannerSlider = () => {
 				<Spinner />
 			) : (
 				<Slider ref={slider => slider} {...settings}>
-					{banners.map(({ alt, title, desc, _id, photo }: IBanner) => (
+					{banners.map(({ alt, title, text, _id, photo }: IBanner) => (
 						<div className={style.item} key={_id}>
 							<div className={style.info}>
 								<h1 className={style.title}>{title}</h1>
-								<p className={style.desc}>{desc}</p>
+								<p className={style.desc}>{text}</p>
 							</div>
 							<img
 								className={style.img}

@@ -6,7 +6,7 @@ import { ILink } from "@interfaces";
 import Link from "next/link";
 import { fetchServices } from "@redux/actions";
 import menu from "@data/menu.json";
-import style from "./index.scss";
+import style from "./Menu.module.scss";
 
 export interface IMenu {
     _id: string;

@@ -1,4 +1,4 @@
-import { HOST_IMAGE } from '@keys'
+import { HOST_IMAGE_RESIZE } from '@keys'
 import { IPhoto } from '@interfaces';
 import Link from 'next/link';
 import React from 'react';
@@ -32,7 +32,7 @@ export const Doctor = ({
 					<img
 						className={style.img}
 						src={
-							`${HOST_IMAGE}/${filesId[0].src}`
+							`${HOST_IMAGE_RESIZE}/380x316/${filesId[0].src}`
 						}
 						alt={name}
 						title={name}

@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { HOST_API } from "@keys";
 import { Layout } from "@components/template";
 import { fetchService } from "@redux/actions";
-import style from "./service.scss";
+import style from "./service.module.scss";
 import { useReset } from "@components/template/resetToggle";
 import { useRouter } from "next/router";
 

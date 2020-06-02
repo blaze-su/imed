@@ -1,6 +1,6 @@
 // import Link from "next/link";
 
-import "./index.scss";
+import "./index.module.scss";
 
 import { Box, ErrorBoundary, Spinner, Title } from "@components/atoms";
 import React, { useEffect } from "react";

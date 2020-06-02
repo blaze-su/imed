@@ -1,5 +1,5 @@
-import style from './index.scss';
 import React from 'react';
+import style from './Button.module.scss';
 
 export interface IButton {
     text: string;

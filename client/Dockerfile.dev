@@ -10,9 +10,5 @@ RUN npm rebuild node-sass
 
 COPY . .
 
-ENV CHOKIDAR_USEPOLLING=true
-ENV HOST_API "/api"
-ENV HOST_IMAGE "/api/static"
-
 CMD ["npm", "run",  "production"]
 #CMD ["npm", "run",  "dev"]

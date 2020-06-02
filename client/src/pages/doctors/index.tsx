@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { HOST_API } from "@keys";
 import { Layout } from "@components/template";
 import { fetchDoctors } from "@redux/actions";
-import style from "./index.scss";
+import style from "./index.module.scss";
 import { useReset } from "@components/template/resetToggle";
 
 const Doctors = (props: any) => {

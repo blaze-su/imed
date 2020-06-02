@@ -1,7 +1,8 @@
-import style from "./index.scss";
+import { Field, reduxForm } from "redux-form";
+import { useDispatch, useSelector } from "react-redux";
+
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { reduxForm, Field } from "redux-form";
+import style from "./Search.module.scss";
 import { toggleSearch } from "@redux/actions";
 
 const FormSearch = (props: any) => {

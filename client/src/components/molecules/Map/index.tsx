@@ -1,6 +1,7 @@
-import css from './index.scss';
+import { Map, Placemark, YMaps } from 'react-yandex-maps';
+
 import React from 'react';
-import { YMaps, Map, Placemark } from 'react-yandex-maps';
+import css from './Map.module.scss';
 
 const mapData = {
     center: [45.054052, 38.929241],

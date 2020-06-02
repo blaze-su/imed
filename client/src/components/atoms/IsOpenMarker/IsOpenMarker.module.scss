@@ -3,7 +3,7 @@
     width: 32px;
     height: 32px;
 
-    &::before, &::after {
+    &:before, &::after {
         content: '';
         position: absolute;
         left: 0;
@@ -13,7 +13,7 @@
         background: #C4C4C4;
     }
 
-    &::after {
+    &:after {
         transform: rotate(90deg);
         transition-duration: 400ms;
         opacity: 1;
@@ -21,14 +21,9 @@
 }
 
 .open {
-    &::after  {
+    &:after  {
         opacity: .1;
         transform-origin: rotate(90deg);
         transform: rotate(0deg);
     }
-}
-
-
-@media (max-width: 540px) {
-   
 }

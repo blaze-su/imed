@@ -1,5 +1,5 @@
-import style from './index.scss';
 import React from 'react';
+import style from './Feedback.module.scss';
 
 export interface IFeedback {
     _id: string;

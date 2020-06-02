@@ -1,11 +1,11 @@
-import style from './index.scss';
+import {ErrorBoundary, Spinner} from '@components/atoms';
 import React, {useLayoutEffect, useMemo} from 'react';
-import {fetchVideo} from '@redux/actions';
-import {Spinner, ErrorBoundary} from '@components/atoms';
 import {useDispatch, useSelector} from 'react-redux';
-import YouTube from 'react-youtube';
-import {IVideo} from '@interfaces'
 
+import {IVideo} from '@interfaces'
+import YouTube from 'react-youtube';
+import {fetchVideo} from '@redux/actions';
+import style from './GalleryVideo.module.scss';
 
 export const GalleryVideo = (props: { url: string }) => {
 

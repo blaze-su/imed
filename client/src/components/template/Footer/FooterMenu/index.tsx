@@ -1,7 +1,7 @@
-import style from './index.scss';
+import { ILink } from '@interfaces';
 import React from 'react';
 import { FooterTitle as Title } from '../FooterTitle';
-import { ILink } from '@interfaces';
+import style from './FooterMenu.module.scss';
 
 interface IProps {
 	data: Array<ILink>;

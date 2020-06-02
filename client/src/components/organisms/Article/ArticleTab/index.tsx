@@ -1,6 +1,6 @@
-import style from "./index.scss";
-import React from "react";
 import { IArticle } from "@components/organisms/Article";
+import React from "react";
+import style from "./ArticleTab.module.scss";
 
 export const ArticleTab = (props: IArticle) => {
   const { title, describe, photos } = props;

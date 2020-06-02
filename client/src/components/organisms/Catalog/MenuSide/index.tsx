@@ -1,6 +1,6 @@
-import style from './index.scss';
-import React from 'react';
 import Link from 'next/link';
+import React from 'react';
+import style from './MenuSide.module.scss';
 
 export interface IMenuItem {
     _id: string;

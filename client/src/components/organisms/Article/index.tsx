@@ -1,8 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
-import css from './index.scss';
-import { Tag } from '@components/atoms';
 import { IPhoto } from '@interfaces';
+import Link from 'next/link';
+import React from 'react';
+import { Tag } from '@components/atoms';
+import css from './Article.module.scss';
 
 export interface IArticle {
 	_id: string;

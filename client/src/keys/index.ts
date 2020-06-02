@@ -1,4 +1,5 @@
 import getConfig from "next/config";
+import path from "path";
 
 const { publicRuntimeConfig } = getConfig();
 const {
@@ -13,3 +14,4 @@ const {
 export const NODE_ENV = PROCESS_ENV_NODE_ENV;
 export const HOST_API = PROCESS_ENV_HOST_API;
 export const HOST_IMAGE = PROCESS_ENV_HOST_IMAGE;
+export const HOST_IMAGE_RESIZE = path.join(HOST_API, "/images/")

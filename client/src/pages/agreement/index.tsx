@@ -1,7 +1,7 @@
 import { Layout } from "@components/template";
 import React from "react";
 import { Title } from "@components/atoms";
-import style from "./index.scss";
+import style from "./index.module.scss";
 import { useDispatch } from "react-redux";
 import { useReset } from "@components/template/resetToggle";
 

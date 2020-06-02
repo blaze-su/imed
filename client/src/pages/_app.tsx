@@ -1,3 +1,5 @@
+import "./page.scss"
+
 import App from "next/app";
 import MobileDetect from "mobile-detect";
 import { Provider } from "react-redux";

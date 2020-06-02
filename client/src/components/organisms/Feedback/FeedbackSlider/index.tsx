@@ -1,18 +1,19 @@
-import style from "./index.scss";
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchFeedbacks, toggleFormSign } from "@redux/actions";
-import Slider from "react-slick";
 import {
     ArrowNext,
     ArrowPrev,
+    Box,
     Button,
-    Title,
     Spinner,
-	Box
+    Title
 } from "@components/atoms";
 import { Feedback, IFeedback } from "@components/organisms";
+import React, { useEffect } from "react";
+import { fetchFeedbacks, toggleFormSign } from "@redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+
 import { HOST_API } from "@keys";
+import Slider from "react-slick";
+import style from "./FeedbackSlider.module.scss";
 
 const settings = {
     dots: false,

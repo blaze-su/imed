@@ -2,7 +2,7 @@ import {Button} from '../../components/atoms/Button';
 import { Layout } from '@components/template';
 import Map from '../../components/molecules/Map';
 import React from 'react';
-import css from './index.scss';
+import css from './index.module.scss';
 import {toggleFormSign} from '../../redux/actions';
 import {useDispatch} from 'react-redux';
 import { useReset } from '@components/template/resetToggle';

@@ -1,6 +1,7 @@
-import styles from './index.scss';
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+import React from 'react';
+import styles from './Burger.module.scss';
 import { toggleMobileMenu } from '@redux/actions';
 
 export const Burger = () => {
