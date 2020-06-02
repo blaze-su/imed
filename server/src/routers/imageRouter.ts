@@ -13,18 +13,21 @@ imageRouter.route("/images/:imageSize/:imageName").get((req, res, next) => {
     const imagePath = path.join(dirPath, imageName);
 
     const size = imageSize.split("x");
-    console.log("size", size);
     const width = parseInt(size[0]);
     const height = parseInt(size[1]);
 
-    const imageResizePath = path.join(
+    const imageResizePath = path.join("/app/server/",
         PUBLIC_DIR as string,
         ".temp",
         `${width}x${height}.${imageName}`
     );
 
+    //console.log("imageResizePath", path.resolve(imageResizePath))
+    //console.log("__dirpath", __dirname)
+
     fs.access(imageResizePath, (err: any) => {
         if (!err) {
+            console.log("create file")
             imageStream(res, imageResizePath);
         } else {
             console.log("make image resize")
