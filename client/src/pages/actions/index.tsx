@@ -19,7 +19,7 @@ const SaleList = (props:any) => {
     return (
         <Layout
             isMobile={props.isMobile}
-            title={"Это тайлтл"}
+            title={"Intellect Medical Group"}
             description={"Это дескрипшен"}
             keywords={"Это ключевое слово"}
             breadcrumbs={[

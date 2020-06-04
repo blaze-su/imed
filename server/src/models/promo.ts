@@ -1,12 +1,13 @@
 import * as mongoose from 'mongoose';
 
+import { IFile } from './file';
+
 export interface IPromo extends mongoose.Document {
 	offer: string;
-	photo: string;
+	fileId: IFile;
 	title: string;
 	date: string;
 	description: string;
-	doctorsId: string;
 }
 
 const promoSchema = new mongoose.Schema({
@@ -14,13 +15,10 @@ const promoSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	doctorsId: {
+	fileId: {
+		required: true,
 		type: mongoose.Schema.Types.ObjectId,
-		ref: 'Doctor'
-	},
-	photo: {
-		type: String,
-		required: true
+		ref: 'File'
 	},
 	title: {
 		required: true,

@@ -1,6 +1,7 @@
-import { Request, Response, NextFunction, Router } from 'express';
 import * as bodyParser from 'body-parser';
-import { Promo, Doctor } from '@models/';
+
+import { File, Promo } from '@models/';
+import { NextFunction, Request, Response, Router } from 'express';
 
 const handleError = (err: Error, res: Response) => {
 	res.status(500).json('Error');
@@ -13,7 +14,7 @@ promoRouter
 	.route('/promos/')
 	.get((req: Request, res: Response, next: NextFunction): void => {
 		Promo.find({})
-			.populate({ path: 'doctorsId', model: Doctor })
+			.populate({ path: 'fileId', model: File })
 			.then(
 				promo => {
 					res.json(promo);
@@ -27,6 +28,7 @@ promoRouter
 	.route('/promos/:promoId')
 	.get((req: Request, res: Response, next: NextFunction): void => {
 		Promo.findById(req.params.promoId)
+			.populate({ path: 'fileId', model: File })
 			.then(
 				promo => {
 					res.json(promo);

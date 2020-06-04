@@ -1,11 +1,5 @@
 [
     {
-        "_id": "Menu-1",
-        "title": "Клиника",
-        "link": "/about",
-        "node": null
-    },
-    {
         "_id": "Menu-2",
         "title": "Услуги",
         "link": "/services",
@@ -22,6 +16,12 @@
         "_id": "Menu-4",
         "title": "Акции",
         "link": "/actions",
+        "node": null
+    },
+    {
+        "_id": "Menu-1",
+        "title": "Клиника",
+        "link": "/about",
         "node": null
     },
     {

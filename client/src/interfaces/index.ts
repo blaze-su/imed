@@ -1,3 +1,4 @@
+export * from './IFile'
 export * from './ILink'
 export * from './IPhoto'
 export * from './IService'

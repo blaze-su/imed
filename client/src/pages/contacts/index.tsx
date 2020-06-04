@@ -24,7 +24,7 @@ const Contacts = (props:any) => {
     const dispatch = useDispatch();
     useReset(dispatch);
     return(
-        <Layout isMobile={props.isMobile} title={'Это тайлтл'} description={'Это дескрипшен'} keywords={'Это ключевое слово'} breadcrumbs={null}>
+        <Layout isMobile={props.isMobile} title={'Intellect Medical Group'} description={'Это дескрипшен'} keywords={'Это ключевое слово'} breadcrumbs={null}>
             <div className={css.wrap}>
                 <MapDescription/>
                 <Map/>
