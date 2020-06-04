@@ -15,7 +15,6 @@
 
 html,
 body {
-    overflow-x: hidden;
     font-family: "SF UI Display";
 }
 
@@ -31,10 +30,6 @@ a {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    max-width: 100vw;
-    min-height: 100vh;
     margin: 0;
     padding: 0;
 }
