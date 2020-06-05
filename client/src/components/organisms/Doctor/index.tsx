@@ -12,6 +12,7 @@ interface ISpecialization {
 export interface IDoctor {
 	_id: string;
 	name: string;
+	position: string;
 	filesId: IPhoto[];
 	specializationsId: ISpecialization[];
 	experience: string;
