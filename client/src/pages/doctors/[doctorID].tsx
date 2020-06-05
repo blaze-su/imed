@@ -56,6 +56,16 @@ const Doctor = (props: any) => {
                                 />
                             </aside>
                             <article className={style.content}>
+                                {doctor.description.map(
+                                    (item: string, index: number) => (
+                                        <p
+                                            className={style.description}
+                                            key={index}
+                                        >
+                                            {item}
+                                        </p>
+                                    )
+                                )}
                                 <h3 className={style.title}>Образование</h3>
                                 {doctor.education.map(
                                     (item: string, index: number) => (
@@ -67,9 +77,7 @@ const Doctor = (props: any) => {
                                         </span>
                                     )
                                 )}
-                                <p className={style.description}>
-                                    {doctor.describe}
-                                </p>
+                               
                             </article>
                         </section>
                     </ErrorBoundary>

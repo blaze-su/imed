@@ -1,6 +1,7 @@
-import { Request, Response, NextFunction, Router } from 'express';
 import * as bodyParser from 'body-parser';
-import { Doctor, Mark, Specialization, File } from '@models/';
+
+import { Doctor, File, Mark, Specialization } from '@models/';
+import { NextFunction, Request, Response, Router } from 'express';
 
 const doctorRouter = Router();
 doctorRouter.use(bodyParser.json());
@@ -8,7 +9,7 @@ doctorRouter.use(bodyParser.json());
 doctorRouter
 	.route('/doctors/')
 	.get((req: Request, res: Response, next: NextFunction): void => {
-		Doctor.find({})
+		Doctor.find({}).sort('sort')
 			.populate([
 				{ path: 'marksId', model: Mark },
 				{ path: 'specializationsId', model: Specialization },

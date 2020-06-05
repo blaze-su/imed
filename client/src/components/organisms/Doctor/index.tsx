@@ -20,7 +20,8 @@ export interface IDoctor {
 
 export const Doctor = ({
 	name,
-	specializationsId,
+	// specializationsId,
+	position,
 	experience,
 	filesId,
 	_id
@@ -45,13 +46,15 @@ export const Doctor = ({
 						<p className={style.name}>{name}</p>
 					</a>
 				</Link>
-				<div className={style.positions}>
+				<div className={style.positions}><p className={style.position}>{position}</p></div>	
+				
+				{/* <div className={style.positions}>
                 {
                     specializationsId.map((item: ISpecialization, key: any) => (
                         <p key={key} className={style.position}>{item.title}</p>
                     ))
                 }
-				</div>
+				</div> */}
 				<p className={style.experience}>{experience}</p>
 			</div>
 		</div>

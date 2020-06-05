@@ -6,7 +6,11 @@ const doctorSchema = new mongoose.Schema({
 		type: String,
 		text: true
 	},
-	describe: {
+	sort: {
+		required: true,
+		type: Number,
+	},
+	position: {
 		type: String,
 		text: true,
 		required: true
