@@ -1,10 +1,10 @@
-import { Box, Spinner } from "@components/atoms";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { HOST_API } from "@keys";
 import { IPhoto } from "@interfaces";
 import Slider from "react-slick";
+import { Spinner } from "@components/atoms";
 import { fetchBanners } from "@redux/actions";
 import style from "./BannerSlider.module.scss";
 
