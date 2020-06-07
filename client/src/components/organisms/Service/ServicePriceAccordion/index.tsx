@@ -20,8 +20,13 @@ interface IPrice {
     description?: string;
 }
 
-export const ServicePriceAccordion = () => {
-    const serviceId = "5e187faf3c653e28d04a44e4";
+
+interface IProps {
+    serviceId: string
+}
+
+export const ServicePriceAccordion = ({serviceId}: IProps) => {
+    //const serviceId = "5e187faf3c653e28d04a44e4";
 
     const url: string = `${HOST_API}/prices/service/${serviceId}`;
     const dispatch = useDispatch();
@@ -69,7 +74,7 @@ const Panel = (props: IPrice) => {
             <div className={style.header} onClick={toggleAccordion}>
                 <h4 className={style.title}>{title}</h4>
                 <div className={style.duration}>{duration}</div>
-                <div className={style.cost}>{cost} руб.</div>
+                <div className={style.cost}>{cost}</div>
                 <IsOpenMarker isOpen={setActive === "active" ? true : false} />
             </div>
             <section

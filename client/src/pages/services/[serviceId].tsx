@@ -74,7 +74,7 @@ const service = (props: any) => {
                                     ]}
                                 >
                                     {description}
-                                    <ServicePriceAccordion />
+                                    <ServicePriceAccordion serviceId={parentId} />
                                     <DoctorsList doctors={doctorsId} />
                                 </Tabs>
                             </article>
