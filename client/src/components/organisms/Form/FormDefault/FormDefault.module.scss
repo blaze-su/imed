@@ -48,16 +48,18 @@ $checkbox: 1px solid #959393;
 .label {
   position: relative;
   display: flex;
+  font-size: 14px;
   flex-direction: column;
   width: 100%;
   margin-bottom: 20px;
+  color: #535353; 
 
   & > span {
     font-family: 'SF UI Display';
     font-weight: 300;
     font-size: 12px;
     line-height: 14px;
-    color: #535353;
+    
   }
 
   &:last-child{
@@ -88,7 +90,7 @@ $checkbox: 1px solid #959393;
   margin-right: 10px;
   padding-bottom: 2px;
   background: white;
-  border: 1px solid #959393;
+  border: 1x solid #959393;
   border-radius: 3px;
 
   span {
@@ -103,10 +105,12 @@ $checkbox: 1px solid #959393;
 
 .confident {
   display: flex;
-  margin-top: 30px;
+
+  margin:  0 0 30px 0 ;
 
   span {
     width: 95%;
+    font-size: 14px;
     font-family: 'SF UI Display';
     font-weight: 300;
   }

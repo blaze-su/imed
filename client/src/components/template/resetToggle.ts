@@ -1,14 +1,15 @@
 import {
+    toggleFormDefault,
     toggleFormFeedback,
     toggleFormSeminar,
-    toggleFormSign,
-    toggleFormVacancy, toggleMobileMenu,
+    toggleFormVacancy,
+    toggleMobileMenu,
     toggleSearch
 } from '@redux/actions';
 
 export const useReset = (dispatch: any) =>{
     dispatch(toggleFormVacancy(false));
-    dispatch(toggleFormSign(false));
+    dispatch(toggleFormDefault(false));
     dispatch(toggleFormSeminar(false));
     dispatch(toggleFormFeedback(false));
     dispatch(toggleSearch(false));

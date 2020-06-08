@@ -1,40 +1,39 @@
 $bg: rgba(55, 55, 55, 0.5);
 
-
 .bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background: $bg;
-  z-index: 200;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: $bg;
+    z-index: 200;
 }
 
 .success {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 572px;
-  height: 272px;
-  padding: 50px;
-  background: white;
-  text-align: center;
-  z-index: 201;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 572px;
+    height: 272px;
+    padding: 50px;
+    background: white;
+    text-align: center;
+    z-index: 201;
 
-  span {
-    max-width: 350px;
-    font-family: 'SF UI Display';
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 150%;
-  }
+    span {
+        max-width: 350px;
+        font-family: "SF UI Display";
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 150%;
+    }
 }

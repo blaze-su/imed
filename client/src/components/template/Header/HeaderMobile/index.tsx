@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Fragment } from "react";
 import Link from "next/link";
 import style from "./HeaderMobile.module.scss";
-import { toggleFormSign } from "@redux/actions";
+import { toggleFormDefault } from "@redux/actions";
 
 export const HeaderMobile = () => {
     const dispatch = useDispatch();
@@ -53,7 +53,7 @@ export const HeaderMobile = () => {
                         </ul>
                         <Button
                             text="Записаться на прием"
-                            onClick={() => dispatch(toggleFormSign(true))}
+                            onClick={() => dispatch(toggleFormDefault(true))}
                         />
                         <br />
                     </div>

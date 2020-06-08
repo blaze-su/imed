@@ -3,7 +3,7 @@ import { Layout } from '@components/template';
 import Map from '../../components/molecules/Map';
 import React from 'react';
 import css from './index.module.scss';
-import {toggleFormSign} from '../../redux/actions';
+import {toggleFormDefault} from '../../redux/actions';
 import {useDispatch} from 'react-redux';
 import { useReset } from '@components/template/resetToggle';
 
@@ -15,7 +15,7 @@ const MapDescription = () => {
             <span><a className={css.tel} href={'tel:+79181111414'}>+7(918)111-14-14</a></span>
             <span className={css.time}>Пн-Сб c 9:00 до 21:00<br/>Вс c 9:00 до 17:00</span>
             <span><a className={css.email} href={'mailto:info@almameds.ru'}>info@almameds.ru</a></span>
-            <Button text={'Записаться на прием'} onClick={()  => dispatch(toggleFormSign(true))}/>
+            <Button text={'Записаться на прием'} onClick={()  => dispatch(toggleFormDefault(true))}/>
         </div>
     );
 };

@@ -1,8 +1,8 @@
 import React, { Fragment, ReactElement, useRef } from 'react';
 import {
+	toggleFormDefault,
 	toggleFormFeedback,
 	toggleFormSeminar,
-	toggleFormSign,
 	toggleFormVacancy
 } from '@redux/actions';
 
@@ -24,7 +24,7 @@ export const ModalForm = (props: IForm) => {
 				ref={bg}
 				onClickCapture={event => {
 					if (event.target === bg.current) {
-						dispatch(toggleFormSign(false));
+						dispatch(toggleFormDefault(false));
 						dispatch(toggleFormVacancy(false));
 						dispatch(toggleFormFeedback(false));
 						dispatch(toggleFormSeminar(false));

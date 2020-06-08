@@ -38,7 +38,7 @@ const Index = (props: any) => {
     return (
         <Layout
             isMobile={props.isMobile}
-            title={"Intellect Nedical Group"}
+            title={"Intellect Medical Group"}
             description={"Это дескрипшен"}
             keywords={"Это ключевое слово"}
             breadcrumbs={null}

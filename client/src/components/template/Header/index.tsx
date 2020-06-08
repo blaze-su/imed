@@ -1,6 +1,6 @@
 // import { BrowserView, MobileView } from "react-device-detect";
 
-import { FormSignUp, ModalForm } from "@components/organisms";
+import { FormDefault, ModalForm } from "@components/organisms";
 import React, { Fragment } from "react";
 
 import { HeaderDesktop } from "./HeaderDesktop";
@@ -21,7 +21,7 @@ interface IProps {
 
 export const Header = ({isMobile}: IProps) => {
     const active = useSelector(
-        (store: any) => store.formReducer.formSignActive
+        (store: any) => store.formReducer.formDefaultActive
     );
     return (
         <Fragment>
@@ -46,7 +46,7 @@ export const Header = ({isMobile}: IProps) => {
             )} */}
             {active ? (
                 <ModalForm>
-                    <FormSignUp
+                    <FormDefault
                         initialValues={{ confidentPolitic: "checked" }}
                         onSubmit={onSubmit}
                     />

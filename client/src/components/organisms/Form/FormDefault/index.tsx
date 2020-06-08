@@ -6,13 +6,12 @@ import {
 	normalizePhone,
 	phoneLength,
 	required,
-	upper
 } from '@components/template/validation';
 
 import { Button } from '@components/atoms';
 import React from 'react';
-import style from './FormSignUp.module.scss';
-import { toggleFormSign } from '@redux/actions';
+import style from './FormDefault.module.scss';
+import { toggleFormDefault } from '@redux/actions';
 import { useDispatch } from 'react-redux';
 
 const minLength2 = minLength(2);
@@ -25,7 +24,7 @@ const Form = (props: any) => {
 		<form className={style.form} onSubmit={props.handleSubmit}>
 			<div
 				className={style.close}
-				onClick={() => dispatch(toggleFormSign(false))}
+				onClick={() => dispatch(toggleFormDefault(false))}
 			>
 				&times;
 			</div>
@@ -48,7 +47,7 @@ const Form = (props: any) => {
 				<Field
 					className={style.input}
 					name={'phone'}
-					placeholder={'+7('}
+					placeholder={'+7(***)***-**-**'}
 					require={'true'}
 					type={'tel'}
 					normalize={normalizePhone}
@@ -56,23 +55,6 @@ const Form = (props: any) => {
 					component={'input'}
 				/>
 			</label>
-			<label className={style.label} htmlFor="email">
-				Укажите электронную почту *
-				<Field
-					className={style.input}
-					name={'email'}
-					placeholder={'Ivanov.I.S@g-mail.com'}
-					require={'true'}
-					type={'email'}
-					normalize={upper}
-					validate={[required, minLength2, maxLength30]}
-					component={'input'}
-				/>
-			</label>
-			<Button
-				text={'Отправить'}
-				onClick={() => console.log('Отправить форму')}
-			/>
 			<label className={style.confident}>
 				<Field
 					className={style.checkbox}
@@ -89,10 +71,14 @@ const Form = (props: any) => {
 					</a>
 				</span>
 			</label>
+			<Button
+				text={'Отправить'}
+				onClick={() => console.log('Отправить форму')}
+			/>
 		</form>
 	);
 };
 
-export const FormSignUp = reduxForm({
-	form: 'signup'
+export const FormDefault = reduxForm({
+	form: 'formDefault'
 })(Form);

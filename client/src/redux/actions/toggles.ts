@@ -1,13 +1,14 @@
+import {TOGGLE_FORM_DEFAULT, TOGGLE_FORM_FEEDBACK, TOGGLE_FORM_SEMINAR, TOGGLE_FORM_VACANCY, TOGGLE_MENU_MOBILE, TOGGLE_SEARCH} from './actionTypes';
+
 import {toggleWithProps} from './index';
-import {TOGGLE_FORM_FEEDBACK, TOGGLE_FORM_SEMINAR, TOGGLE_FORM_SIGN, TOGGLE_FORM_VACANCY, TOGGLE_MENU_MOBILE, TOGGLE_SEARCH} from './actionTypes';
 
 export const toggleFormVacancy = (bool: boolean) =>
     (dispatch: toggleWithProps) =>
         dispatch({type: TOGGLE_FORM_VACANCY, payload: bool});
 
-export const toggleFormSign = (bool: boolean) =>
+export const toggleFormDefault = (bool: boolean) =>
     (dispatch: toggleWithProps) =>
-        dispatch({type: TOGGLE_FORM_SIGN, payload: bool});
+        dispatch({type: TOGGLE_FORM_DEFAULT, payload: bool});
 
 export const toggleFormFeedback = (bool: boolean) =>
     (dispatch: toggleWithProps) =>

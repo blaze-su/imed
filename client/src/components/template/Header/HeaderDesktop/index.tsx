@@ -3,7 +3,7 @@ import { Address, Button, Logo, Telephone } from "@components/atoms";
 import { Fragment } from "react";
 import { Menu } from "@components/molecules";
 import desktopStyle from "./HeaderDesktop.module.scss";
-import { toggleFormSign } from "@redux/actions";
+import { toggleFormDefault } from "@redux/actions";
 import { useDispatch } from "react-redux";
 
 export const HeaderDesktop = () => {
@@ -25,7 +25,7 @@ export const HeaderDesktop = () => {
                     </div>
                     <Button
                         text="Записаться на прием"
-                        onClick={() => dispatch(toggleFormSign(true))}
+                        onClick={() => dispatch(toggleFormDefault(true))}
                     />
                 </div>
             </header>

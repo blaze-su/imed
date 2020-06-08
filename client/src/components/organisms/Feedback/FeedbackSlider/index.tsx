@@ -8,7 +8,7 @@ import {
 } from "@components/atoms";
 import { Feedback, IFeedback } from "@components/organisms";
 import React, { useEffect } from "react";
-import { fetchFeedbacks, toggleFormSign } from "@redux/actions";
+import { fetchFeedbacks, toggleFormDefault } from "@redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 import { HOST_API } from "@keys";
@@ -61,7 +61,7 @@ export const FeedbackSlider = () => {
                 <Button
                     text="Записаться на прием"
                     type="white"
-                    onClick={() => dispatch(toggleFormSign(true))}
+                    onClick={() => dispatch(toggleFormDefault(true))}
                 />
             </Box>
         </div>
