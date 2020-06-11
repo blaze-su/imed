@@ -1,42 +1,50 @@
-import style from './Footer.module.scss';
-import React from 'react';
-import { FooterInfo, FooterMenu, FooterBottom, FooterContacts } from '@components/template/Footer'
-import { ILink } from '@interfaces';
+import {
+    FooterBottom,
+    FooterContacts,
+    FooterInfo,
+    FooterMenu,
+} from "@components/template/Footer";
 
-const services: Array<ILink> = [
-    {_id: '98H45G', title: 'Косметология', link: '/cosmetology'},
-    {_id: '98H45F', title: 'Массаж', link: '/massage'},
-    {_id: '98H45D', title: 'Мануальная терапия', link: '/therapy'},
-    {_id: '98H45S', title: 'Лечебная гимнастика', link: '/gymnastics'},
-    {_id: '98H45U', title: 'Остеопатия', link: '/osteopath'}
-];
+import { ILink } from "@interfaces";
+import React from "react";
+import style from "./Footer.module.scss";
+import { useSelector } from "react-redux";
 
 const about: Array<ILink> = [
-    {_id: '98H45T', title: 'Клиника', link: '/about'},
-    {_id: '98H45U', title: 'Врачи', link: '/doctors'},
-    {_id: 'Q8H45U', title: 'Акции', link: '/actions'},
-    {_id: 'W8H45U', title: 'Обучение', link: '/educationList'},
-    {_id: 'E8H45U', title: 'Контакты', link: '/contacts'},
-    {_id: 'R8H45U', title: 'Вакансии', link: '/vacancies'},
-    {_id: 'T8H45U', title: 'Статьи', link: '/articles'}
+    { _id: "98H45T", title: "О нас", link: "/about" },
+    { _id: "98H45U", title: "Врачи", link: "/doctors" },
+    { _id: "Q8H45U", title: "Акции", link: "/actions" },
+    { _id: "E8H45U", title: "Контакты", link: "/contacts" },
 ];
 
 export const Footer = () => {
+    const servicesReducer = useSelector((store: any) => store.servicesReducer);
+
+    const services: ILink[] = servicesReducer.services.map((service: any):ILink => {
+        return {
+            _id: service._id,
+            title: service.title,
+            link: `/services/${service._id}`,
+        };
+    });
+
+    // console.log("footer__menu", services);
+
     return (
         <footer className={style.wrap}>
             <div className={style.container}>
-                <FooterInfo/>
-                <FooterMenu data={services} title='Услуги'/>
-                <FooterMenu data={about} title='О клинике'/>
-                <FooterContacts/>
+                <FooterInfo />
+                <FooterMenu data={services} title="Услуги" />
+                <FooterMenu data={about} title="О клинике" />
+                <FooterContacts />
             </div>
-            <FooterBottom/>
+            <FooterBottom />
         </footer>
     );
 };
 
-export * from './FooterBottom'
-export * from './FooterContacts'
-export * from './FooterInfo'
-export * from './FooterMenu'
-export * from './FooterTitle'
+export * from "./FooterBottom";
+export * from "./FooterContacts";
+export * from "./FooterInfo";
+export * from "./FooterMenu";
+export * from "./FooterTitle";

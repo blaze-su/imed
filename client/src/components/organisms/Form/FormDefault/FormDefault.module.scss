@@ -18,6 +18,13 @@ $checkbox: 1px solid #959393;
   z-index: 201;
 }
 
+.center {
+  text-align: center;
+  b {
+    color: #43A047;
+  }
+}
+
 .close {
   position: absolute;
   top: 12px;
@@ -45,6 +52,11 @@ $checkbox: 1px solid #959393;
   font-weight: bold;
 }
 
+.field {
+  position: relative;
+  margin-bottom: 20px;
+}
+
 .label {
   position: relative;
   display: flex;
@@ -65,6 +77,13 @@ $checkbox: 1px solid #959393;
   &:last-child{
     margin-bottom: 30px;
   }
+}
+
+.error {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  color: red;
 }
 
 .input {

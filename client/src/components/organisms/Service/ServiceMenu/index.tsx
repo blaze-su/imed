@@ -25,9 +25,10 @@ export const ServiceMenu = ({ serviceId, parentId, isMobile }: IProps) => {
     const { services, servicesIsLoading } = servicesReducer;
 
     // const category = findParent(services, serviceId);
+    // console.log("ServiceMenu", serviceId, parentId );
     const category = services.find((s: IService) => s._id == parentId);
 
-    console.log("menu-service", category);
+    // console.log("menu-service", category);
 
     return (
         <nav>

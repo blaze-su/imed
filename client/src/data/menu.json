@@ -20,7 +20,7 @@
     },
     {
         "_id": "Menu-1",
-        "title": "Клиника",
+        "title": "О нас",
         "link": "/about",
         "node": null
     },

@@ -23,7 +23,7 @@ export const Doctor = ({
 	name,
 	// specializationsId,
 	position,
-	experience,
+	// experience,
 	filesId,
 	_id
 }: IDoctor) => {
@@ -55,8 +55,8 @@ export const Doctor = ({
                         <p key={key} className={style.position}>{item.title}</p>
                     ))
                 }
-				</div> */}
-				<p className={style.experience}>{experience}</p>
+				</div> 
+				<p className={style.experience}>{experience}</p>*/}
 			</div>
 		</div>
 	);

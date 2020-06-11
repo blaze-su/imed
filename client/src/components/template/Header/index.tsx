@@ -2,36 +2,40 @@
 
 import { FormDefault, ModalForm } from "@components/organisms";
 import React, { Fragment } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import { HeaderDesktop } from "./HeaderDesktop";
 import { HeaderMobile } from "./HeaderMobile";
-import { useSelector } from "react-redux";
-
-const onSubmit = (formData: any) => {
-    console.log("Form send");
-    console.log(formData);
-};
+import { formSuccess } from "@redux/actions/sendForm";
 
 // const HeaderMobile = () => <h1>Header Mobile</h1>
 // const HeaderDesktop = () => <h1>Header Desktop</h1>
 
 interface IProps {
-    isMobile: string | null
+    isMobile: string | null;
 }
 
-export const Header = ({isMobile}: IProps) => {
+export const Header = ({ isMobile }: IProps) => {
+    const dispatch = useDispatch();
+
+    const onSubmit = (formData: any) => {
+        const msn = `${formData.name}, ${formData.phone}, [Главная]`;
+        console.log("formData", msn);
+        dispatch(formSuccess(true));
+    };
+
     const active = useSelector(
         (store: any) => store.formReducer.formDefaultActive
     );
     return (
         <Fragment>
+            {isMobile ? (
+                <HeaderMobile key="HeaderMobile" />
+            ) : (
+                <HeaderDesktop key="HeaderDesktop" />
+            )}
 
-
-            {isMobile ? <HeaderMobile key="HeaderMobile"/> : <HeaderDesktop key="HeaderDesktop"/>}
-                
-    
-
-{/* 
+            {/* 
             <BrowserView>
                 <HeaderDesktop key="HeaderDesktop"/>
             </BrowserView> */}

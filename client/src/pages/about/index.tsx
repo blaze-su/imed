@@ -79,14 +79,14 @@ const AboutGallery = () => {
     const [stateToggler, setToggler] = useState({ toggler: false, slide: 1 });
 
     const photos = [
-        "/api/static/da3173e5f976c2a0bc4d9378ae609c22.jpg",
-        "/api/static/7aca0e8fc4c553d8a10b1f89a0756c34.jpg",
-        "/api/static/df7232af58f2f471136f02f34843986d.jpg",
-        "/api/static/da3173e5f976c2a0bc4d9378ae609c22.jpg",
-        "/api/static/7aca0e8fc4c553d8a10b1f89a0756c34.jpg",
-        "/api/static/df7232af58f2f471136f02f34843986d.jpg",
-        "/api/static/da3173e5f976c2a0bc4d9378ae609c22.jpg",
-        "/api/static/7aca0e8fc4c553d8a10b1f89a0756c34.jpg",
+        "/api/static/8ad0d71f3c9c981f3e54bb54404bf8ea.jpg",
+        "/api/static/aecbf176c95bf4bc8210b1c3e364e6f0.jpg",
+        "/api/static/a58dea6ee418531b1bb75244d13ce7c4.jpg",
+        "/api/static/bca2a811b50116ebe6090bdc9f96a23a.jpg",
+        "/api/static/7c2760b4d827fca7c455e5bc2a3b87ce.jpg",
+        "/api/static/0dc31ca8f23a8b9e4950a526aa5c5293.jpg",
+        "/api/static/1400a612975e8fc1619f03ef98c8b2ab.jpg",
+        "/api/static/fd4bfa870fa20f2bb46a5e32c3c4667d.jpg",
     ];
 
     const onClickHandler = (slide: number) => {

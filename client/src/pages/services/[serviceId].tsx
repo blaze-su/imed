@@ -32,12 +32,14 @@ const service = (props: any) => {
     // console.log("serviceIsLoading", serviceIsLoading);
     // console.log("service", service);
 
-    const { doctorsId, title, parentId, description } = service;
+    let { doctorsId, title, parentId, description } = service;
 
-    // console.log(doctorsId);
+    parentId = parentId ? parentId : serviceId; 
+
+    //console.log("parentId", parentId );
 
     const links = [
-        { title: "Главная", link: "/" },
+        { title: "Услуги", link: "/" },
         { title: "Услуги", link: "/services/" },
         { title: title, link: "" },
     ];

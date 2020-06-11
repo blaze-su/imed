@@ -1,7 +1,7 @@
 import { Box, Button, ErrorBoundary, Spinner, Title } from "@components/atoms";
 import { HOST_API, HOST_IMAGE_RESIZE } from "@keys";
 import React, { useEffect } from "react";
-import { fetchDoctor, toggleFormSign } from "@redux/actions";
+import { fetchDoctor, toggleFormDefault } from "@redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Layout } from "@components/template";
@@ -30,7 +30,7 @@ const Doctor = (props: any) => {
     return (
         <Layout
             isMobile={props.isMobile}
-            title={"Это тайтл"}
+            title={doctor.name}
             description={"Это дескрипшен"}
             keywords={"Это ключевое слово"}
             breadcrumbs={arr}
@@ -51,7 +51,7 @@ const Doctor = (props: any) => {
                                 <Button
                                     text={"Записаться на прием"}
                                     onClick={() =>
-                                        dispatch(toggleFormSign(true))
+                                        dispatch(toggleFormDefault(true))
                                     }
                                 />
                             </aside>

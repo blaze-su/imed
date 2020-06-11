@@ -1,32 +1,27 @@
 type Validator = string | undefined;
 
-export const required = (value: string): Validator => value ? undefined : 'Required';
+export const required = (value: string): Validator =>
+    value ? undefined : "Обязательное поле";
 
 export const name = (value: string): Validator =>
-    /[a-zA-Z]+/g.test(value)
-        ? 'Invalid name'
+    /[a-zA-Z]+/g.test(value) ? "Некорректное имя" : undefined;
+
+export const maxLength = (max: number) => (value: string): Validator =>
+    value && value.length > max
+        ? `Не более ${max} символов`
         : undefined;
 
-export const maxLength = (max: number) =>
-    (value: string): Validator =>
-        (value && value.length > max)
-            ? `Must be ${max} characters or less`
-            : undefined;
-
-export const minLength = (min: number) =>
-    (value: string): Validator =>
-        (value && value.length < min)
-            ? `Must be ${min} characters or more`
-            : undefined;
+export const minLength = (min: number) => (value: string): Validator =>
+    value && value.length < min
+        ? `Не менее ${min} символов`
+        : undefined;
 
 export const phoneLength = (value: string): Validator =>
-       value && value.length < 18
-            ? `Invalid phone number`
-            : undefined;
+    value && value.length < 18 ? `Не корректный телефон` : undefined;
 
 export const email = (value: string): Validator =>
     value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
-        ? 'Invalid email address'
+        ? "Invalid email address"
         : undefined;
 
 export const upper = (value: string) => value.toUpperCase();
@@ -39,10 +34,14 @@ export const normalizePhone = (value: string) => {
     if (def.length >= val.length) val = def;
 
     return matrix.replace(/./g, (a) =>
-        (/[_\d]/.test(a) && i < val.length)
+        /[_\d]/.test(a) && i < val.length
             ? val.charAt(i++)
-            : i >= val.length ? "" : a);
+            : i >= val.length
+            ? ""
+            : a
+    );
 };
 
 export const normalizeName = (value: string) =>
     value.replace(/\d/g, "").toLocaleUpperCase();
+    
