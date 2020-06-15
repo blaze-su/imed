@@ -17,7 +17,7 @@ const nextConfig = {
     publicRuntimeConfig: {
         PROCESS_ENV_NODE_ENV: process.env.NODE_ENV,
         PROCESS_ENV_HOST_API: process.env.HOST_API,
-        PROCESS_ENV_HOST_IMAGE: process.env.HOST_IMAGE,
+        PROCESS_ENV_HOST_IMAGE: process.env.HOST_IMAGE
     },
     entry: "./src/index.js",
     webpack(config) {

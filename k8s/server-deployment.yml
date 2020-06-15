@@ -30,5 +30,17 @@ spec:
               valueFrom: 
                 secretKeyRef:
                   name: mongodburl
-                  key: MONGODB_URL    
+                  key: MONGODB_URL            
+            - name: SMS_API
+              valueFrom: 
+                secretKeyRef:
+                  name: smsapi
+                  key: SMS_API
+            - name: SMS_PHONE
+              valueFrom: 
+                secretKeyRef:
+                  name: smsphone
+                  key: SMS_PHONE
+        
+
 

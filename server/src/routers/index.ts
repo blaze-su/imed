@@ -26,6 +26,7 @@ export { searchPriceRouter } from '@routers/searchPriceRouter';
 export { sefurlRouter } from '@routers/sefurlRouter';
 export { seminarRouter } from '@routers/seminarRouter';
 export { serviceRouter } from '@routers/serviceRouter';
+export { smsRouter } from '@routers/smsRouter';
 export { specializationRouter } from '@routers/specializationRouter';
 export { tableRouter } from '@routers/tableRouter';
 // export { uploadRouter } from '@routers/uploadRouter';

@@ -5,7 +5,7 @@ const { publicRuntimeConfig } = getConfig();
 const {
     PROCESS_ENV_NODE_ENV,
     PROCESS_ENV_HOST_API,
-    PROCESS_ENV_HOST_IMAGE,
+    PROCESS_ENV_HOST_IMAGE
 } = publicRuntimeConfig;
 
 // console.log("publicRuntimeConfig v3", publicRuntimeConfig)

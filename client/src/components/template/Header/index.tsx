@@ -4,6 +4,7 @@ import { FormDefault, ModalForm } from "@components/organisms";
 import React, { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import { HOST_API } from "@keys";
 import { HeaderDesktop } from "./HeaderDesktop";
 import { HeaderMobile } from "./HeaderMobile";
 import { formSuccess } from "@redux/actions/sendForm";
@@ -20,9 +21,25 @@ export const Header = ({ isMobile }: IProps) => {
 
     const onSubmit = (formData: any) => {
         const msn = `${formData.name}, ${formData.phone}, [Главная]`;
-        console.log("formData", msn);
-        dispatch(formSuccess(true));
+        smsSent(msn).then(() => {
+            console.log("СООБЩЕНИЕ ОТПРАВЛЕННО: ", msn);
+            dispatch(formSuccess(true));
+        })
     };
+
+    const smsSent = (data: string) => {
+        const url = `${HOST_API}/sms/`;
+        
+        return fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+              },
+            body: JSON.stringify({
+                msn: data
+            })
+        })
+    }
 
     const active = useSelector(
         (store: any) => store.formReducer.formDefaultActive

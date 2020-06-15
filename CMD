@@ -12,4 +12,3 @@ kubectl create secret generic hostapi --from-literal HOST_API="/api"
 kubectl create secret generic hostimage --from-literal HOST_API="/api/static"
 
 
-
