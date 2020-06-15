@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { HOST_API } from "@keys";
 import { HeaderDesktop } from "./HeaderDesktop";
 import { HeaderMobile } from "./HeaderMobile";
+import { IFormInfo } from "@redux/reducers/formReducer";
 import { formSuccess } from "@redux/actions/sendForm";
 
 // const HeaderMobile = () => <h1>Header Mobile</h1>
@@ -18,32 +19,39 @@ interface IProps {
 
 export const Header = ({ isMobile }: IProps) => {
     const dispatch = useDispatch();
-
-    const onSubmit = (formData: any) => {
-        const msn = `${formData.name}, ${formData.phone}, [Главная]`;
-        smsSent(msn).then(() => {
-            console.log("СООБЩЕНИЕ ОТПРАВЛЕННО: ", msn);
-            dispatch(formSuccess(true));
-        })
-    };
-
-    const smsSent = (data: string) => {
-        const url = `${HOST_API}/sms/`;
-        
-        return fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-              },
-            body: JSON.stringify({
-                msn: data
-            })
-        })
-    }
+    const formInfo: IFormInfo = useSelector(
+            (store: any) => store.formReducer.formInfo
+        );
 
     const active = useSelector(
         (store: any) => store.formReducer.formDefaultActive
     );
+
+    const onSubmit = (formData: any) => {
+        
+        console.log("formInfo", formInfo)
+
+        const msn = `${formData.name}, ${formData.phone}, [${formInfo.target}]`;
+        smsSent(msn).then(() => {
+            console.log("SMS отправлено: ", msn);
+            dispatch(formSuccess(true));
+        });
+    };
+
+    const smsSent = (data: string) => {
+        const url = `${HOST_API}/sms/`;
+
+        return fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json;charset=utf-8",
+            },
+            body: JSON.stringify({
+                msn: data,
+            }),
+        });
+    };
+
     return (
         <Fragment>
             {isMobile ? (

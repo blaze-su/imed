@@ -1,5 +1,6 @@
 import {
     FORM_FAILED,
+    FORM_INFO,
     FORM_SUCCESS,
     SENDING_FORM,
     TOGGLE_FORM_DEFAULT,
@@ -16,7 +17,13 @@ const initialState = {
     sendingForm: false,
     formSuccess: false,
     formFailed: false,
+    formInfo: null,
 };
+
+export interface IFormInfo {
+    target: string;
+    yandexGoalId?: string;
+}
 
 export const formReducer = (state = initialState, action: any) => {
     switch (action.type) {
@@ -28,6 +35,8 @@ export const formReducer = (state = initialState, action: any) => {
             return { ...state, formSeminarActive: action.payload };
         case TOGGLE_FORM_FEEDBACK:
             return { ...state, formFeedbackActive: action.payload };
+        case FORM_INFO:
+            return { ...state, formInfo: action.payload };
         case SENDING_FORM:
             return { ...state, sendingForm: action.payload };
         case FORM_SUCCESS:

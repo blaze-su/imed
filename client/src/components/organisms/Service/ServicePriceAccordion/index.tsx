@@ -4,11 +4,12 @@ import {
     IsOpenMarker,
     Spinner,
 } from "@components/atoms";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useReducer, useRef, useState } from "react";
+import { fetchPrice, toggleFormDefault } from "@redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 import { HOST_API } from "@keys";
-import { fetchPrice } from "@redux/actions";
+import { formInfo } from "@redux/actions/sendForm";
 import style from "./ServicePrice.module.scss";
 import { useReset } from "@components/template/resetToggle";
 
@@ -20,12 +21,11 @@ interface IPrice {
     description?: string;
 }
 
-
 interface IProps {
-    serviceId: string
+    serviceId: string;
 }
 
-export const ServicePriceAccordion = ({serviceId}: IProps) => {
+export const ServicePriceAccordion = ({ serviceId }: IProps) => {
     //const serviceId = "5e187faf3c653e28d04a44e4";
 
     const url: string = `${HOST_API}/prices/service/${serviceId}`;
@@ -51,6 +51,8 @@ export const ServicePriceAccordion = ({serviceId}: IProps) => {
 };
 
 const Panel = (props: IPrice) => {
+    const dispatch = useDispatch();
+
     const { _id, title, duration, cost, description } = props;
 
     const [setActive, setActiveState] = useState("");
@@ -86,7 +88,10 @@ const Panel = (props: IPrice) => {
                     <p className={style.description}>{description}</p>
                     <Button
                         text="Записаться на прием"
-                        onClick={() => console.log("click button")}
+                        onClick={() => {
+                            dispatch(formInfo({ target: `${title} ${duration} ${cost}`}));
+                            dispatch(toggleFormDefault(true));
+                        }}
                     />
                 </div>
             </section>

@@ -65,3 +65,4 @@ export const FETCH_SCHEDULE_REQUEST = 'FETCH_SHEDULE_REQUEST';
 export const SENDING_FORM = 'SENDING_FORM';
 export const FORM_SUCCESS = 'FORM_SUCCESS';
 export const FORM_FAILED = 'FORM_FAILED';
+export const FORM_INFO = 'FORM_INFO';

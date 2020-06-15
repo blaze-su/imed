@@ -5,6 +5,7 @@ import { fetchDoctor, toggleFormDefault } from "@redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Layout } from "@components/template";
+import { formInfo } from "@redux/actions/sendForm";
 import style from "./doctor.module.scss";
 import { useReset } from "@components/template/resetToggle";
 import { useRouter } from "next/router";
@@ -49,10 +50,13 @@ const Doctor = (props: any) => {
                                     alt={doctor.name}
                                 />
                                 <Button
-                                    text={"Записаться на прием"}
-                                    onClick={() =>
-                                        dispatch(toggleFormDefault(true))
-                                    }
+                                    text="Записаться на прием"
+                                    onClick={() => {
+                                        dispatch(
+                                            formInfo({ target: doctor.name })
+                                        );
+                                        dispatch(toggleFormDefault(true));
+                                    }}
                                 />
                             </aside>
                             <article className={style.content}>
@@ -77,7 +81,6 @@ const Doctor = (props: any) => {
                                         </span>
                                     )
                                 )}
-                               
                             </article>
                         </section>
                     </ErrorBoundary>
