@@ -12,6 +12,7 @@ import { HOST_API } from "@keys";
 import { formInfo } from "@redux/actions/sendForm";
 import style from "./ServicePrice.module.scss";
 import { useReset } from "@components/template/resetToggle";
+import ym from "react-yandex-metrika";
 
 interface IPrice {
     _id: string;
@@ -91,6 +92,7 @@ const Panel = (props: IPrice) => {
                         onClick={() => {
                             dispatch(formInfo({ target: `${title} ${duration} ${cost}`}));
                             dispatch(toggleFormDefault(true));
+                            ym('reachGoal', 'zapisatsya-na-priem-usluga');
                         }}
                     />
                 </div>

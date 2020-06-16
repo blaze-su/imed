@@ -9,6 +9,7 @@ import { HeaderDesktop } from "./HeaderDesktop";
 import { HeaderMobile } from "./HeaderMobile";
 import { IFormInfo } from "@redux/reducers/formReducer";
 import { formSuccess } from "@redux/actions/sendForm";
+import ym from "react-yandex-metrika";
 
 // const HeaderMobile = () => <h1>Header Mobile</h1>
 // const HeaderDesktop = () => <h1>Header Desktop</h1>
@@ -35,6 +36,7 @@ export const Header = ({ isMobile }: IProps) => {
         smsSent(msn).then(() => {
             console.log("SMS отправлено: ", msn);
             dispatch(formSuccess(true));
+            ym('reachGoal', 'zapisatsya-na-priem-glavnaya');
         });
     };
 

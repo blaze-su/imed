@@ -4,6 +4,8 @@ import App from "next/app";
 import MobileDetect from "mobile-detect";
 import { Provider } from "react-redux";
 import React from "react";
+import { YANDEX_METRIKA_ID } from "@keys";
+import { YMInitializer } from 'react-yandex-metrika';
 import configureStore from "../redux/store/configureStore";
 import { isMobile } from "react-device-detect";
 import { withRouter } from "next/router";
@@ -37,6 +39,7 @@ class MyApp extends App {
         const { Component, pageProps, router } = this.props;
         return (
             <Provider store={store}>
+                <YMInitializer accounts={[YANDEX_METRIKA_ID]} options={{webvisor: true}} version="2" />
                 <App
                     pageProps={pageProps}
                     Component={Component}

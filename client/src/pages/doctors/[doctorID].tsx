@@ -9,6 +9,7 @@ import { formInfo } from "@redux/actions/sendForm";
 import style from "./doctor.module.scss";
 import { useReset } from "@components/template/resetToggle";
 import { useRouter } from "next/router";
+import ym from "react-yandex-metrika";
 
 const Doctor = (props: any) => {
     const router = useRouter();
@@ -56,6 +57,7 @@ const Doctor = (props: any) => {
                                             formInfo({ target: doctor.name })
                                         );
                                         dispatch(toggleFormDefault(true));
+                                        ym('reachGoal', 'zapisatsya-na-priem-doctor');
                                     }}
                                 />
                             </aside>
