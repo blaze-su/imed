@@ -4,7 +4,7 @@ import {
     IsOpenMarker,
     Spinner,
 } from "@components/atoms";
-import React, { useEffect, useReducer, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { fetchPrice, toggleFormDefault } from "@redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
